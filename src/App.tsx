@@ -131,6 +131,18 @@ C                        F
 Mi-ai promis că vei sta lângă mine 
     G                   C 
 Nicicând n-ai să mă părăsești. 
+
+2. 
+/: De voi încerca să m-ascund de Tine
+Nu voi reuși
+Oriunde m-aș duce, chiar la marginea mării
+Mâna Ta mă va călăuzi. : /
+
+3. 
+/: Tu mă cunoști întru totul Doamne
+Când stau jos sau mă ridic
+Îmi cunoști toate căile mele
+Nu pot ascunde nimic. : /
 `,
   },
   {
@@ -151,12 +163,63 @@ R.
 /: Când sunt slab, Tu mă faci Tare 
 Când sunt mic, Tu mă faci Mare 
 Cu toată puterea Ta,  
-Tu lucrezi în viața mea :// `,
+Tu lucrezi în viața mea :// 
+    
+2.	
+Când văd muntele din fața mea
+Tu îmi dai curaj să-l pot urca.
+Uriașii nu mă pot împiedica
+Cu Tine biruința este-a mea
+Da, biruința este-a mea!
+
+R.
+/: Când sunt slab, Tu mă faci Tare
+Când sunt mic, Tu mă faci Mare
+Cu toată puterea Ta, 
+Tu lucrezi în viața mea :/
+
+R Final.
+/Zi de zi aleg să merg la pas cu tine
+În Tine este toată încrederea mea
+Anii trec dar eu aleg să stau lângă Tine
+Tu Dumnezeu ești victoria mea./2x `,
     chords: `
-Am                          F
-În fiecare dimineață Tu îmi spui 
-C                     G 
-Ridică-te, fă-ți patul și umblă 
+1.	
+    Am                        F
+În fiecare dimineață Tu îmi spui
+  C                        G
+Ridică-te, fă-ți patul și umblă
+    Am                     F
+Voi merge nencetat pe urma ta
+      C                       G
+Chiar zi si noapte voi cinta așa
+C                 G
+Da, eu voi cânta așa...
+
+    F                  C
+/: Când sunt slab, Tu mă faci Tare
+G                 Am
+Când sunt mic, Tu mă faci Mare
+F           C
+Cu toată puterea Ta, 
+       G            Am
+Tu lucrezi în viața mea ://
+
+2.	Când văd muntele din fața mea
+Tu îmi dai curaj să-l pot urca.
+Uriașii nu mă pot împiedica
+Cu Tine biruința este-a mea
+Da, biruința este-a mea!
+
+/: Când sunt slab, Tu mă faci Tare
+Când sunt mic, Tu mă faci Mare
+Cu toată puterea Ta, 
+Tu lucrezi în viața mea :/
+
+/Zi de zi aleg să merg la pas cu tine
+În Tine este toată încrederea mea
+Anii trec dar eu aleg să stau lângă Tine
+Tu Dumnezeu ești victoria mea./2x
 `,
   },
   {
