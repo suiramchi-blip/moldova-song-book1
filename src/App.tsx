@@ -669,6 +669,9 @@ export default function App() {
     >
       {showVideo ? "Hide Video" : "▶ Play Video"}
     </button>
+    {showVideo && (
+      <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7 }}>
+        Video playing (floating window)
   </div>
 )}
 ``
