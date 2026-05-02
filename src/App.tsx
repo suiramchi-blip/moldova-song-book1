@@ -261,8 +261,46 @@ Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
 Eu sunt lucrarea ta, Tu bucuria mea! : /
 `,
     chords: `
-D     G
-Tu ești credincios...`,
+ 1.	 
+               D            G             D
+Tu ești credincios, tot ce faci e desăvârșit
+    G                   A          G                  D G
+Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!
+               D             G              D
+Tu ești credincios, m-ai convins cu iubirea Ta
+        G               A       G                   D G
+Tu ești Doamne minunea mea, o, Tată, Tu ești credincios!
+
+R.
+       G	              A         D       A/C#	  Bm
+Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
+       G                A	      D         Em   D/F#
+Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
+       G               A        D       A/C#  Bm  G
+Îmi ridic ochii către Tine, recunosc bunătatea Ta
+A                D
+Eu sunt lucrarea Ta!
+
+2. 
+Tu ești credincios, m-ai ales după planul Tău
+Îmi vorbești azi prin Duhul Tău, o, Tată, Tu ești credincios!
+Tu ești credincios, Tu ești Tatăl luminilor
+Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
+
+B.
+D                 G                 D
+Eu sunt lucrarea Lui, lucrarea Tatălui!
+
+R Final.
+    G             A              D          A/C#     Bm
+/: Tot ce ai început în mine, Tu vei duce la bun sfârșit
+G              A                   D      A/C#    Bm
+Tot ce ai început în mine, Tu vei duce la bun sfârșit!
+G               A                 D         A/C#   Bm
+Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
+                 G   A           A
+Eu sunt lucrarea ta, Tu bucuria mea! : /
+`,
   },
 ];
 
