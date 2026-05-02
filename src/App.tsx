@@ -36,17 +36,17 @@ Suntem setoși de neprihănire
 Cu apa vieții inundă țara mea.`,
 chords: `
 R: 
-E        A   B        E
-/: Binecuvintează Doamne, Tu Moldova!
+E        A    B        E
+/: 
+Binecuvintează Doamne, Tu Moldova!
 E        A        E B
 Binecuvintează țara mea;
 E        A    B     E
 Vino cu putere, vino cu trezire,
 E        A        B     E
 Te rugăm, Isus, ai milă de ea. :/
-1. 
 E     B        E
-Noi Te chemăm, arată-Ți puterea,
+1. Noi Te chemăm, arată-Ți puterea,
 A        E     B     E
 Dă-ne credință din nou, Te rugăm;
 E B        E
@@ -65,7 +65,6 @@ Cu apa vieții inundă țara mea.
     title: "Iată-mă Tu trimite-mă",
     key: "E",
     capo: 0,
-    youtube: "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
     lyrics: `Iată-mă, Tu trimite-mă
 Oriunde vrei, folosește-mă
 Pe strada mea sau în depărtări
