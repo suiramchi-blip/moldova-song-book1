@@ -626,7 +626,7 @@ export default function App() {
           <div style={{ display: "flex", flexDirection: "column", gap: 14, textAlign: "center" }}>
             {songsData.map((song) => (
               <div
-                key={song.id}
+                key={`${song.id}-${song.title}`}
                 onClick={() => {
                   setSelectedSong(song);
                   setViewMode("lyrics");
