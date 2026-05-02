@@ -36,9 +36,8 @@ Suntem setoși de neprihănire
 Cu apa vieții inundă țara mea.`,
 chords: `
 R: 
-E        A    B        E
-/: 
-Binecuvintează Doamne, Tu Moldova!
+  E         A     B            E
+/:Binecuvintează Doamne, Tu Moldova!
 E        A        E B
 Binecuvintează țara mea;
 E        A    B     E
