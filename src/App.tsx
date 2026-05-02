@@ -117,17 +117,17 @@ Nu pot ascunde nimic. : / `,
 /: Când eram doar un plod fără chip 
 G	     	 C 
 Ochii Tăi mă vedeau 
-    C		    F 
+    C		   F 
 În Cartea Ta de mult erau scrise 
-    G		    C 
+    G		   C  
 Zilele ce m-așteptau. : / 
  
 R:
        C	         F
 Tu-mi știi viitorul și ești lângă mine 
-    G		         C
+    G		        C 
 De ce să mă îngrijorez? 
-C			             F 
+C                        F    
 Mi-ai promis că vei sta lângă mine 
 	G                     C 
 Nicicând n-ai să mă părăsești. 
