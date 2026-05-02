@@ -330,14 +330,40 @@ Transformă-mi viața,
 După-al Tău plan perfect! :/
 `,
     chords: `
- E             A
-Iată-mă, Tu trimite-mă
-B                 E
-Oriunde vrei, folosește-mă
-    E                A
-Pe strada mea sau în depărtări
-     E         B    E
-Iată-mă, Tu trimite-mă.`,
+R.
+             D        A
+/: Leagă-ți inima de Cer,
+	    Bm		          G
+Leagă-ți viața ta de Dumnezeu,
+  D		        A	          G
+Viitorul tău este în mâna Sa!
+	       D	       A
+Prin credință-naintezi,
+	        Bm	   G
+Deschide ochii inimii să-L vezi,
+      D		        A		            G
+Este lângă tine, trebuie doar să crezi! :/
+
+1.
+D		               	A	        Bm
+Predă-ți viața, în brațul Domnului,
+	     G		          D         A
+Să conducă-al tău destin, spre Cer!
+Em	     D	          A		           Bm
+Oferă-I totul, chiar și când nu-nțelegi,
+	     C	           G A
+E suveran și-n viața ta!
+
+C.
+   D  A    Bm	    G
+/: Inima, mintea mea,
+	     D A      G
+Sunt legate de Cer!
+      D  A     Bm G
+Transformă-mi viața,
+	       D   A        G
+După-al Tău plan perfect! :/
+`,
   },
 ];
 
