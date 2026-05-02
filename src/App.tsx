@@ -810,7 +810,7 @@ export default function App() {
             right: 16,
             width: 340,
             maxWidth: "92vw",
-            aspectRatio: "16 / 9",
+            paddingTop: "56.25%", // 16:9 fallback for TS,
             background: "#000",
             borderRadius: 10,
             boxShadow: "0 10px 30px rgba(0,0,0,0.45)",
