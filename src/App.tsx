@@ -188,7 +188,7 @@ Tu Dumnezeu ești victoria mea./2x`,
   C                        G
 Ridică-te, fă-ți patul și umblă
     Am                     F
-Voi merge nencetat pe urma ta
+Voi merge nencatat pe urma ta
       C                       G
 Chiar zi si noapte voi cinta așa
 C                 G
@@ -210,18 +210,6 @@ Tu îmi dai curaj să-l pot urca.
 Uriașii nu mă pot împiedica
 Cu Tine biruința este-a mea
 Da, biruința este-a mea!
-
-R.
-/: Când sunt slab, Tu mă faci Tare
-Când sunt mic, Tu mă faci Mare
-Cu toată puterea Ta, 
-Tu lucrezi în viața mea :/
-
-R Final.
-/Zi de zi aleg să merg la pas cu tine
-În Tine este toată încrederea mea
-Anii trec dar eu aleg să stau lângă Tine
-Tu Dumnezeu ești victoria mea./2x
 `,
   },
   {
@@ -240,62 +228,19 @@ R.
 Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
 Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
 Îmi ridic ochii către Tine, recunosc bunătatea Ta
-Eu sunt lucrarea Ta!
-
-2. 
-Tu ești credincios, m-ai ales după planul Tău
-Îmi vorbești azi prin Duhul Tău, o, Tată, Tu ești credincios!
-Tu ești credincios, Tu ești Tatăl luminilor
-Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
-
-B.
-Eu sunt lucrarea Lui, lucrarea Tatălui!
-
-R Final. 
-/: Tot ce ai început în mine, Tu vei duce la bun sfârșit
-Tot ce ai început în mine, Tu vei duce la bun sfârșit!
-Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
-Eu sunt lucrarea ta, Tu bucuria mea! : /`,
+Eu sunt lucrarea Ta!`,
     chords: `
- 1.     
+1.     
                D            G             D
 Tu ești credincios, tot ce faci e desăvârșit
     G                   A          G                  D G
 Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!
-               D             G              D
-Tu ești credincios, m-ai convins cu iubirea Ta
-        G               A       G                   D G
-Tu ești Doamne minunea mea, o, Tată, Tu ești credincios!
 
 R.
        G               A         D       A/C#      Bm
 Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
        G                A          D         Em   D/F#
 Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
-       G               A        D       A/C#  Bm  G
-Îmi ridic ochii către Tine, recunosc bunătatea Ta
-A                D
-Eu sunt lucraarea Ta!
-
-2. 
-Tu ești credincios, m-ai ales după planul Tău
-Îmi vorbești azi prin Duhul Tău, o, Tată, Tu ești credincios!
-Tu ești credincios, Tu ești Tatăl luminilor
-Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
-
-B.
-D                 G                 D
-Eu sunt lucrarea Lui, lucrarea Tatălui!
-
-R Final.
-    G             A                  D      A/C#     Bm
-/: Tot ce ai început în mine, Tu vei duce la bun sfârșit
-G              A                   D      A/C#    Bm
-Tot ce ai început în mine, Tu vei duce la bun sfârșit!
-G               A                 D         A/C#   Bm
-Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
-                 G   A           A
-Eu sunt lucrarea ta, Tu bucuria mea! : /
 `,
   },
   {
@@ -307,22 +252,7 @@ Eu sunt lucrarea ta, Tu bucuria mea! : /
     lyrics: `R.
 /: Leagă-ți inima de Cer,
 Leagă-ți viața ta de Dumnezeu,
-Viitorul tău este în mâna Sa!
-Prin credință-naintezi,
-Deschide ochii inimii să-L vezi,
-Este lângă tine, trebuie doar să crezi! :/
-
-1. 
-Predă-ți viața, în brațul Domnului,
-Să conducă-al tău destin, spre Cer!
-Oferă-I totul, chiar și când nu-nțelegi,
-E suveran și-n viața ta!
-
-C.
-/: Inima, mintea mea,
-Sunt legate de Cer!
-Transformă-mi viața,
-După-al Tău plan perfect! :/`,
+Viitorul tău este în mâna Sa! :/`,
     chords: `
 R.
              D        A
@@ -330,33 +260,7 @@ R.
          Bm           G
 Leagă-ți viața ta de Dumnezeu,
   D           A           G
-Viitorul tău este în mâna Sa!
-         D       A
-Prin credință-naintezi,
-          Bm      G
-Deschide ochii inimii să-L vezi,
-      D             A               G
-Este lângă tine, trebuie doar să crezi:/
-
-1.
-D                   A          Bm
-Predă-ți viața, în brațul Domnului,
-       G             D         A
-Să conducă-al tău destin, spre Cer!
-Em       D           A             Bm
-Oferă-I totul, chiar și când nu-nțelegi,
-       C            G A
-E suveran și-n viața ta!
-
-C.
-   D  A    Bm        G
-/: Inima, mintea mea,
-       D A      G
-Sunt legate de Cer!
-      D  A     Bm G
-Transformă-mi viața,
-         D   A       G
-După-al Tău plan perfect! :/
+Viitorul tău este în mâna Sa! :/
 `,
   },
 ];
@@ -406,19 +310,23 @@ function detectSectionLabel(line: string): { isLabel: boolean; type: SectionType
 }
 
 /**
- * ✅ UPDATED: fit-to-screen improvements
- * - Responsive font size for phones
- * - Slightly tighter lineHeight for mono view
- * - Negative letterSpacing for mono view to reduce wrapping
+ * Compact mode lives here: it tightens font + spacing ONLY when requested.
  */
 function renderWithSectionStyling(
   text: string,
-  opts: { stageMode: boolean; dark: boolean; autoBoldChorus: boolean; mono?: boolean }
+  opts: {
+    stageMode: boolean;
+    dark: boolean;
+    autoBoldChorus: boolean;
+    mono?: boolean;
+    compactMode?: boolean;
+  }
 ) {
   const lines = text.split("\n");
   let currentSection: SectionType = "other";
 
   const isPhone = typeof window !== "undefined" && window.innerWidth < 420;
+  const compact = !!opts.compactMode && !opts.stageMode;
 
   const containerStyle: React.CSSProperties = {
     whiteSpace: "pre-wrap",
@@ -426,17 +334,22 @@ function renderWithSectionStyling(
       ? "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
       : "Arial, sans-serif",
 
+    // Compact mode is mainly for phones
     fontSize: opts.stageMode
       ? 28
       : isPhone
-        ? 14
-        : 16,
+        ? (compact ? 13 : 14)
+        : (compact ? 15 : 16),
 
     lineHeight: opts.stageMode
       ? 1.7
       : opts.mono
-        ? 1.45
-        : 1.6,
+        ? (compact ? 1.32 : 1.45)
+        : (compact ? 1.50 : 1.60),
+
+    // Helps monospace render tighter (less wrapping)
+    letterSpacing: opts.mono ? (compact ? "-0.45px" : "-0.3px") : undefined,
+    fontVariantLigatures: "none",
 
     color: opts.dark ? "#fff" : "#000",
     marginTop: 14,
@@ -478,13 +391,7 @@ function renderWithSectionStyling(
           line.trim().length > 0;
 
         return (
-          <div
-            key={idx}
-            style={{
-              fontWeight: shouldBold ? 900 : 500,
-              letterSpacing: opts.mono ? "-0.3px" : undefined,
-            }}
-          >
+          <div key={idx} style={{ fontWeight: shouldBold ? 900 : 500 }}>
             {line}
           </div>
         );
@@ -611,6 +518,9 @@ export default function App() {
   const [transposeSemis, setTransposeSemis] = useState(0);
   const [preferFlats, setPreferFlats] = useState(false);
 
+  // ✅ NEW: Compact mode toggle (for phones)
+  const [compactMode, setCompactMode] = useState(false);
+
   const wakeLockRef = useRef<any>(null);
 
   const dark = stageMode;
@@ -701,42 +611,9 @@ export default function App() {
 
   return (
     <div style={containerStyle}>
-      <style>{`
-        .moldovaTitle {
-          font-weight: 900;
-          letter-spacing: 0.5px;
-          text-align: center;
-          margin-bottom: 16px;
-          font-size: 38px;
-          background: linear-gradient(
-            90deg,
-            #0033A0 0%,
-            #0033A0 33%,
-            #FFD100 33%,
-            #FFD100 66%,
-            #CE1126 66%,
-            #CE1126 100%
-          );
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-size: 200% 100%;
-          animation: moldovaWave 3.5s ease-in-out infinite;
-          text-shadow: 0 1px 10px rgba(0,0,0,0.12);
-        }
-        @keyframes moldovaWave {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        @media (max-width: 480px) {
-          .moldovaTitle { font-size: 30px; }
-        }
-      `}</style>
-
       {!selectedSong ? (
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <h1 className="moldovaTitle">Moldova 2026</h1>
+          <h1 style={{ textAlign: "center", fontWeight: 900 }}>Moldova 2026</h1>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14, textAlign: "center" }}>
             {songsData.map((song) => (
@@ -750,6 +627,7 @@ export default function App() {
                   setTransposeSemis(0);
                   setPreferFlats(false);
                   setShowVideo(false);
+                  setCompactMode(false);
                 }}
                 style={{
                   cursor: "pointer",
@@ -761,7 +639,7 @@ export default function App() {
               >
                 <div style={{ fontWeight: 800, fontSize: 18 }}>{song.title}</div>
                 <div style={{ fontSize: 14, opacity: 0.85 }}>
-                  Key: {song.key} {song.capo && song.capo > 0 ? `• Capo: ${song.capo}` : ""}
+                  Key: {song.key} {song.capo && song.capo > 0 ? `| Capo: ${song.capo}` : ""}
                 </div>
               </div>
             ))}
@@ -778,6 +656,7 @@ export default function App() {
                 setTransposeSemis(0);
                 setPreferFlats(false);
                 setShowVideo(false);
+                setCompactMode(false);
               }}
               style={{
                 background: "none",
@@ -788,7 +667,7 @@ export default function App() {
                 padding: 0,
               }}
             >
-              ← Back
+              {"<- Back"}
             </button>
 
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "flex-end" }}>
@@ -801,11 +680,11 @@ export default function App() {
               </button>
 
               <button onClick={() => setKeepAwake((v) => !v)} style={btnStyle(dark)}>
-                {keepAwake ? "Screen Awake ✓" : "Keep Screen On"}
+                {keepAwake ? "Screen Awake (ON)" : "Keep Screen On"}
               </button>
 
               <button onClick={() => setAutoBoldChorus((v) => !v)} style={btnStyle(dark)}>
-                {autoBoldChorus ? "Chorus Bold ✓" : "Chorus Bold"}
+                {autoBoldChorus ? "Chorus Bold (ON)" : "Chorus Bold"}
               </button>
             </div>
           </div>
@@ -814,7 +693,6 @@ export default function App() {
             {selectedSong.title}
           </h2>
 
-          {/* Centered red video button */}
           {embedUrl && !stageMode && (
             <div style={{ textAlign: "center", marginTop: 10, marginBottom: 6 }}>
               <button
@@ -828,30 +706,24 @@ export default function App() {
                   fontWeight: 800,
                   cursor: "pointer",
                   fontSize: 14,
-                  transition: "transform 0.1s ease",
                 }}
               >
-                {showVideo ? "Hide Video" : "▶ Play Video"}
+                {showVideo ? "Hide Video" : "Play Video"}
               </button>
-
-              {showVideo && (
-                <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7 }}>
-                  Video playing (floating window)
-                </div>
-              )}
             </div>
           )}
 
           {selectedSong.youtube && !embedUrl && !stageMode && (
             <div style={{ textAlign: "center", marginTop: 6 }}>
               <a href={selectedSong.youtube} target="_blank" rel="noopener noreferrer">
-                ▶ Open Audio/Link
+                Open Audio/Link
               </a>
             </div>
           )}
 
           <div style={metaStyle}>
-            Key: <b>{displayKey}</b> • Capo: <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
+            Key: <b>{displayKey}</b> | Capo:{" "}
+            <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "-"}</b>
             {transposeSemis !== 0 ? (
               <span style={{ marginLeft: 10 }}>
                 (Transpose: <b>{transposeSemis > 0 ? `+${transposeSemis}` : transposeSemis}</b>)
@@ -872,6 +744,10 @@ export default function App() {
 
               {viewMode === "both" && (
                 <div style={{ textAlign: "center", marginBottom: 8 }}>
+                  <button onClick={() => setCompactMode((v) => !v)} style={{ ...btnStyle(dark), marginRight: 10 }}>
+                    {compactMode ? "Normal" : "Compact"}
+                  </button>
+
                   <button onClick={() => setTransposeSemis((v) => v - 1)} style={btnStyle(dark)}>
                     -1
                   </button>
@@ -900,17 +776,18 @@ export default function App() {
                 dark,
                 autoBoldChorus,
                 mono: false,
+                compactMode: false, // don't compact lyrics view by default
               })
             : renderWithSectionStyling(bothText, {
                 stageMode,
                 dark,
                 autoBoldChorus,
                 mono: true,
+                compactMode, // ✅ compact affects Lyrics+Chords
               })}
         </div>
       )}
 
-      {/* Floating YouTube mini-player overlay */}
       {showVideo && embedUrl && (
         <div
           style={{
@@ -957,7 +834,7 @@ export default function App() {
             }}
             aria-label="Close video"
           >
-            ✕
+            X
           </button>
         </div>
       )}
