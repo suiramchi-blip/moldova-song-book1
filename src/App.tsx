@@ -125,11 +125,11 @@ Zilele ce m-așteptau. : /
 R:
        C	         F
 Tu-mi știi viitorul și ești lângă mine 
-    G		        C 
+    G		      C
 De ce să mă îngrijorez? 
 C                        F    
 Mi-ai promis că vei sta lângă mine 
-	G                     C 
+	G                   C 
 Nicicând n-ai să mă părăsești. 
  
 2. 
