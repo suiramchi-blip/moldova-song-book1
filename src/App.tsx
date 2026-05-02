@@ -3,10 +3,10 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 type Song = {
   id: number;
   title: string;
-  key: string;     // e.g. "E", "D", "Bm"
-  capo?: number;   // optional
+  key: string;
+  capo?: number;
   lyrics: string;
-  chords: string;  // your “camp chart” (can contain lyrics lines too)
+  chords: string;
   youtube?: string;
 };
 
@@ -66,8 +66,7 @@ Cu apa vieții inundă țara mea.
     title: "Iată-mă Tu trimite-mă",
     key: "E",
     capo: 0,
-    youtube:
-      "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
+    youtube: "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
     lyrics: `Iată-mă, Tu trimite-mă
 Oriunde vrei, folosește-mă
 Pe strada mea sau în depărtări
@@ -132,18 +131,7 @@ C                        F
 Mi-ai promis că vei sta lângă mine 
     G                   C 
 Nicicând n-ai să mă părăsești. 
- 
-2. 
-/: De voi încerca să m-ascund de Tine 
-Nu voi reuși 
-Oriunde m-aș duce, chiar la marginea mării 
-Mâna Ta mă va călăuzi. : / 
- 
-3. 
-/: Tu mă cunoști întru totul Doamne 
-Când stau jos sau mă ridic 
-Îmi cunoști toate căile mele 
-Nu pot ascunde nimic. : / `,
+`,
   },
   {
     id: 4,
@@ -163,111 +151,27 @@ R.
 /: Când sunt slab, Tu mă faci Tare 
 Când sunt mic, Tu mă faci Mare 
 Cu toată puterea Ta,  
-Tu lucrezi în viața mea :// 
-
-2.
-Când văd muntele din fața mea 
-Tu îmi dai curaj să-l pot urca. 
-Uriașii nu mă pot împiedica 
-Cu Tine biruința este-a mea 
-Da, biruința este-a mea! 
-
-R.
-/: Când sunt slab, Tu mă faci Tare 
-Când sunt mic, Tu mă faci Mare 
-Cu toată puterea Ta,  
-Tu lucrezi în viața mea :/ 
-
-Bridge.
-/Zi de zi aleg să merg la pas cu tine 
-În Tine este toată încrederea mea 
-Anii trec dar eu aleg să stau lângă Tine 
-Tu Dumnezeu ești victoria mea./2x `,
+Tu lucrezi în viața mea :// `,
     chords: `
-1.
 Am                          F
 În fiecare dimineață Tu îmi spui 
-    C                     G 
+C                     G 
 Ridică-te, fă-ți patul și umblă 
-     Am                    F 
-Voi merge nencetat pe urma ta 
-      C                      G 
-Chiar zi si noapte voi cinta așa 
-C                 G 
-Da, eu voi cânta așa... 
-
-R.
-    F                  C 
-/: Când sunt slab, Tu mă faci Tare 
-G                 Am 
-Când sunt mic, Tu mă faci Mare 
-F           C 
-Cu toată puterea Ta,  
-      G             Am 
-Tu lucrezi în viața mea :// 
-
-2.
-Când văd muntele din fața mea 
-Tu îmi dai curaj să-l pot urca. 
-Uriașii nu mă pot împiedica 
-Cu Tine biruința este-a mea 
-Da, biruința este-a mea! 
-
-R.
-/: Când sunt slab, Tu mă faci Tare 
-Când sunt mic, Tu mă faci Mare 
-Cu toată puterea Ta,  
-Tu lucrezi în viața mea :/
-
-Bridge.
-/Zi de zi aleg să merg la pas cu tine 
-În Tine este toată încrederea mea 
-Anii trec dar eu aleg să stau lângă Tine 
-Tu Dumnezeu ești victoria mea./2x `,
+`,
   },
-    {
+  {
     id: 5,
-    title: "Tu ești credincios ",
+    title: "Tu ești credincios",
     key: "D",
     capo: 0,
-    youtube:
-      "https://www.youtube.com/watch?v=NlPpPw_o1KA",
+    youtube: "https://www.youtube.com/watch?v=NlPpPw_o1KA",
     lyrics: `
 1.
 Tu ești credincios, tot ce faci e desăvârșit
-Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!
-Tu ești credincios, m-ai convins cu iubirea Ta
-Tu ești Doamne minunea mea, o, Tată, Tu ești credincios!
-
-R.
-Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
-Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
-Îmi ridic ochii către Tine, recunosc bunătatea Ta
-Eu sunt lucrarea Ta!
-
-2. 
-Tu ești credincios, m-ai ales după planul Tău
-Îmi vorbești azi prin Duhul Tău, o, Tată, Tu ești credincios!
-Tu ești credincios, Tu ești Tatăl luminilor
-Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
-
-B.
-Eu sunt lucrarea Lui, lucrarea Tatălui!
-
-C. 
-/:Tot ce ai început în mine, Tu vei duce la bun sfârșit
-Tot ce ai început în mine, Tu vei duce la bun sfârșit!
-Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
-Eu sunt lucrarea ta, Tu bucuria mea! : /`,
+Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!`,
     chords: `
- E             A
-Iată-mă, Tu trimite-mă
-B                 E
-Oriunde vrei, folosește-mă
-    E                A
-Pe strada mea sau în depărtări
-     E         B    E
-Iată-mă, Tu trimite-mă.`,
+D     G
+Tu ești credincios...`,
   },
 ];
 
@@ -277,28 +181,21 @@ type SectionType = "chorus" | "verse" | "bridge" | "other";
 const MOLDOVA_FLAG_URL =
   "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova.svg";
 
-// ---------- YouTube helpers (floating embedded mini-player) ----------
+// ---------- YouTube helpers ----------
 function isYouTubeUrl(url?: string) {
   if (!url) return false;
   return /(^https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//i.test(url);
 }
 
 function toYouTubeEmbedUrl(url: string) {
-  // supports:
-  // https://youtu.be/ID?...
-  // https://www.youtube.com/watch?v=ID&...
-  // https://www.youtube.com/embed/ID
   const trimmed = url.trim();
 
-  // Already embed
   const embedMatch = trimmed.match(/youtube\.com\/embed\/([^?&/]+)/i);
   if (embedMatch?.[1]) return `https://www.youtube.com/embed/${embedMatch[1]}`;
 
-  // youtu.be
   const shortMatch = trimmed.match(/youtu\.be\/([^?&/]+)/i);
   if (shortMatch?.[1]) return `https://www.youtube.com/embed/${shortMatch[1]}`;
 
-  // watch?v=
   const watchMatch = trimmed.match(/[?&]v=([^?&/]+)/i);
   if (watchMatch?.[1]) return `https://www.youtube.com/embed/${watchMatch[1]}`;
 
@@ -306,16 +203,12 @@ function toYouTubeEmbedUrl(url: string) {
 }
 
 // ---------- Section detection + chorus bold ----------
-function detectSectionLabel(line: string): {
-  isLabel: boolean;
-  type: SectionType;
-  labelText: string;
-} {
+function detectSectionLabel(line: string): { isLabel: boolean; type: SectionType; labelText: string } {
   const s = line.trim();
   if (!s) return { isLabel: false, type: "other", labelText: "" };
 
   if (/^(R|R:|Ref|Ref\.|Refren|Chorus)\b/i.test(s)) {
-    return { isLabel: true, type: "chorus", labelText: s.replace(/^R\b/i, "R") };
+    return { isLabel: true, type: "chorus", labelText: s };
   }
   if (/^\d+\s*[:.]/.test(s) || /^\d+\s*$/.test(s)) {
     return { isLabel: true, type: "verse", labelText: s.replace(/\s+/g, " ") };
@@ -373,9 +266,7 @@ function renderWithSectionStyling(
           );
         }
 
-        const shouldBold =
-          opts.autoBoldChorus && currentSection === "chorus" && line.trim().length > 0;
-
+        const shouldBold = opts.autoBoldChorus && currentSection === "chorus" && line.trim().length > 0;
         return (
           <div key={idx} style={{ fontWeight: shouldBold ? 900 : 500 }}>
             {line}
@@ -386,7 +277,7 @@ function renderWithSectionStyling(
   );
 }
 
-// ---------- Transpose helpers (semitones) ----------
+// ---------- Transpose helpers ----------
 const NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
 const NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
 
@@ -436,7 +327,6 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
   return `${newRoot}${rest}`;
 }
 
-// Matches chord tokens like: E, F#, Bb, C#m7, Asus4, G/B, D/F#
 const CHORD_TOKEN_RX = /\b([A-G])(#|b)?([a-zA-Z0-9()+/-]*)\b/g;
 
 function transposeText(text: string, semis: number, preferFlats: boolean) {
@@ -453,7 +343,6 @@ function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
   return `${newRoot}${minor}`;
 }
 
-// ---------- Wake lock ----------
 function btnStyle(dark: boolean): React.CSSProperties {
   return {
     padding: "6px 10px",
@@ -492,7 +381,6 @@ function pillStyle(active: boolean, dark: boolean): React.CSSProperties {
   };
 }
 
-// ---------- APP ----------
 export default function App() {
   const [selectedSong, setSelectedSong] = useState<Song | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("lyrics");
@@ -502,10 +390,8 @@ export default function App() {
   const [keepAwake, setKeepAwake] = useState(false);
   const [autoBoldChorus, setAutoBoldChorus] = useState(true);
 
-  // Floating embedded YouTube overlay
   const [showVideo, setShowVideo] = useState(false);
 
-  // Transpose controls (Lyrics + Chords mode)
   const [transposeSemis, setTransposeSemis] = useState(0);
   const [preferFlats, setPreferFlats] = useState(false);
 
@@ -514,26 +400,24 @@ export default function App() {
   const dark = stageMode;
 
   const containerStyle: React.CSSProperties = useMemo(() => {
-  const base: React.CSSProperties = {
-    minHeight: "100vh",
-    padding: stageMode ? 28 : 20,
-    paddingBottom: showVideo ? 220 : 20, // ✅ ADD THIS LINE
-    fontFamily: "Arial, sans-serif",
-    background: stageMode ? "#000" : "#fff",
-    color: stageMode ? "#fff" : "#000",
-  };
+    const base: React.CSSProperties = {
+      minHeight: "100vh",
+      padding: stageMode ? 28 : 20,
+      paddingBottom: showVideo ? 260 : 20,
+      fontFamily: "Arial, sans-serif",
+      background: stageMode ? "#000" : "#fff",
+      color: stageMode ? "#fff" : "#000",
+    };
 
-  if (showFlag && !stageMode) {
-    base.backgroundImage = `linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)), url('${MOLDOVA_FLAG_URL}')`;
-    base.backgroundSize = "cover";
-    base.backgroundPosition = "center";
-    base.backgroundRepeat = "no-repeat";
-  }
+    if (showFlag && !stageMode) {
+      base.backgroundImage = `linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)), url('${MOLDOVA_FLAG_URL}')`;
+      base.backgroundSize = "cover";
+      base.backgroundPosition = "center";
+      base.backgroundRepeat = "no-repeat";
+    }
+    return base;
+  }, [stageMode, showFlag, showVideo]);
 
-  return base;
-}, [stageMode, showFlag, showVideo]); // ✅ include showVideo
-
-  // Wake lock (Keep Screen On)
   useEffect(() => {
     let cancelled = false;
 
@@ -547,18 +431,6 @@ export default function App() {
           return;
         }
         wakeLockRef.current = sentinel;
-
-        const onVis = async () => {
-          if (document.visibilityState === "visible" && keepAwake) {
-            try {
-              // @ts-ignore
-              wakeLockRef.current = await navigator.wakeLock.request("screen");
-            } catch {}
-          }
-        };
-        document.addEventListener("visibilitychange", onVis);
-
-        return () => document.removeEventListener("visibilitychange", onVis);
       } catch {}
     }
 
@@ -580,21 +452,12 @@ export default function App() {
     };
   }, [keepAwake]);
 
-  const metaStyle: React.CSSProperties = {
-    textAlign: "center",
-    fontSize: stageMode ? 18 : 14,
-    opacity: dark ? 0.9 : 0.8,
-    marginTop: 6,
-  };
-
-  // Build display text for Lyrics+Chords, then transpose it
   const bothText = useMemo(() => {
     if (!selectedSong) return "";
     const raw =
       selectedSong.chords.split("\n").some((l) => /[a-zA-ZăâîșțĂÂÎȘȚ]/.test(l))
         ? selectedSong.chords
         : `${selectedSong.chords}\n\n${selectedSong.lyrics}`;
-
     return transposeText(raw, transposeSemis, preferFlats);
   }, [selectedSong, transposeSemis, preferFlats]);
 
@@ -603,7 +466,6 @@ export default function App() {
     return transposeKeyLabel(selectedSong.key, transposeSemis, preferFlats);
   }, [selectedSong, transposeSemis, preferFlats]);
 
-  // If user changes songs or goes back, close the floating video
   useEffect(() => {
     setShowVideo(false);
   }, [selectedSong?.id]);
@@ -614,47 +476,50 @@ export default function App() {
     return toYouTubeEmbedUrl(selectedSong.youtube);
   }, [selectedSong?.youtube]);
 
+  const metaStyle: React.CSSProperties = {
+    textAlign: "center",
+    fontSize: stageMode ? 18 : 14,
+    opacity: dark ? 0.9 : 0.8,
+    marginTop: 6,
+  };
+
   return (
     <div style={containerStyle}>
       {!selectedSong ? (
-        // ===== SONG LIST =====
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <h1 style={{ textAlign: "center", fontWeight: 900, marginBottom: 16 }}>
-            Song List
-          </h1>
+          <h1 style={{ textAlign: "center", fontWeight: 900, marginBottom: 16 }}>Song List</h1>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14, textAlign: "center" }}>
-  {songsData.map((song) => (
-    <div
-      key={`${song.id}-${song.title}`}
-      onClick={() => {
-        setSelectedSong(song);
-        setViewMode("lyrics");
-        setStageMode(false);
-        setShowFlag(false);
-        setTransposeSemis(0);
-        setPreferFlats(false);
-        setShowVideo(false);
-      }}
-      style={{
-        cursor: "pointer",
-        padding: "10px 8px",
-        borderRadius: 10,
-        border: "1px solid rgba(0,0,0,0.10)",
-        background: "rgba(255,255,255,0.98)",
-      }}
-    >
-      <div style={{ fontWeight: 800, fontSize: 18 }}>{song.title}</div>
-      <div style={{ fontSize: 14, opacity: 0.85 }}>
-        Key: {song.key} {song.capo && song.capo > 0 ? `• Capo: ${song.capo}` : ""}
-      </div>
-    </div>
-  ))}
-</div>
+            {songsData.map((song) => (
+              <div
+                key={`${song.id}-${song.title}`}
+                onClick={() => {
+                  setSelectedSong(song);
+                  setViewMode("lyrics");
+                  setStageMode(false);
+                  setShowFlag(false);
+                  setTransposeSemis(0);
+                  setPreferFlats(false);
+                  setShowVideo(false);
+                }}
+                style={{
+                  cursor: "pointer",
+                  padding: "10px 8px",
+                  borderRadius: 10,
+                  border: "1px solid rgba(0,0,0,0.10)",
+                  background: "rgba(255,255,255,0.98)",
+                }}
+              >
+                <div style={{ fontWeight: 800, fontSize: 18 }}>{song.title}</div>
+                <div style={{ fontSize: 14, opacity: 0.85 }}>
+                  Key: {song.key} {song.capo && song.capo > 0 ? `• Capo: ${song.capo}` : ""}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       ) : (
-        // ===== SONG VIEW =====
         <div style={{ maxWidth: 920, margin: "0 auto" }}>
-          {/* Top bar */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
             <button
               onClick={() => {
@@ -693,39 +558,41 @@ export default function App() {
               <button onClick={() => setAutoBoldChorus((v) => !v)} style={btnStyle(dark)}>
                 {autoBoldChorus ? "Chorus Bold ✓" : "Chorus Bold"}
               </button>
-
-              {/* Floating embedded YouTube button */}
-             {embedUrl && !stageMode && (
-  <div style={{ textAlign: "center", marginTop: 10, marginBottom: 6 }}>
-    <button
-      onClick={() => setShowVideo((v) => !v)}
-      style={{
-        padding: "8px 18px",
-        borderRadius: 999,
-        border: "1px solid #b00000",
-        background: "#ff4d4d", // red background
-        color: "#000",         // black text
-        fontWeight: 800,
-        cursor: "pointer",
-        fontSize: 14,
-        transition: "transform 0.1s ease",
- }}
-    >
-      {showVideo ? "Hide Video" : "▶ Play Video"}
-    </button>
-    {showVideo && (
-      <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7 }}>
-        Video playing (floating window)
-  </div>
-)}
             </div>
-)}
-</div>
+          </div>
+
           <h2 style={{ textAlign: "center", fontWeight: 900, fontSize: stageMode ? 38 : 22, marginTop: 14 }}>
             {selectedSong.title}
           </h2>
 
-          {/* If it's not YouTube (like your MP3), keep a simple link */}
+          {/* Centered red video button */}
+          {embedUrl && !stageMode && (
+            <div style={{ textAlign: "center", marginTop: 10, marginBottom: 6 }}>
+              <button
+                onClick={() => setShowVideo((v) => !v)}
+                style={{
+                  padding: "8px 18px",
+                  borderRadius: 999,
+                  border: "1px solid #b00000",
+                  background: "#ff4d4d",
+                  color: "#000",
+                  fontWeight: 800,
+                  cursor: "pointer",
+                  fontSize: 14,
+                  transition: "transform 0.1s ease",
+                }}
+              >
+                {showVideo ? "Hide Video" : "▶ Play Video"}
+              </button>
+
+              {showVideo && (
+                <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7 }}>
+                  Video playing (floating window)
+                </div>
+              )}
+            </div>
+          )}
+
           {selectedSong.youtube && !embedUrl && !stageMode && (
             <div style={{ textAlign: "center", marginTop: 6 }}>
               <a href={selectedSong.youtube} target="_blank" rel="noopener noreferrer">
@@ -734,10 +601,8 @@ export default function App() {
             </div>
           )}
 
-          {/* Key + Capo + Transposed Key */}
           <div style={metaStyle}>
-            Key: <b>{displayKey}</b> • Capo:{" "}
-            <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
+            Key: <b>{displayKey}</b> • Capo: <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
             {transposeSemis !== 0 ? (
               <span style={{ marginLeft: 10 }}>
                 (Transpose: <b>{transposeSemis > 0 ? `+${transposeSemis}` : transposeSemis}</b>)
@@ -747,7 +612,6 @@ export default function App() {
 
           {!stageMode && (
             <>
-              {/* Modes */}
               <div style={{ textAlign: "center", marginTop: 12, marginBottom: 6 }}>
                 <button onClick={() => setViewMode("lyrics")} style={pillStyle(viewMode === "lyrics", dark)}>
                   Lyrics Only
@@ -757,7 +621,6 @@ export default function App() {
                 </button>
               </div>
 
-              {/* Transpose controls only in Lyrics+Chords */}
               {viewMode === "both" && (
                 <div style={{ textAlign: "center", marginBottom: 8 }}>
                   <button onClick={() => setTransposeSemis((v) => v - 1)} style={btnStyle(dark)}>
@@ -782,7 +645,6 @@ export default function App() {
             </>
           )}
 
-          {/* Content */}
           {viewMode === "lyrics"
             ? renderWithSectionStyling(selectedSong.lyrics, {
                 stageMode,
@@ -795,10 +657,11 @@ export default function App() {
                 dark,
                 autoBoldChorus,
                 mono: true,
-              })
+              })}
         </div>
+      )}
 
-    {/* Floating YouTube mini-player overlay */}
+      {/* Floating YouTube mini-player overlay */}
       {showVideo && embedUrl && (
         <div
           style={{
@@ -815,7 +678,20 @@ export default function App() {
             overflow: "hidden",
           }}
         >
-          {embedUrl}
+          <iframe
+            src={embedUrl}
+            title="YouTube player"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              border: "none",
+            }}
+          />
           <button
             onClick={() => setShowVideo(false)}
             style={{
@@ -839,3 +715,4 @@ export default function App() {
     </div>
   );
 }
+``
