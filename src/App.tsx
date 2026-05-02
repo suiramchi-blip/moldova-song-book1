@@ -34,7 +34,7 @@ Suntem flămânzi, Doamne, de Tine,
 Pâinea vieții doar Tu ne-o poți da;
 Suntem setoși de neprihănire
 Cu apa vieții inundă țara mea.`,
-chords: `
+    chords: `
 R: 
   E         A     B            E
 /:Binecuvintează Doamne, Tu Moldova!
@@ -66,7 +66,8 @@ Cu apa vieții inundă țara mea.
     title: "Iată-mă Tu trimite-mă",
     key: "E",
     capo: 0,
-    youtube: "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
+    youtube:
+      "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
     lyrics: `Iată-mă, Tu trimite-mă
 Oriunde vrei, folosește-mă
 Pe strada mea sau în depărtări
@@ -113,23 +114,23 @@ Când stau jos sau mă ridic
 Nu pot ascunde nimic. : / `,
     chords: `
 1.  
-    C		        F 
+    C                F 
 /: Când eram doar un plod fără chip 
-G	     	 C 
+G              C 
 Ochii Tăi mă vedeau 
-    C		   F 
+    C           F 
 În Cartea Ta de mult erau scrise 
-    G		   C  
+    G           C  
 Zilele ce m-așteptau. : / 
  
 R:
-       C	         F
+       C             F
 Tu-mi știi viitorul și ești lângă mine 
-    G		      C
+    G              C
 De ce să mă îngrijorez? 
 C                        F    
 Mi-ai promis că vei sta lângă mine 
-	G                   C 
+    G                   C 
 Nicicând n-ai să mă părăsești. 
  
 2. 
@@ -144,7 +145,7 @@ Când stau jos sau mă ridic
 Îmi cunoști toate căile mele 
 Nu pot ascunde nimic. : / `,
   },
- {
+  {
     id: 4,
     title: "Când sunt slab, Tu mă faci Tare",
     key: "C",
@@ -232,8 +233,40 @@ type SectionType = "chorus" | "verse" | "bridge" | "other";
 const MOLDOVA_FLAG_URL =
   "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova.svg";
 
+// ---------- YouTube helpers (floating embedded mini-player) ----------
+function isYouTubeUrl(url?: string) {
+  if (!url) return false;
+  return /(^https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//i.test(url);
+}
+
+function toYouTubeEmbedUrl(url: string) {
+  // supports:
+  // https://youtu.be/ID?...
+  // https://www.youtube.com/watch?v=ID&...
+  // https://www.youtube.com/embed/ID
+  const trimmed = url.trim();
+
+  // Already embed
+  const embedMatch = trimmed.match(/youtube\.com\/embed\/([^?&/]+)/i);
+  if (embedMatch?.[1]) return `https://www.youtube.com/embed/${embedMatch[1]}`;
+
+  // youtu.be
+  const shortMatch = trimmed.match(/youtu\.be\/([^?&/]+)/i);
+  if (shortMatch?.[1]) return `https://www.youtube.com/embed/${shortMatch[1]}`;
+
+  // watch?v=
+  const watchMatch = trimmed.match(/[?&]v=([^?&/]+)/i);
+  if (watchMatch?.[1]) return `https://www.youtube.com/embed/${watchMatch[1]}`;
+
+  return "";
+}
+
 // ---------- Section detection + chorus bold ----------
-function detectSectionLabel(line: string): { isLabel: boolean; type: SectionType; labelText: string } {
+function detectSectionLabel(line: string): {
+  isLabel: boolean;
+  type: SectionType;
+  labelText: string;
+} {
   const s = line.trim();
   if (!s) return { isLabel: false, type: "other", labelText: "" };
 
@@ -314,16 +347,16 @@ const NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
 const NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
 
 const ENHARMONIC_TO_SHARP: Record<string, string> = {
-  "Db": "C#",
-  "Eb": "D#",
-  "Gb": "F#",
-  "Ab": "G#",
-  "Bb": "A#",
-  "Cb": "B",
-  "Fb": "E",
+  Db: "C#",
+  Eb: "D#",
+  Gb: "F#",
+  Ab: "G#",
+  Bb: "A#",
+  Cb: "B",
+  Fb: "E",
   "E#": "F",
   "B#": "C",
-}
+};
 
 function normNoteToSharp(n: string) {
   return ENHARMONIC_TO_SHARP[n] ?? n;
@@ -338,14 +371,12 @@ function transposeNote(note: string, semis: number, preferFlats: boolean) {
 }
 
 function transposeChordToken(token: string, semis: number, preferFlats: boolean) {
-  // Root is first letter A-G + optional accidental
   const m = token.match(/^([A-G])([#b]?)(.*)$/);
   if (!m) return token;
 
   const root = m[1] + (m[2] || "");
   let rest = m[3] || "";
 
-  // Slash chord: transpose bass too (e.g., C/E)
   if (rest.includes("/")) {
     const [beforeSlash, afterSlash] = rest.split("/", 2);
     const bassMatch = afterSlash.match(/^([A-G])([#b]?)(.*)$/);
@@ -361,27 +392,15 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
   return `${newRoot}${rest}`;
 }
 
-// This regex matches chord tokens without touching Romanian words.
-// It requires A-G then optional #/b and then only “chord-ish” chars (m,a,j,i,n,u,d,s,g, digits, /, #, b, +, -, (, ))
+// Matches chord tokens like: E, F#, Bb, C#m7, Asus4, G/B, D/F#
+const CHORD_TOKEN_RX = /\b([A-G])(#|b)?([a-zA-Z0-9()+/-]*)\b/g;
 
-
-// Matches chord tokens like:
-// E, F#, Bb, C#m7, Asus4, G/B, D/F#
-const CHORD_TOKEN_RX =
-  /\b([A-G])(#|b)?([a-zA-Z0-9()+/-]*)\b/g;
-
-
-  function transposeText(text: string, semis: number, preferFlats: boolean) {
-    if (semis === 0) return text;
-  
-    return text.replace(CHORD_TOKEN_RX, (full) => {
-      return transposeChordToken(full, semis, preferFlats);
-    });
-  }
-  ``
+function transposeText(text: string, semis: number, preferFlats: boolean) {
+  if (semis === 0) return text;
+  return text.replace(CHORD_TOKEN_RX, (full) => transposeChordToken(full, semis, preferFlats));
+}
 
 function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
-  // key like "E" or "Bm" — transpose root only
   const m = key.match(/^([A-G])([#b]?)(m)?$/i);
   if (!m) return key;
   const root = m[1].toUpperCase() + (m[2] || "");
@@ -390,7 +409,7 @@ function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
   return `${newRoot}${minor}`;
 }
 
-// ---------- Wake lock + Fullscreen ----------
+// ---------- Wake lock ----------
 function btnStyle(dark: boolean): React.CSSProperties {
   return {
     padding: "6px 10px",
@@ -439,6 +458,9 @@ export default function App() {
   const [keepAwake, setKeepAwake] = useState(false);
   const [autoBoldChorus, setAutoBoldChorus] = useState(true);
 
+  // Floating embedded YouTube overlay
+  const [showVideo, setShowVideo] = useState(false);
+
   // Transpose controls (Lyrics + Chords mode)
   const [transposeSemis, setTransposeSemis] = useState(0);
   const [preferFlats, setPreferFlats] = useState(false);
@@ -466,7 +488,7 @@ export default function App() {
     return base;
   }, [stageMode, showFlag]);
 
-  // Wake lock (Keep Screen On) [2](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/wakeLock)
+  // Wake lock (Keep Screen On)
   useEffect(() => {
     let cancelled = false;
 
@@ -523,7 +545,6 @@ export default function App() {
   // Build display text for Lyrics+Chords, then transpose it
   const bothText = useMemo(() => {
     if (!selectedSong) return "";
-    // If your chords already include lyrics lines, show that chart only; otherwise append lyrics
     const raw =
       selectedSong.chords.split("\n").some((l) => /[a-zA-ZăâîșțĂÂÎȘȚ]/.test(l))
         ? selectedSong.chords
@@ -536,6 +557,17 @@ export default function App() {
     if (!selectedSong) return "";
     return transposeKeyLabel(selectedSong.key, transposeSemis, preferFlats);
   }, [selectedSong, transposeSemis, preferFlats]);
+
+  // If user changes songs or goes back, close the floating video
+  useEffect(() => {
+    setShowVideo(false);
+  }, [selectedSong?.id]);
+
+  const embedUrl = useMemo(() => {
+    if (!selectedSong?.youtube) return "";
+    if (!isYouTubeUrl(selectedSong.youtube)) return "";
+    return toYouTubeEmbedUrl(selectedSong.youtube);
+  }, [selectedSong?.youtube]);
 
   return (
     <div style={containerStyle}>
@@ -554,8 +586,10 @@ export default function App() {
                   setSelectedSong(song);
                   setViewMode("lyrics");
                   setStageMode(false);
+                  setShowFlag(false);
                   setTransposeSemis(0);
                   setPreferFlats(false);
+                  setShowVideo(false);
                 }}
                 style={{
                   cursor: "pointer",
@@ -578,25 +612,26 @@ export default function App() {
         <div style={{ maxWidth: 920, margin: "0 auto" }}>
           {/* Top bar */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
-           <button
-  onClick={() => {
-    setSelectedSong(null);
-    setStageMode(false);
-    setShowFlag(false);
-    setTransposeSemis(0);
-    setPreferFlats(false);
-  }}
-  style={{
-    background: "none",
-    border: "none",
-    color: dark ? "#9BE7FF" : "#0066cc",
-    cursor: "pointer",
-    fontSize: 16,
-    padding: 0,
-  }}
->
-  ← Back
-</button>
+            <button
+              onClick={() => {
+                setSelectedSong(null);
+                setStageMode(false);
+                setShowFlag(false);
+                setTransposeSemis(0);
+                setPreferFlats(false);
+                setShowVideo(false);
+              }}
+              style={{
+                background: "none",
+                border: "none",
+                color: dark ? "#9BE7FF" : "#0066cc",
+                cursor: "pointer",
+                fontSize: 16,
+                padding: 0,
+              }}
+            >
+              ← Back
+            </button>
 
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "flex-end" }}>
               <button onClick={() => setStageMode((v) => !v)} style={btnStyle(dark)}>
@@ -614,24 +649,29 @@ export default function App() {
               <button onClick={() => setAutoBoldChorus((v) => !v)} style={btnStyle(dark)}>
                 {autoBoldChorus ? "Chorus Bold ✓" : "Chorus Bold"}
               </button>
+
+              {/* Floating embedded YouTube button */}
+              {embedUrl && (
+                <button onClick={() => setShowVideo((v) => !v)} style={btnStyle(dark)}>
+                  {showVideo ? "Hide Video" : "Video"}
+                </button>
+              )}
             </div>
           </div>
 
           <h2 style={{ textAlign: "center", fontWeight: 900, fontSize: stageMode ? 38 : 22, marginTop: 14 }}>
             {selectedSong.title}
           </h2>
-              
-          {selectedSong.youtube && !stageMode && (
-  <div style={{ textAlign: "center", marginTop: 6 }}>
-    <a
-      href={selectedSong.youtube}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      ▶ Watch on YouTube
-    </a>
-  </div>
-)}
+
+          {/* If it's not YouTube (like your MP3), keep a simple link */}
+          {selectedSong.youtube && !embedUrl && !stageMode && (
+            <div style={{ textAlign: "center", marginTop: 6 }}>
+              <a href={selectedSong.youtube} target="_blank" rel="noopener noreferrer">
+                ▶ Open Audio/Link
+              </a>
+            </div>
+          )}
+
           {/* Key + Capo + Transposed Key */}
           <div style={metaStyle}>
             Key: <b>{displayKey}</b> • Capo:{" "}
@@ -694,6 +734,51 @@ export default function App() {
                 autoBoldChorus,
                 mono: true,
               })}
+        </div>
+      )}
+
+      {/* Floating YouTube mini-player overlay */}
+      {showVideo && embedUrl && (
+        <div
+          style={{
+            position: "fixed",
+            bottom: 16,
+            right: 16,
+            width: 340,
+            maxWidth: "92vw",
+            aspectRatio: "16 / 9",
+            background: "#000",
+            borderRadius: 10,
+            boxShadow: "0 10px 30px rgba(0,0,0,0.45)",
+            zIndex: 9999,
+            overflow: "hidden",
+          }}
+        >
+          <iframe
+            src={embedUrl}
+            title="YouTube player"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            style={{ width: "100%", height: "100%", border: "none" }}
+          />
+          <button
+            onClick={() => setShowVideo(false)}
+            style={{
+              position: "absolute",
+              top: 6,
+              right: 6,
+              background: "rgba(0,0,0,0.65)",
+              color: "#fff",
+              border: "none",
+              borderRadius: 6,
+              cursor: "pointer",
+              padding: "2px 8px",
+              fontSize: 12,
+            }}
+            aria-label="Close video"
+          >
+            ✕
+          </button>
         </div>
       )}
     </div>
