@@ -797,7 +797,6 @@ export default function App() {
                 mono: true,
               })}
         </div>
-      )}
 
      {/* Floating YouTube mini-player overlay */}
       {showVideo && embedUrl && (
