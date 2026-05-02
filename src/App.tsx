@@ -65,6 +65,7 @@ Cu apa vieții inundă țara mea.
     title: "Iată-mă Tu trimite-mă",
     key: "E",
     capo: 0,
+    youtube: "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
     lyrics: `Iată-mă, Tu trimite-mă
 Oriunde vrei, folosește-mă
 Pe strada mea sau în depărtări
