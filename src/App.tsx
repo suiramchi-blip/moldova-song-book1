@@ -719,7 +719,6 @@ export default function App() {
         Video playing (floating window)
   </div>
 )}
-``
             </div>
           </div>
 
