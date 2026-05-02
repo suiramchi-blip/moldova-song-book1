@@ -651,11 +651,27 @@ export default function App() {
               </button>
 
               {/* Floating embedded YouTube button */}
-              {embedUrl && (
-                <button onClick={() => setShowVideo((v) => !v)} style={btnStyle(dark)}>
-                  {showVideo ? "Hide Video" : "Video"}
-                </button>
-              )}
+             {embedUrl && !stageMode && (
+  <div style={{ textAlign: "center", marginTop: 10, marginBottom: 6 }}>
+    <button
+      onClick={() => setShowVideo((v) => !v)}
+      style={{
+        padding: "8px 18px",
+        borderRadius: 999,
+        border: "1px solid #b00000",
+        background: "#ff4d4d", // red background
+        color: "#000",         // black text
+        fontWeight: 800,
+        cursor: "pointer",
+        fontSize: 14,
+        transition: "transform 0.1s ease",
+ }}
+    >
+      {showVideo ? "Hide Video" : "▶ Play Video"}
+    </button>
+  </div>
+)}
+``
             </div>
           </div>
 
