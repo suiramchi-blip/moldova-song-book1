@@ -795,7 +795,7 @@ export default function App() {
                 dark,
                 autoBoldChorus,
                 mono: true,
-              }
+              })
         </div>
 
     {/* Floating YouTube mini-player overlay */}
