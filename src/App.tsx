@@ -470,23 +470,24 @@ export default function App() {
   const dark = stageMode;
 
   const containerStyle: React.CSSProperties = useMemo(() => {
-    const base: React.CSSProperties = {
-      minHeight: "100vh",
-      padding: stageMode ? 28 : 20,
-      fontFamily: "Arial, sans-serif",
-      background: stageMode ? "#000" : "#fff",
-      color: stageMode ? "#fff" : "#000",
-    };
+  const base: React.CSSProperties = {
+    minHeight: "100vh",
+    padding: stageMode ? 28 : 20,
+    paddingBottom: showVideo ? 220 : 20, // ✅ ADD THIS LINE
+    fontFamily: "Arial, sans-serif",
+    background: stageMode ? "#000" : "#fff",
+    color: stageMode ? "#fff" : "#000",
+  };
 
-    if (showFlag && !stageMode) {
-      base.backgroundImage = `linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)), url('${MOLDOVA_FLAG_URL}')`;
-      base.backgroundSize = "cover";
-      base.backgroundPosition = "center";
-      base.backgroundRepeat = "no-repeat";
-    }
+  if (showFlag && !stageMode) {
+    base.backgroundImage = `linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)), url('${MOLDOVA_FLAG_URL}')`;
+    base.backgroundSize = "cover";
+    base.backgroundPosition = "center";
+    base.backgroundRepeat = "no-repeat";
+  }
 
-    return base;
-  }, [stageMode, showFlag]);
+  return base;
+}, [stageMode, showFlag, showVideo]); // ✅ include showVideo
 
   // Wake lock (Keep Screen On)
   useEffect(() => {
