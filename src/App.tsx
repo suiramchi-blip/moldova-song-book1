@@ -123,11 +123,11 @@ Ochii Tăi mă vedeau
 Zilele ce m-așteptau. : / 
  
 R:
-       C             F
+       C               F
 Tu-mi știi viitorul și ești lângă mine 
     G              C
 De ce să mă îngrijorez? 
-C                        F    
+C                     F    
 Mi-ai promis că vei sta lângă mine 
     G                   C 
 Nicicând n-ai să mă părăsești. 
@@ -196,6 +196,7 @@ Chiar zi si noapte voi cinta așa
 C                 G
 Da, eu voi cânta așa...
 
+R.
     F                  C
 /: Când sunt slab, Tu mă faci Tare
 G                 Am
@@ -205,17 +206,20 @@ Cu toată puterea Ta,
        G            Am
 Tu lucrezi în viața mea ://
 
-2.	Când văd muntele din fața mea
+2.	
+Când văd muntele din fața mea
 Tu îmi dai curaj să-l pot urca.
 Uriașii nu mă pot împiedica
 Cu Tine biruința este-a mea
 Da, biruința este-a mea!
 
+R.
 /: Când sunt slab, Tu mă faci Tare
 Când sunt mic, Tu mă faci Mare
 Cu toată puterea Ta, 
 Tu lucrezi în viața mea :/
 
+R Final.
 /Zi de zi aleg să merg la pas cu tine
 În Tine este toată încrederea mea
 Anii trec dar eu aleg să stau lângă Tine
@@ -229,9 +233,33 @@ Tu Dumnezeu ești victoria mea./2x
     capo: 0,
     youtube: "https://www.youtube.com/watch?v=NlPpPw_o1KA",
     lyrics: `
-1.
+1.	
 Tu ești credincios, tot ce faci e desăvârșit
-Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!`,
+Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!
+Tu ești credincios, m-ai convins cu iubirea Ta
+Tu ești Doamne minunea mea, o, Tată, Tu ești credincios!
+
+R.
+Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
+Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
+Îmi ridic ochii către Tine, recunosc bunătatea Ta
+Eu sunt lucrarea Ta!
+
+2. 
+Tu ești credincios, m-ai ales după planul Tău
+Îmi vorbești azi prin Duhul Tău, o, Tată, Tu ești credincios!
+Tu ești credincios, Tu ești Tatăl luminilor
+Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
+
+B.
+Eu sunt lucrarea Lui, lucrarea Tatălui!
+
+R Final. 
+/: Tot ce ai început în mine, Tu vei duce la bun sfârșit
+Tot ce ai început în mine, Tu vei duce la bun sfârșit!
+Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
+Eu sunt lucrarea ta, Tu bucuria mea! : /
+`,
     chords: `
 D     G
 Tu ești credincios...`,
