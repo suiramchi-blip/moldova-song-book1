@@ -333,35 +333,35 @@ După-al Tău plan perfect! :/
 R.
              D        A
 /: Leagă-ți inima de Cer,
-	    Bm		          G
+         Bm           G
 Leagă-ți viața ta de Dumnezeu,
-  D		        A	          G
+  D           A           G
 Viitorul tău este în mâna Sa!
-	       D	       A
+	       D       A
 Prin credință-naintezi,
-	        Bm	   G
+          Bm      G
 Deschide ochii inimii să-L vezi,
-      D		        A		            G
-Este lângă tine, trebuie doar să crezi! :/
+      D             A               G
+Este lângă tine, trebuie doar să crezi:/
 
 1.
-D		               	A	        Bm
+D                   A          Bm
 Predă-ți viața, în brațul Domnului,
-	     G		          D         A
+       G             D         A
 Să conducă-al tău destin, spre Cer!
-Em	     D	          A		           Bm
+Em       D           A             Bm
 Oferă-I totul, chiar și când nu-nțelegi,
-	     C	           G A
+       C            G A
 E suveran și-n viața ta!
 
 C.
    D  A    Bm	    G
 /: Inima, mintea mea,
-	     D A      G
+       D A      G
 Sunt legate de Cer!
       D  A     Bm G
 Transformă-mi viața,
-	       D   A        G
+         D   A       G
 După-al Tău plan perfect! :/
 `,
   },
