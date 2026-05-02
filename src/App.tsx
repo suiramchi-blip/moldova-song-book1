@@ -184,7 +184,7 @@ Anii trec dar eu aleg să stau lângă Tine
 Tu Dumnezeu ești victoria mea./2x `,
     chords: `
 1.
-Am				            F
+Am                          F
 În fiecare dimineață Tu îmi spui 
     C                     G 
 Ridică-te, fă-ți patul și umblă 
@@ -216,9 +216,9 @@ R.
 /: Când sunt slab, Tu mă faci Tare 
 Când sunt mic, Tu mă faci Mare 
 Cu toată puterea Ta,  
-Tu lucrezi în viața mea :/ 
+Tu lucrezi în viața mea :/
 
-B.
+Bridge.
 /Zi de zi aleg să merg la pas cu tine 
 În Tine este toată încrederea mea 
 Anii trec dar eu aleg să stau lângă Tine 
