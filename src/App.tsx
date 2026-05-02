@@ -54,7 +54,8 @@ Ajută-ne să Te cunoaștem,
 A          E            B      E
 Să Te-ascultăm, Doamne, să Te iubim.
 
-2. Suntem flămânzi, Doamne, de Tine,
+2. 
+Suntem flămânzi, Doamne, de Tine,
 Pâinea vieții doar Tu ne-o poți da.
 Suntem setoși de neprihănire
 Cu apa vieții inundă țara mea.
