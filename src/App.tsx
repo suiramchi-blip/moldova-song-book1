@@ -177,20 +177,52 @@ Când sunt mic, Tu mă faci Mare
 Cu toată puterea Ta,  
 Tu lucrezi în viața mea :/ 
 
-R Final.
+Bridge.
 /Zi de zi aleg să merg la pas cu tine 
 În Tine este toată încrederea mea 
 Anii trec dar eu aleg să stau lângă Tine 
 Tu Dumnezeu ești victoria mea./2x `,
     chords: `
- E             A
-Iată-mă, Tu trimite-mă
-B                 E
-Oriunde vrei, folosește-mă
-    E                A
-Pe strada mea sau în depărtări
-     E         B    E
-Iată-mă, Tu trimite-mă.`,
+1.
+Am				            F
+În fiecare dimineață Tu îmi spui 
+    C                     G 
+Ridică-te, fă-ți patul și umblă 
+     Am                    F 
+Voi merge nencetat pe urma ta 
+      C                      G 
+Chiar zi si noapte voi cinta așa 
+C                 G 
+Da, eu voi cânta așa... 
+
+R.
+    F                  C 
+/: Când sunt slab, Tu mă faci Tare 
+G                 Am 
+Când sunt mic, Tu mă faci Mare 
+F           C 
+Cu toată puterea Ta,  
+      G             Am 
+Tu lucrezi în viața mea :// 
+
+2.
+Când văd muntele din fața mea 
+Tu îmi dai curaj să-l pot urca. 
+Uriașii nu mă pot împiedica 
+Cu Tine biruința este-a mea 
+Da, biruința este-a mea! 
+
+R.
+/: Când sunt slab, Tu mă faci Tare 
+Când sunt mic, Tu mă faci Mare 
+Cu toată puterea Ta,  
+Tu lucrezi în viața mea :/ 
+
+B.
+/Zi de zi aleg să merg la pas cu tine 
+În Tine este toată încrederea mea 
+Anii trec dar eu aleg să stau lângă Tine 
+Tu Dumnezeu ești victoria mea./2x `,
   },
 ];
 
