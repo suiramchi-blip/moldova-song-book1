@@ -405,7 +405,7 @@ export default function App() {
       padding: stageMode ? 28 : 20,
       paddingBottom: showVideo ? 260 : 20,
       fontFamily: "Arial, sans-serif",
-      background: stageMode ? "#000" : "#fff",
+      background: stageMode ? "#000" : "#eaf4ff",
       color: stageMode ? "#fff" : "#000",
     };
 
