@@ -624,34 +624,33 @@ export default function App() {
           </h1>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14, textAlign: "center" }}>
-            {songsData.map((song) => (
-              <div
-                key={`${song.id}-${song.title}`}
-                onClick={() => {
-                  setSelectedSong(song);
-                  setViewMode("lyrics");
-                  setStageMode(false);
-                  setShowFlag(false);
-                  setTransposeSemis(0);
-                  setPreferFlats(false);
-                  setShowVideo(false);
-                }}
-                style={{
-                  cursor: "pointer",
-                  padding: "10px 8px",
-                  borderRadius: 10,
-                  border: "1px solid rgba(0,0,0,0.10)",
-                  background: "rgba(255,255,255,0.98)",
-                }}
-              >
-                <div style={{ fontWeight: 800, fontSize: 18 }}>{song.title}</div>
-                <div style={{ fontSize: 14, opacity: 0.85 }}>
-                  Key: {song.key} {song.capo && song.capo > 0 ? `• Capo: ${song.capo}` : ""}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+  {songsData.map((song) => (
+    <div
+      key={`${song.id}-${song.title}`}
+      onClick={() => {
+        setSelectedSong(song);
+        setViewMode("lyrics");
+        setStageMode(false);
+        setShowFlag(false);
+        setTransposeSemis(0);
+        setPreferFlats(false);
+        setShowVideo(false);
+      }}
+      style={{
+        cursor: "pointer",
+        padding: "10px 8px",
+        borderRadius: 10,
+        border: "1px solid rgba(0,0,0,0.10)",
+        background: "rgba(255,255,255,0.98)",
+      }}
+    >
+      <div style={{ fontWeight: 800, fontSize: 18 }}>{song.title}</div>
+      <div style={{ fontSize: 14, opacity: 0.85 }}>
+        Key: {song.key} {song.capo && song.capo > 0 ? `• Capo: ${song.capo}` : ""}
+      </div>
+    </div>
+  ))}
+</div>
       ) : (
         // ===== SONG VIEW =====
         <div style={{ maxWidth: 920, margin: "0 auto" }}>
