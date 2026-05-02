@@ -798,7 +798,7 @@ export default function App() {
               }
         </div>
 
-     {/* Floating YouTube mini-player overlay */}
+    {/* Floating YouTube mini-player overlay */}
       {showVideo && embedUrl && (
         <div
           style={{
@@ -815,13 +815,7 @@ export default function App() {
             overflow: "hidden",
           }}
         >
-          <iframe
-            src={embedUrl}
-            title="YouTube player"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-            style={{ width: "100%", height: "100%", border: "none", position: "absolute", top: 0, left: 0 }}
-          />
+          {embedUrl}
           <button
             onClick={() => setShowVideo(false)}
             style={{
