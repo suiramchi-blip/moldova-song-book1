@@ -66,6 +66,7 @@ Cu apa vieții inundă țara mea.
     title: "Iată-mă Tu trimite-mă",
     key: "E",
     capo: 0,
+    youtube: "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
     lyrics: `Iată-mă, Tu trimite-mă
 Oriunde vrei, folosește-mă
 Pe strada mea sau în depărtări
@@ -79,6 +80,69 @@ Oriunde vrei, folosește-mă
 Pe strada mea sau în depărtări
      E         B    E
 Iată-mă, Tu trimite-mă.`,
+  },
+  {
+    id: 3,
+    title: "Când eram doar un plod fără chip",
+    key: "C",
+    capo: 0,
+    youtube: "https://www.youtube.com/watch?v=C1fBEod-8jA",
+    lyrics: `
+1.
+/: Când eram doar un plod fără chip 
+Ochii Tăi mă vedeau 
+În Cartea Ta de mult erau scrise 
+Zilele ce m-așteptau. : / 
+ 
+R: 
+Tu-mi știi viitorul și ești lângă mine 
+De ce să mă îngrijorez? 
+Mi-ai promis că vei sta lângă mine 
+Nicicând n-ai să mă părăsești. 
+ 
+2. 
+/: De voi încerca să m-ascund de Tine 
+Nu voi reuși 
+Oriunde m-aș duce, chiar la marginea mării 
+Mâna Ta mă va călăuzi. :/ 
+ 
+3. 
+/: Tu mă cunoști întru totul Doamne 
+Când stau jos sau mă ridic 
+Îmi cunoști toate căile mele 
+Nu pot ascunde nimic. : / `,
+    chords: `
+1.  
+    C		             F 
+/: Când eram doar un plod fără chip 
+G	     	      C 
+Ochii Tăi mă vedeau 
+    C		         F 
+În Cartea Ta de mult erau scrise 
+    G		       C 
+Zilele ce m-așteptau. : / 
+ 
+R:
+       C		            F 
+Tu-mi știi viitorul și ești lângă mine 
+	    G		          C 
+De ce să mă îngrijorez? 
+C			                F 
+Mi-ai promis că vei sta lângă mine 
+	    G			               C 
+Nicicând n-ai să mă părăsești. 
+ 
+2. 
+/: De voi încerca să m-ascund de Tine 
+Nu voi reuși 
+Oriunde m-aș duce, chiar la marginea mării 
+Mâna Ta mă va călăuzi. : / 
+ 
+3. 
+/: Tu mă cunoști întru totul Doamne 
+Când stau jos sau mă ridic 
+Îmi cunoști toate căile mele 
+Nu pot ascunde nimic. : / `,
   },
 ];
 
