@@ -255,6 +255,46 @@ function renderWithSectionStyling(
 
   return (
     <div style={containerStyle}>
+      <style>{`
+  .moldovaTitle {
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: 16px;
+    font-size: 38px;
+
+    /* Moldova flag colors: blue, yellow, red */
+    background: linear-gradient(
+      90deg,
+      #0033A0 0%,
+      #0033A0 33%,
+      #FFD100 33%,
+      #FFD100 66%,
+      #CE1126 66%,
+      #CE1126 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-size: 200% 100%;
+    animation: moldovaWave 3.5s ease-in-out infinite;
+
+    text-shadow: 0 1px 10px rgba(0,0,0,0.12);
+  }
+
+  @keyframes moldovaWave {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @media (max-width: 480px) {
+    .moldovaTitle { font-size: 30px; }
+  }
+`}</style>
+
       {lines.map((line, idx) => {
         const { isLabel, type, labelText } = detectSectionLabel(line);
         if (isLabel) {
