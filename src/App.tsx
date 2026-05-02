@@ -225,6 +225,50 @@ Bridge.
 Anii trec dar eu aleg să stau lângă Tine 
 Tu Dumnezeu ești victoria mea./2x `,
   },
+    {
+    id: 5,
+    title: "Tu ești credincios ",
+    key: "D",
+    capo: 0,
+    youtube:
+      "https://www.youtube.com/watch?v=NlPpPw_o1KA",
+    lyrics: `
+1.
+Tu ești credincios, tot ce faci e desăvârșit
+Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!
+Tu ești credincios, m-ai convins cu iubirea Ta
+Tu ești Doamne minunea mea, o, Tată, Tu ești credincios!
+
+R.
+Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
+Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
+Îmi ridic ochii către Tine, recunosc bunătatea Ta
+Eu sunt lucrarea Ta!
+
+2. 
+Tu ești credincios, m-ai ales după planul Tău
+Îmi vorbești azi prin Duhul Tău, o, Tată, Tu ești credincios!
+Tu ești credincios, Tu ești Tatăl luminilor
+Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
+
+B.
+Eu sunt lucrarea Lui, lucrarea Tatălui!
+
+C. 
+/:Tot ce ai început în mine, Tu vei duce la bun sfârșit
+Tot ce ai început în mine, Tu vei duce la bun sfârșit!
+Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
+Eu sunt lucrarea ta, Tu bucuria mea! : /`,
+    chords: `
+ E             A
+Iată-mă, Tu trimite-mă
+B                 E
+Oriunde vrei, folosește-mă
+    E                A
+Pe strada mea sau în depărtări
+     E         B    E
+Iată-mă, Tu trimite-mă.`,
+  },
 ];
 
 type ViewMode = "lyrics" | "both";
