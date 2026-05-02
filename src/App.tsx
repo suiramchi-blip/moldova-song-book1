@@ -720,7 +720,7 @@ export default function App() {
   </div>
 )}
             </div>
-          </div>
+)}
 
           <h2 style={{ textAlign: "center", fontWeight: 900, fontSize: stageMode ? 38 : 22, marginTop: 14 }}>
             {selectedSong.title}
