@@ -268,7 +268,7 @@ Tu ești credincios, m-ai convins cu iubirea Ta
 Tu ești Doamne minunea mea, o, Tată, Tu ești credincios!
 
 R.
-       G                  A         D       A/C#      Bm
+       G               A         D       A/C#      Bm
 Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
        G                A          D         Em   D/F#
 Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
@@ -288,7 +288,7 @@ D                 G                 D
 Eu sunt lucrarea Lui, lucrarea Tatălui!
 
 R Final.
-    G             A              D          A/C#     Bm
+    G             A                  D      A/C#     Bm
 /: Tot ce ai început în mine, Tu vei duce la bun sfârșit
 G              A                   D      A/C#    Bm
 Tot ce ai început în mine, Tu vei duce la bun sfârșit!
