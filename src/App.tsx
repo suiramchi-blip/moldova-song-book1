@@ -302,6 +302,43 @@ Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
 Eu sunt lucrarea ta, Tu bucuria mea! : /
 `,
   },
+  {
+    id: 6,
+    title: "Leagă-ți inima de cer",
+    key: "D",
+    capo: 0,
+    youtube: "https://www.youtube.com/watch?v=TuiogypPJPE",
+    lyrics: `
+R.
+/: Leagă-ți inima de Cer,
+Leagă-ți viața ta de Dumnezeu,
+Viitorul tău este în mâna Sa!
+Prin credință-naintezi,
+Deschide ochii inimii să-L vezi,
+Este lângă tine, trebuie doar să crezi! :/
+
+1. 
+Predă-ți viața, în brațul Domnului,
+Să conducă-al tău destin, spre Cer!
+Oferă-I totul, chiar și când nu-nțelegi,
+E suveran și-n viața ta!
+
+C.
+/: Inima, mintea mea,
+Sunt legate de Cer!
+Transformă-mi viața,
+După-al Tău plan perfect! :/
+`,
+    chords: `
+ E             A
+Iată-mă, Tu trimite-mă
+B                 E
+Oriunde vrei, folosește-mă
+    E                A
+Pe strada mea sau în depărtări
+     E         B    E
+Iată-mă, Tu trimite-mă.`,
+  },
 ];
 
 type ViewMode = "lyrics" | "both";
