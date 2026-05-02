@@ -115,7 +115,7 @@ function renderWithSectionStyling(
     fontFamily: opts.mono
       ? "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
       : "Arial, sans-serif",
-    fontSize: opts.stageMode ? 28 : 16,
+    fontSize: opts.stageMode ? 28 : 15,
     lineHeight: opts.stageMode ? 1.7 : 1.55,
     color: opts.dark ? "#fff" : "#000",
     marginTop: 14,
