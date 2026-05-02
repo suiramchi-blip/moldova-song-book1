@@ -337,7 +337,7 @@ R.
 Leagă-ți viața ta de Dumnezeu,
   D           A           G
 Viitorul tău este în mâna Sa!
-	       D       A
+         D       A
 Prin credință-naintezi,
           Bm      G
 Deschide ochii inimii să-L vezi,
