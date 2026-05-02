@@ -35,29 +35,23 @@ Pâinea vieții doar Tu ne-o poți da;
 Suntem setoși de neprihănire
 Cu apa vieții inundă țara mea.`,
 chords: `
+R: 
 E        A   B        E
-
-R: /: Binecuvintează Doamne, Tu Moldova!
+/: Binecuvintează Doamne, Tu Moldova!
 E        A        E B
-
 Binecuvintează țara mea;
 E        A    B     E
-
 Vino cu putere, vino cu trezire,
 E        A        B     E
-
 Te rugăm, Isus, ai milă de ea. :/
-
+1. 
 E     B        E
-1. Noi Te chemăm, arată-Ți puterea,
+Noi Te chemăm, arată-Ți puterea,
 A        E     B     E
-
 Dă-ne credință din nou, Te rugăm;
 E B        E
-
 Ajută-ne să Te cunoaștem,
 A        E           B   E
-
 Să Te-ascultăm, Doamne, să Te iubim.
 
 2. Suntem flămânzi, Doamne, de Tine,
