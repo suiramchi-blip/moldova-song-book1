@@ -87,8 +87,7 @@ Iată-mă, Tu trimite-mă.`,
     key: "C",
     capo: 0,
     youtube: "https://www.youtube.com/watch?v=C1fBEod-8jA",
-    lyrics: `
-1.
+    lyrics: `1.
 /: Când eram doar un plod fără chip 
 Ochii Tăi mă vedeau 
 În Cartea Ta de mult erau scrise 
@@ -110,7 +109,7 @@ Mâna Ta mă va călăuzi. :/
 /: Tu mă cunoști întru totul Doamne 
 Când stau jos sau mă ridic 
 Îmi cunoști toate căile mele 
-Nu pot ascunde nimic. : / `,
+Nu pot ascunde nimic. : /`,
     chords: `
 1.  
     C                F 
@@ -151,8 +150,7 @@ Nu pot ascunde nimic. : /
     key: "C",
     capo: 0,
     youtube: "https://www.youtube.com/watch?v=39qmNUJzFns",
-    lyrics: `
-1.
+    lyrics: `1.
 În fiecare dimineață Tu îmi spui 
 Ridică-te, fă-ți patul și umblă 
 Voi merge nencetat pe urma ta 
@@ -165,7 +163,7 @@ Când sunt mic, Tu mă faci Mare
 Cu toată puterea Ta,  
 Tu lucrezi în viața mea :// 
     
-2.	
+2.    
 Când văd muntele din fața mea
 Tu îmi dai curaj să-l pot urca.
 Uriașii nu mă pot împiedica
@@ -182,9 +180,9 @@ R Final.
 /Zi de zi aleg să merg la pas cu tine
 În Tine este toată încrederea mea
 Anii trec dar eu aleg să stau lângă Tine
-Tu Dumnezeu ești victoria mea./2x `,
+Tu Dumnezeu ești victoria mea./2x`,
     chords: `
-1.	
+1.    
     Am                        F
 În fiecare dimineață Tu îmi spui
   C                        G
@@ -206,7 +204,7 @@ Cu toată puterea Ta,
        G            Am
 Tu lucrezi în viața mea ://
 
-2.	
+2.    
 Când văd muntele din fața mea
 Tu îmi dai curaj să-l pot urca.
 Uriașii nu mă pot împiedica
@@ -232,8 +230,7 @@ Tu Dumnezeu ești victoria mea./2x
     key: "D",
     capo: 0,
     youtube: "https://www.youtube.com/watch?v=NlPpPw_o1KA",
-    lyrics: `
-1.	
+    lyrics: `1.    
 Tu ești credincios, tot ce faci e desăvârșit
 Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!
 Tu ești credincios, m-ai convins cu iubirea Ta
@@ -258,10 +255,9 @@ R Final.
 /: Tot ce ai început în mine, Tu vei duce la bun sfârșit
 Tot ce ai început în mine, Tu vei duce la bun sfârșit!
 Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
-Eu sunt lucrarea ta, Tu bucuria mea! : /
-`,
+Eu sunt lucrarea ta, Tu bucuria mea! : /`,
     chords: `
- 1.	 
+ 1.     
                D            G             D
 Tu ești credincios, tot ce faci e desăvârșit
     G                   A          G                  D G
@@ -272,14 +268,14 @@ Tu ești credincios, m-ai convins cu iubirea Ta
 Tu ești Doamne minunea mea, o, Tată, Tu ești credincios!
 
 R.
-       G	              A         D       A/C#	  Bm
+       G                  A         D       A/C#      Bm
 Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
-       G                A	      D         Em   D/F#
+       G                A          D         Em   D/F#
 Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
        G               A        D       A/C#  Bm  G
 Îmi ridic ochii către Tine, recunosc bunătatea Ta
 A                D
-Eu sunt lucrarea Ta!
+Eu sunt lucraarea Ta!
 
 2. 
 Tu ești credincios, m-ai ales după planul Tău
@@ -308,8 +304,7 @@ Eu sunt lucrarea ta, Tu bucuria mea! : /
     key: "D",
     capo: 0,
     youtube: "https://www.youtube.com/watch?v=TuiogypPJPE",
-    lyrics: `
-R.
+    lyrics: `R.
 /: Leagă-ți inima de Cer,
 Leagă-ți viața ta de Dumnezeu,
 Viitorul tău este în mâna Sa!
@@ -327,8 +322,7 @@ C.
 /: Inima, mintea mea,
 Sunt legate de Cer!
 Transformă-mi viața,
-După-al Tău plan perfect! :/
-`,
+După-al Tău plan perfect! :/`,
     chords: `
 R.
              D        A
@@ -355,7 +349,7 @@ Oferă-I totul, chiar și când nu-nțelegi,
 E suveran și-n viața ta!
 
 C.
-   D  A    Bm	    G
+   D  A    Bm        G
 /: Inima, mintea mea,
        D A      G
 Sunt legate de Cer!
@@ -411,6 +405,12 @@ function detectSectionLabel(line: string): { isLabel: boolean; type: SectionType
   return { isLabel: false, type: "other", labelText: "" };
 }
 
+/**
+ * ✅ UPDATED: fit-to-screen improvements
+ * - Responsive font size for phones
+ * - Slightly tighter lineHeight for mono view
+ * - Negative letterSpacing for mono view to reduce wrapping
+ */
 function renderWithSectionStyling(
   text: string,
   opts: { stageMode: boolean; dark: boolean; autoBoldChorus: boolean; mono?: boolean }
@@ -418,13 +418,26 @@ function renderWithSectionStyling(
   const lines = text.split("\n");
   let currentSection: SectionType = "other";
 
+  const isPhone = typeof window !== "undefined" && window.innerWidth < 420;
+
   const containerStyle: React.CSSProperties = {
     whiteSpace: "pre-wrap",
     fontFamily: opts.mono
       ? "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
       : "Arial, sans-serif",
-    fontSize: opts.stageMode ? 28 : 15,
-    lineHeight: opts.stageMode ? 1.7 : 1.55,
+
+    fontSize: opts.stageMode
+      ? 28
+      : isPhone
+        ? 14
+        : 16,
+
+    lineHeight: opts.stageMode
+      ? 1.7
+      : opts.mono
+        ? 1.45
+        : 1.6,
+
     color: opts.dark ? "#fff" : "#000",
     marginTop: 14,
   };
@@ -445,50 +458,11 @@ function renderWithSectionStyling(
     color: opts.dark ? "#fff" : type === "chorus" ? "#0B5FFF" : "#111",
   });
 
- return (
-  <div style={containerStyle}>
-    <style>{`
-      .moldovaTitle {
-        font-weight: 900;
-        letter-spacing: 0.5px;
-        text-align: center;
-        margin-bottom: 16px;
-        font-size: 38px;
-
-        /* Moldova flag colors */
-        background: linear-gradient(
-          90deg,
-          #0033A0 0%,
-          #0033A0 33%,
-          #FFD100 33%,
-          #FFD100 66%,
-          #CE1126 66%,
-          #CE1126 100%
-        );
-
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        background-size: 200% 100%;
-        animation: moldovaWave 3.5s ease-in-out infinite;
-
-        text-shadow: 0 1px 10px rgba(0,0,0,0.12);
-      }
-
-      @keyframes moldovaWave {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-
-      @media (max-width: 480px) {
-        .moldovaTitle { font-size: 30px; }
-      }
-    `}</style>
-
+  return (
+    <div style={containerStyle}>
       {lines.map((line, idx) => {
         const { isLabel, type, labelText } = detectSectionLabel(line);
+
         if (isLabel) {
           currentSection = type;
           return (
@@ -498,9 +472,19 @@ function renderWithSectionStyling(
           );
         }
 
-        const shouldBold = opts.autoBoldChorus && currentSection === "chorus" && line.trim().length > 0;
+        const shouldBold =
+          opts.autoBoldChorus &&
+          currentSection === "chorus" &&
+          line.trim().length > 0;
+
         return (
-          <div key={idx} style={{ fontWeight: shouldBold ? 900 : 500 }}>
+          <div
+            key={idx}
+            style={{
+              fontWeight: shouldBold ? 900 : 500,
+              letterSpacing: opts.mono ? "-0.3px" : undefined,
+            }}
+          >
             {line}
           </div>
         );
@@ -716,45 +700,43 @@ export default function App() {
   };
 
   return (
-  <div style={containerStyle}>
-    <style>{`
-  .moldovaTitle {
-    font-weight: 900;
-    letter-spacing: 0.5px;
-    text-align: center;
-    margin-bottom: 16px;
-    font-size: 38px;
+    <div style={containerStyle}>
+      <style>{`
+        .moldovaTitle {
+          font-weight: 900;
+          letter-spacing: 0.5px;
+          text-align: center;
+          margin-bottom: 16px;
+          font-size: 38px;
+          background: linear-gradient(
+            90deg,
+            #0033A0 0%,
+            #0033A0 33%,
+            #FFD100 33%,
+            #FFD100 66%,
+            #CE1126 66%,
+            #CE1126 100%
+          );
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-size: 200% 100%;
+          animation: moldovaWave 3.5s ease-in-out infinite;
+          text-shadow: 0 1px 10px rgba(0,0,0,0.12);
+        }
+        @keyframes moldovaWave {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        @media (max-width: 480px) {
+          .moldovaTitle { font-size: 30px; }
+        }
+      `}</style>
 
-    background: linear-gradient(
-      90deg,
-      #0033A0 0%,
-      #0033A0 33%,
-      #FFD100 33%,
-      #FFD100 66%,
-      #CE1126 66%,
-      #CE1126 100%
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    background-size: 200% 100%;
-    animation: moldovaWave 3.5s ease-in-out infinite;
-
-    text-shadow: 0 1px 10px rgba(0,0,0,0.12);
-  }
-
-  @keyframes moldovaWave {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-`}</style>
-
-    {!selectedSong ? (
-      <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <h1 className="moldovaTitle">Moldova 2026</h1>
+      {!selectedSong ? (
+        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+          <h1 className="moldovaTitle">Moldova 2026</h1>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14, textAlign: "center" }}>
             {songsData.map((song) => (
@@ -891,7 +873,7 @@ export default function App() {
               {viewMode === "both" && (
                 <div style={{ textAlign: "center", marginBottom: 8 }}>
                   <button onClick={() => setTransposeSemis((v) => v - 1)} style={btnStyle(dark)}>
-                    −1
+                    -1
                   </button>
                   <button onClick={() => setTransposeSemis(0)} style={{ ...btnStyle(dark), margin: "0 8px" }}>
                     Reset
@@ -982,4 +964,3 @@ export default function App() {
     </div>
   );
 }
-``
