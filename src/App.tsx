@@ -70,13 +70,14 @@ Cu apa vieții inundă țara mea.
 Oriunde vrei, folosește-mă
 Pe strada mea sau în depărtări
 Iată-mă, Tu trimite-mă.`,
-    chords: `E       A
+    chords: `
+ E             A
 Iată-mă, Tu trimite-mă
-B       E
+B                 E
 Oriunde vrei, folosește-mă
-E       A
+    E                A
 Pe strada mea sau în depărtări
-E     B   E
+     E         B    E
 Iată-mă, Tu trimite-mă.`,
   },
 ];
