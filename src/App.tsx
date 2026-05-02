@@ -487,7 +487,7 @@ export default function App() {
     <div style={containerStyle}>
       {!selectedSong ? (
         <div style={{ maxWidth: 720, margin: "0 auto" }}>
-          <h1 style={{ textAlign: "center", fontWeight: 900, marginBottom: 16 }}>Song List</h1>
+          <h1 style={{ textAlign: "center", fontWeight: 900, marginBottom: 16 }}>Moldova 2026</h1>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14, textAlign: "center" }}>
             {songsData.map((song) => (
