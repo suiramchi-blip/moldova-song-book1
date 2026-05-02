@@ -799,50 +799,50 @@ export default function App() {
         </div>
       )}
 
-      {/* Floating YouTube mini-player overlay */}
-     {showVideo && embedUrl && (
-      <div
-        style={{
-          position: "fixed",
-          bottom: 16,
-          right: 16,
-          width: 340,
-          maxWidth: "92vw",
-          paddingTop: "56.25%",
-          background: "#000",
-          borderRadius: 10,
-          boxShadow: "0 10px 30px rgba(0,0,0,0.45)",
-          zIndex: 9999,
-          overflow: "hidden",
-        }}
-      >
-        <iframe
-          src={embedUrl}
-          title="YouTube player"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          allowFullScreen
-          style={{ width: "100%", height: "100%", border: "none" }}
-        />
-        <button
-          onClick={() => setShowVideo(false)}
+     {/* Floating YouTube mini-player overlay */}
+      {showVideo && embedUrl && (
+        <div
           style={{
-            position: "absolute",
-            top: 6,
-            right: 6,
-            background: "rgba(0,0,0,0.65)",
-            color: "#fff",
-            border: "none",
-            borderRadius: 6,
-            cursor: "pointer",
-            padding: "2px 8px",
-            fontSize: 12,
+            position: "fixed",
+            bottom: 16,
+            right: 16,
+            width: 340,
+            maxWidth: "92vw",
+            paddingTop: "56.25%",
+            background: "#000",
+            borderRadius: 10,
+            boxShadow: "0 10px 30px rgba(0,0,0,0.45)",
+            zIndex: 9999,
+            overflow: "hidden",
           }}
-          aria-label="Close video"
         >
-          ✕
-        </button>
-      </div>
-    )}
-  </div>
-);
+          <iframe
+            src={embedUrl}
+            title="YouTube player"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            style={{ width: "100%", height: "100%", border: "none", position: "absolute", top: 0, left: 0 }}
+          />
+          <button
+            onClick={() => setShowVideo(false)}
+            style={{
+              position: "absolute",
+              top: 6,
+              right: 6,
+              background: "rgba(0,0,0,0.65)",
+              color: "#fff",
+              border: "none",
+              borderRadius: 6,
+              cursor: "pointer",
+              padding: "2px 8px",
+              fontSize: 12,
+            }}
+            aria-label="Close video"
+          >
+            ✕
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
