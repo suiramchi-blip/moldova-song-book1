@@ -578,19 +578,25 @@ export default function App() {
         <div style={{ maxWidth: 920, margin: "0 auto" }}>
           {/* Top bar */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
-            <button
-              onClick={() => setSelectedSong(null)}
-              style={{
-                background: "none",
-                border: "none",
-                color: dark ? "#9BE7FF" : "#0066cc",
-                cursor: "pointer",
-                fontSize: 16,
-                padding: 0,
-              }}
-            >
-              ← Back
-            </button>
+           <button
+  onClick={() => {
+    setSelectedSong(null);
+    setStageMode(false);
+    setShowFlag(false);
+    setTransposeSemis(0);
+    setPreferFlats(false);
+  }}
+  style={{
+    background: "none",
+    border: "none",
+    color: dark ? "#9BE7FF" : "#0066cc",
+    cursor: "pointer",
+    fontSize: 16,
+    padding: 0,
+  }}
+>
+  ← Back
+</button>
 
             <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "flex-end" }}>
               <button onClick={() => setStageMode((v) => !v)} style={btnStyle(dark)}>
