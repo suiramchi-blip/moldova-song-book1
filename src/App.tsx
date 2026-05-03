@@ -359,6 +359,51 @@ Transformă-mi viața,
 După-al Tău plan perfect! :/
 `,
   },
+  {
+    id: 7,
+    title: "Isus m-a eliberat",
+    key: "E",
+    capo: 0,
+    youtube: "https://www.youtube.com/watch?v=jkHU3kSbWfM",
+    lyrics: `
+1. 
+/: Isus m-a eliberat
+Prin braţul Său puternic,
+Sunt liber, liber,
+Liber, liber. :/
+
+R. 
+/:Nu mai sunt rob,
+Sunt fiu de Împărat. :/
+
+C. 
+Bateţi din palme, cântaţi,
+Sărbătoriţi-L pe El.
+`,
+    chords: `
+1. 
+   E         A
+/: Isus m-a eliberat
+	    B		        E
+Prin braţul Său puternic,
+	    E	    A
+Sunt liber, liber,
+B	     E
+Liber, liber. :/
+
+R.
+  E		        B
+/:Nu mai sunt rob,
+	   A		      E
+Sunt fiu de Împărat. :/
+
+C.
+E	         B
+Bateţi din palme, cântaţi,
+		    E
+Sărbătoriţi-L pe El.
+`,
+  },
 ];
 
 // ---------- YouTube helpers ----------
