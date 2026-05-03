@@ -399,6 +399,13 @@ function detectSectionLabel(line: string): { isLabel: boolean; type: SectionType
   return { isLabel: false, type: "other", labelText: "" };
 }
 
+const isPhonePortrait = () => {
+  if (typeof window === "undefined") return false;
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+  return w < 520 && h > w; // phone-ish + portrait
+};
+
 /**
  * Existing fit-to-screen tuning:
  * - Responsive font size for phones
