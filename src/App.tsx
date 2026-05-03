@@ -450,7 +450,6 @@ useEffect(() => {
   const update = () => setViewport({ w: window.innerWidth, h: window.innerHeight });
   update(); // initial
   window.addEventListener("resize", update);
-  const phonePortrait = viewport.w > 0 && viewport.w < 520 && viewport.h > viewport.w
   return () => window.removeEventListener("resize", update);
 }, []);
 
