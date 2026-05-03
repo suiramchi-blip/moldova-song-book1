@@ -471,7 +471,11 @@ function renderWithSectionStyling(
   const isPhone = typeof window !== "undefined" && window.innerWidth < 420;
 
   const containerStyle: React.CSSProperties = {
-    whiteSpace: "pre-wrap",
+    
+whiteSpace: opts.mono ? "pre" : "pre-wrap",
+overflowX: opts.mono ? "auto" : "visible",
+WebkitOverflowScrolling: "touch",
+
     fontFamily: opts.mono
       ? "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
       : "Arial, sans-serif",
