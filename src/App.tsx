@@ -1,5 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
+type ViewMode = "lyrics" | "both";
+type SectionType = "chorus" | "verse" | "bridge" | "other";
+
 type Song = {
   id: number;
   title: string;
@@ -66,7 +69,8 @@ Cu apa vieții inundă țara mea.
     title: "Iată-mă Tu trimite-mă",
     key: "E",
     capo: 0,
-    youtube: "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
+    youtube:
+      "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
     lyrics: `Iată-mă, Tu trimite-mă
 Oriunde vrei, folosește-mă
 Pe strada mea sau în depărtări
@@ -384,7 +388,7 @@ Sărbătoriţi-L pe El.
 1. 
    E         A
 /: Isus m-a eliberat
-      B	          E
+      B              E
 Prin braţul Său puternic,
       E     A
 Sunt liber, liber,
@@ -428,10 +432,14 @@ function toYouTubeEmbedUrl(url: string) {
 }
 
 const MOLDOVA_FLAG_URL =
-  "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova.svg"
+  "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova.svg";
 
 // ---------- Section detection + chorus bold ----------
-function detectSectionLabel(line: string): { isLabel: boolean; type: SectionType; labelText: string } {
+function detectSectionLabel(line: string): {
+  isLabel: boolean;
+  type: SectionType;
+  labelText: string;
+} {
   const s = line.trim();
   if (!s) return { isLabel: false, type: "other", labelText: "" };
 
@@ -447,19 +455,19 @@ function detectSectionLabel(line: string): { isLabel: boolean; type: SectionType
   return { isLabel: false, type: "other", labelText: "" };
 }
 
-
 const isPhonePortrait = () => {
   if (typeof window === "undefined") return false;
   const w = window.innerWidth;
   const h = window.innerHeight;
-  return w < 520 && h > w; // phone-ish + portrait
+  return w < 520 && h > w;
 };
 
 /**
- * Existing fit-to-screen tuning:
- * - Responsive font size for phones
- * - Slightly tighter lineHeight for mono view
- * - Negative letterSpacing for mono view to reduce wrapping
+ * Render text with:
+ * - normal mode: pre-wrap (wraps)
+ * - mono mode (lyrics+chords): pre (NO WRAP) + horizontal scroll
+ *   Uses whiteSpace: "pre" to avoid wrapping [1](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/white-space)
+ *   Uses overflowX: "auto" for horizontal scrolling [2](https://www.geeksforgeeks.org/css/make-a-div-horizontally-scrollable-using-css/)
  */
 function renderWithSectionStyling(
   text: string,
@@ -467,25 +475,26 @@ function renderWithSectionStyling(
 ) {
   const lines = text.split("\n");
   let currentSection: SectionType = "other";
-
   const isPhone = typeof window !== "undefined" && window.innerWidth < 420;
 
-  const containerStyle: React.CSSProperties = {
-    
-whiteSpace: opts.mono ? "pre" : "pre-wrap",
-overflowX: opts.mono ? "auto" : "visible",
-WebkitOverflowScrolling: "touch",
-
+  // Inner content style
+  const innerStyle: React.CSSProperties = {
+    whiteSpace: opts.mono ? "pre" : "pre-wrap",
     fontFamily: opts.mono
       ? "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
       : "Arial, sans-serif",
-
     fontSize: opts.stageMode ? 28 : isPhone ? 14 : 16,
-
     lineHeight: opts.stageMode ? 1.7 : opts.mono ? 1.45 : 1.6,
-
     color: opts.dark ? "#fff" : "#000",
     marginTop: 14,
+
+    // Prevent any unexpected breaking in mono mode
+    overflowWrap: opts.mono ? "normal" : "anywhere",
+    wordBreak: opts.mono ? "normal" : "normal",
+
+    // Make the inner block size to its content so horizontal scroll works cleanly
+    display: opts.mono ? "inline-block" : "block",
+    minWidth: opts.mono ? "max-content" : undefined,
   };
 
   const labelStyle = (type: SectionType): React.CSSProperties => ({
@@ -495,53 +504,60 @@ WebkitOverflowScrolling: "touch",
     fontWeight: 900,
     margin: "10px 0 6px",
     letterSpacing: 0.5,
-    background:
-      opts.dark
-        ? "rgba(255,255,255,0.12)"
-        : type === "chorus"
-        ? "rgba(11,95,255,0.12)"
-        : "rgba(0,0,0,0.06)",
+    background: opts.dark
+      ? "rgba(255,255,255,0.12)"
+      : type === "chorus"
+      ? "rgba(11,95,255,0.12)"
+      : "rgba(0,0,0,0.06)",
     color: opts.dark ? "#fff" : type === "chorus" ? "#0B5FFF" : "#111",
   });
 
-  return (
-    <div style={containerStyle}>
-      {lines.map((line, idx) => {
-        const { isLabel, type, labelText } = detectSectionLabel(line);
+  // Outer wrapper provides the single horizontal scroll surface (for mono mode)
+  const outerStyle: React.CSSProperties = opts.mono
+    ? {
+        overflowX: "auto",
+        WebkitOverflowScrolling: "touch",
+      }
+    : {};
 
-        if (isLabel) {
-          currentSection = type;
+  return (
+    <div style={outerStyle}>
+      <div style={innerStyle}>
+        {lines.map((line, idx) => {
+          const { isLabel, type, labelText } = detectSectionLabel(line);
+
+          if (isLabel) {
+            currentSection = type;
+            return (
+              <div key={idx}>
+                <span style={labelStyle(type)}>{labelText}</span>
+              </div>
+            );
+          }
+
+          const shouldBold =
+            opts.autoBoldChorus && currentSection === "chorus" && line.trim().length > 0;
+
           return (
-            <div key={idx}>
-              <span style={labelStyle(type)}>{labelText}</span>
+            <div
+              key={idx}
+              style={{
+                fontWeight: shouldBold ? 900 : 500,
+                letterSpacing: opts.mono ? "-0.3px" : undefined,
+              }}
+            >
+              {line}
             </div>
           );
-        }
-
-        const shouldBold =
-          opts.autoBoldChorus &&
-          currentSection === "chorus" &&
-          line.trim().length > 0;
-
-        return (
-          <div
-            key={idx}
-            style={{
-              fontWeight: shouldBold ? 900 : 500,
-              letterSpacing: opts.mono ? "-0.3px" : undefined,
-            }}
-          >
-            {line}
-          </div>
-        );
-      })}
+        })}
+      </div>
     </div>
   );
 }
 
 // ---------- Transpose helpers ----------
-const NOTES_SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
-const NOTES_FLAT  = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+const NOTES_SHARP = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+const NOTES_FLAT = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
 
 const ENHARMONIC_TO_SHARP: Record<string, string> = {
   Db: "C#",
@@ -661,7 +677,6 @@ export default function App() {
   const [, setViewportTick] = useState(0);
 
   const wakeLockRef = useRef<any>(null);
-
   const dark = stageMode;
 
   useEffect(() => {
@@ -673,6 +688,7 @@ export default function App() {
   const containerStyle: React.CSSProperties = useMemo(() => {
     const base: React.CSSProperties = {
       minHeight: "100vh",
+      overflowY: "scroll", // keeps layout stable
       padding: stageMode ? 28 : 20,
       paddingBottom: showVideo ? 260 : 20,
       fontFamily: "Arial, sans-serif",
@@ -723,12 +739,12 @@ export default function App() {
     };
   }, [keepAwake]);
 
+  // Lyrics + Chords view content (transposed)
   const bothText = useMemo(() => {
     if (!selectedSong) return "";
-    const raw =
-      selectedSong.chords.split("\n").some((l) => /[a-zA-ZăâîșțĂÂÎȘȚ]/.test(l))
-        ? selectedSong.chords
-        : `${selectedSong.chords}\n\n${selectedSong.lyrics}`;
+    const raw = selectedSong.chords.split("\n").some((l) => /[a-zA-ZăâîșțĂÂÎȘȚ]/.test(l))
+      ? selectedSong.chords
+      : `${selectedSong.chords}\n\n${selectedSong.lyrics}`;
     return transposeText(raw, transposeSemis, preferFlats);
   }, [selectedSong, transposeSemis, preferFlats]);
 
@@ -888,11 +904,7 @@ export default function App() {
                 {showVideo ? "Hide Video" : "▶ Play Video"}
               </button>
 
-              {showVideo && (
-                <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7 }}>
-                  Video playing (floating window)
-                </div>
-              )}
+              {showVideo && <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7 }}>Video playing (floating window)</div>}
             </div>
           )}
 
@@ -905,8 +917,7 @@ export default function App() {
           )}
 
           <div style={metaStyle}>
-            Key: <b>{displayKey}</b> • Capo:{" "}
-            <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
+            Key: <b>{displayKey}</b> • Capo: <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
             {transposeSemis !== 0 ? (
               <span style={{ marginLeft: 10 }}>
                 (Transpose: <b>{transposeSemis > 0 ? `+${transposeSemis}` : transposeSemis}</b>)
@@ -949,16 +960,8 @@ export default function App() {
             </>
           )}
 
-          {/* ✅ Landscape hint: ONLY for Lyrics + Chords + phone portrait + not stage */}
           {viewMode === "both" && isPhonePortrait() && !stageMode && (
-            <div
-              style={{
-                textAlign: "center",
-                fontSize: 12,
-                opacity: 0.65,
-                marginBottom: 8,
-              }}
-            >
+            <div style={{ textAlign: "center", fontSize: 12, opacity: 0.65, marginBottom: 8 }}>
               Tip: rotate phone to landscape for better chord alignment
             </div>
           )}
@@ -974,7 +977,7 @@ export default function App() {
                 stageMode,
                 dark,
                 autoBoldChorus,
-                mono: true,
+                mono: true, // ✅ NO WRAP + horizontal scroll
               })}
         </div>
       )}
