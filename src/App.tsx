@@ -427,6 +427,9 @@ function toYouTubeEmbedUrl(url: string) {
   return "";
 }
 
+const MOLDOVA_FLAG_URL =
+  "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova.svg"
+
 // ---------- Section detection + chorus bold ----------
 function detectSectionLabel(line: string): { isLabel: boolean; type: SectionType; labelText: string } {
   const s = line.trim();
