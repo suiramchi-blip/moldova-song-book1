@@ -384,23 +384,23 @@ Sărbătoriţi-L pe El.
 1. 
    E         A
 /: Isus m-a eliberat
-	    B		        E
+      B	          E
 Prin braţul Său puternic,
-	    E	    A
+      E     A
 Sunt liber, liber,
-B	     E
+B       E
 Liber, liber. :/
 
 R.
-  E		        B
+  E            B
 /:Nu mai sunt rob,
-	   A		      E
+      A         E
 Sunt fiu de Împărat. :/
 
 C.
-E	         B
+E          B
 Bateţi din palme, cântaţi,
-		    E
+         E
 Sărbătoriţi-L pe El.
 `,
   },
