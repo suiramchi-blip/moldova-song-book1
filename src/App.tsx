@@ -618,7 +618,7 @@ const ENHARMONIC_TO_SHARP: Record<string, string> = {
   "B#": "C",
 };
 
-// ✅ FIX: illegal enharmonic spellings cleanup
+// Cleanup uncommon/ugly spellings after output selection
 const BAD_ENHARMONICS: Record<string, string> = {
   "Eb#": "E",
   "B#": "C",
@@ -630,7 +630,6 @@ function normNoteToSharp(n: string) {
   return ENHARMONIC_TO_SHARP[n] ?? n;
 }
 
-// ✅ FIX: normalize impossible spellings
 function fixEnharmonic(n: string) {
   return BAD_ENHARMONICS[n] ?? n;
 }
@@ -642,8 +641,6 @@ function transposeNote(note: string, semis: number, preferFlats: boolean) {
 
   const next = (idx + semis + 1200) % 12;
   const out = preferFlats ? NOTES_FLAT[next] : NOTES_SHARP[next];
-
-  // ✅ FIX applied here
   return fixEnharmonic(out);
 }
 
@@ -654,17 +651,22 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
   const root = m[1] + (m[2] || "");
   let rest = m[3] || "";
 
-  // Slash bass handling
+  // Handle slash bass notes (now supports /C# properly because regex captures it)
   if (rest.includes("/")) {
     const [beforeSlash, afterSlash] = rest.split("/", 2);
-    const bassMatch = afterSlash.match(/^([A-G])([#b]?)/);
 
+    // parse bass: letter + optional accidental + anything else
+    const bassMatch = afterSlash.match(/^([A-G])([#b]?)(.*)$/);
     if (bassMatch) {
       const bassRoot = bassMatch[1] + (bassMatch[2] || "");
-      const newBass  = transposeNote(bassRoot, semis, preferFlats);
+      const bassRest = bassMatch[3] || "";
 
-      // ✅ FIX: discard leftover accidentals
-      rest = `${beforeSlash}/${newBass}`;
+      const newBass = transposeNote(bassRoot, semis, preferFlats);
+
+      // IMPORTANT: if bassRest starts with stray accidentals, drop them
+      const cleanedBassRest = bassRest.replace(/^[#b]+/, "");
+
+      rest = `${beforeSlash}/${newBass}${cleanedBassRest}`;
     }
   }
 
@@ -672,20 +674,31 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
   return `${newRoot}${rest}`;
 }
 
-const CHORD_TOKEN_RX = /\b([A-G])(#|b)?([a-zA-Z0-9()+/-]*)\b/g;
+// ✅ FIXED: include # in the tail so tokens like A/C# are captured as one chord
+const CHORD_TOKEN_RX = /\b([A-G])(#|b)?([a-zA-Z0-9()+\/#-]*)\b/g;
+
+// Safety pass (optional but harmless): fix any leftover weird spellings if they appear
+function normalizeSpellings(text: string) {
+  return text
+    .replace(/\bEb#\b/g, "E")
+    .replace(/\bFb\b/g, "E")
+    .replace(/\bB#\b/g, "C")
+    .replace(/\bCb\b/g, "B");
+}
 
 function transposeText(text: string, semis: number, preferFlats: boolean) {
   if (semis === 0) return text;
-  return text.replace(CHORD_TOKEN_RX, (full) =>
+  const out = text.replace(CHORD_TOKEN_RX, (full) =>
     transposeChordToken(full, semis, preferFlats)
   );
+  return normalizeSpellings(out);
 }
 
 function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
   const m = key.match(/^([A-G])([#b]?)(m)?$/i);
   if (!m) return key;
 
-  const root  = m[1].toUpperCase() + (m[2] || "");
+  const root = m[1].toUpperCase() + (m[2] || "");
   const minor = m[3] ? "m" : "";
 
   const newRoot = transposeNote(root, semis, preferFlats);
