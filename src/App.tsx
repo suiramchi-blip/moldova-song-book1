@@ -1151,9 +1151,6 @@ if (showFlag && !stageMode) {
                   })}
                 </div>
 
-                <div style={{ marginTop: 10, fontSize: 12, opacity: dark ? 0.75 : 0.7 }}>
-                  Accidentals adjust automatically (ex: F → Bb, E → G#).
-                </div>
 
                 <div style={{ textAlign: "center", marginTop: 10 }}>
                   <button onClick={() => setShowKeyPicker(false)} style={btnStyle(dark)}>
