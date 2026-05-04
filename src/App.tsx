@@ -898,7 +898,7 @@ if (showFlag && !stageMode) {
   const metaStyle: React.CSSProperties = {
     textAlign: "center",
     fontSize: stageMode ? 18 : 14,
-    opacity: dark ? 0.9 : 0.8,
+    color: dark ? "rgba(255,255,255,0.9)" : "rgba(0,0,0,0.8)",
     marginTop: 6,
     position: "relative",
   };
