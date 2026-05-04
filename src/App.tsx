@@ -425,7 +425,7 @@ function toYouTubeEmbedUrl(url: string) {
 }
 
 const MOLDOVA_TRICOLOR_URL =
-  "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Romania.svg";
+  "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg";
 
 
 // ---------- Section detection + chorus bold ----------
