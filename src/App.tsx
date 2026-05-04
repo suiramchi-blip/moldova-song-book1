@@ -7,7 +7,6 @@ type Song = {
   id: number;
   title: string;
   key: string;
-  capo?: number;
   lyrics: string;
   chords: string;
   youtube?: string;
@@ -19,7 +18,6 @@ const songsData: Song[] = [
     id: 1,
     title: "Binecuvintează Doamne Tu Moldova",
     key: "E",
-    capo: 0,
     youtube: "https://youtu.be/Vy74JQwt8is?si=F1yqCk_X6yxD_Yh7",
     lyrics: `R:
 Binecuvintează Doamne, Tu Moldova!
@@ -69,7 +67,6 @@ Cu apa vieții inundă țara mea.
     id: 2,
     title: "Iată-mă Tu trimite-mă",
     key: "E",
-    capo: 0,
     youtube:
       "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
     lyrics: `Iată-mă, Tu trimite-mă
@@ -90,7 +87,6 @@ Iată-mă, Tu trimite-mă.`,
     id: 3,
     title: "Când eram doar un plod fără chip",
     key: "C",
-    capo: 0,
     youtube: "https://www.youtube.com/watch?v=C1fBEod-8jA",
     lyrics: `1.
 /: Când eram doar un plod fără chip 
@@ -153,7 +149,6 @@ Nu pot ascunde nimic. : /
     id: 4,
     title: "Când sunt slab, Tu mă faci Tare",
     key: "C",
-    capo: 0,
     youtube: "https://www.youtube.com/watch?v=39qmNUJzFns",
     lyrics: `1.
 În fiecare dimineață Tu îmi spui 
@@ -233,7 +228,6 @@ Tu Dumnezeu ești victoria mea./2x
     id: 5,
     title: "Tu ești credincios",
     key: "D",
-    capo: 0,
     youtube: "https://www.youtube.com/watch?v=NlPpPw_o1KA",
     lyrics: `1.    
 Tu ești credincios, tot ce faci e desăvârșit
@@ -307,7 +301,6 @@ Eu sunt lucraarea ta, Tu bucuria mea! : /
     id: 6,
     title: "Leagă-ți inima de cer",
     key: "D",
-    capo: 0,
     youtube: "https://www.youtube.com/watch?v=TuiogypPJPE",
     lyrics: `R.
 /: Leagă-ți inima de Cer,
@@ -368,7 +361,6 @@ După-al Tău plan perfect! :/
     id: 7,
     title: "Isus m-a eliberat",
     key: "E",
-    capo: 0,
     youtube: "https://www.youtube.com/watch?v=jkHU3kSbWfM",
     lyrics: `
 1. 
@@ -941,7 +933,7 @@ export default function App() {
               >
                 <div style={{ fontWeight: 800, fontSize: 18 }}>{song.title}</div>
                 <div style={{ fontSize: 14, opacity: 0.85 }}>
-                  Key: {song.key} {song.capo && song.capo > 0 ? `• Capo: ${song.capo}` : ""}
+                   Key: {song.key}
                 </div>
               </div>
             ))}
@@ -1037,7 +1029,6 @@ export default function App() {
                 {targetKey} <span style={{ opacity: 0.85 }}>▼</span>
               </span>
             )}
-            {"  "}• Capo: <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
 
             {showKeyPicker && !stageMode && (
               <div style={keyPickerStyle} onClick={(e) => e.stopPropagation()}>
