@@ -928,7 +928,7 @@ if (showFlag && !stageMode) {
     padding: 12,
     borderRadius: 14,
     border: dark ? "1px solid rgba(255,255,255,0.22)" : "1px solid rgba(0,0,0,0.12)",
-    background: dark ? "rgba(0,0,0,0.88)" : "rgba(255,255,255,0.98)",
+    background: dark ? "#111" : "#fff",
     boxShadow: "0 12px 30px rgba(0,0,0,0.20)",
   };
 
