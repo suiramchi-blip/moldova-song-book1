@@ -674,8 +674,12 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
   return `${newRoot}${rest}`;
 }
 
-// ✅ FIXED: include # in the tail so tokens like A/C# are captured as one chord
-const CHORD_TOKEN_RX = /\b([A-G])(#|b)?([a-zA-Z0-9()+\/#-]*)\b/g;
+
+// Matches chords even if they end with # (A/C#, F/A# etc)
+// Keeps separators so spacing is preserved
+const CHORD_TOKEN_RX =
+  /(^|[^A-Za-z0-9_])([A-G])(#|b)?([a-zA-Z0-9()+\/#-]*)(?=$|[^A-Za-z0-9_])/g;
+
 
 // Safety pass (optional but harmless): fix any leftover weird spellings if they appear
 function normalizeSpellings(text: string) {
@@ -688,10 +692,14 @@ function normalizeSpellings(text: string) {
 
 function transposeText(text: string, semis: number, preferFlats: boolean) {
   if (semis === 0) return text;
-  const out = text.replace(CHORD_TOKEN_RX, (full) =>
-    transposeChordToken(full, semis, preferFlats)
+
+  return text.replace(
+    CHORD_TOKEN_RX,
+    (full, lead, letter, accidental, rest) => {
+      const token = `${letter}${accidental || ""}${rest || ""}`;
+      return `${lead}${transposeChordToken(token, semis, preferFlats)}`;
+    }
   );
-  return normalizeSpellings(out);
 }
 
 function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
