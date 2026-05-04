@@ -1,6 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
-
-type ViewMode = "lyrics" | "both";
+import React, { useEffect, useMemo, useRef, useState } from "react";import React, { useEffect,Mode = "lyrics" | "both";
 type SectionType = "chorus" | "verse" | "bridge" | "other";
 
 type Song = {
@@ -484,10 +482,8 @@ function renderWithSectionStyling(
     lineHeight: opts.stageMode ? 1.7 : opts.mono ? 1.45 : 1.6,
     color: opts.dark ? "#fff" : "#000",
     marginTop: 14,
-
     overflowWrap: opts.mono ? "normal" : "anywhere",
-    wordBreak: opts.mono ? "normal" : "normal",
-
+    wordBreak: "normal",
     display: opts.mono ? "inline-block" : "block",
     minWidth: opts.mono ? "max-content" : undefined,
   };
@@ -508,10 +504,7 @@ function renderWithSectionStyling(
   });
 
   const outerStyle: React.CSSProperties = opts.mono
-    ? {
-        overflowX: "auto",
-        WebkitOverflowScrolling: "touch",
-      }
+    ? { overflowX: "auto", WebkitOverflowScrolling: "touch" }
     : {};
 
   return (
@@ -569,41 +562,12 @@ function normNoteToSharp(n: string) {
   return ENHARMONIC_TO_SHARP[n] ?? n;
 }
 
-function noteToPc(note: string) {
-  const base = normNoteToSharp(note);
-  return NOTES_SHARP.indexOf(base);
-}
-
 function transposeNote(note: string, semis: number, preferFlats: boolean) {
-  const idx = noteToPc(note);
+  const base = normNoteToSharp(note);
+  const idx = NOTES_SHARP.indexOf(base);
   if (idx < 0) return note;
   const next = (idx + semis + 1200) % 12;
   return preferFlats ? NOTES_FLAT[next] : NOTES_SHARP[next];
-}
-
-// tighter chord detection: only transpose things that LOOK like chords (not Romanian words)
-function looksLikeChordToken(token: string) {
-  // Must start with A-G
-  if (!/^[A-G]/.test(token)) return false;
-
-  // Split slash (bass) if present
-  const [main] = token.split("/", 1);
-
-  // main like: A, Am, A7, Amaj7, Asus4, A(add9), A/C# etc
-  const m = main.match(/^([A-G])([#b]?)(.*)$/);
-  if (!m) return false;
-
-  const rest = (m[3] || "").trim();
-  if (!rest) return true;
-
-  // Remove symbols/digits and validate remaining letters are chord-ish
-  const restAlpha = rest.replace(/[^A-Za-z]/g, "").toLowerCase();
-
-  if (!restAlpha) return true;
-
-  // allow common chord words only
-  const okPrefixes = ["m", "maj", "min", "dim", "aug", "sus", "add"];
-  return okPrefixes.some((p) => restAlpha.startsWith(p));
 }
 
 function transposeChordToken(token: string, semis: number, preferFlats: boolean) {
@@ -628,48 +592,81 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
   return `${newRoot}${rest}`;
 }
 
-const CHORD_TOKEN_RX = /\b?:#|b?[A-Za-z0-9()+/.-]*\b/g;
+const CHORD_TOKEN_RX = /\b([A-G])(#|b)?([a-zA-Z0-9()+/-]*)\b/g;
 
 function transposeText(text: string, semis: number, preferFlats: boolean) {
   if (semis === 0) return text;
-  return text.replace(CHORD_TOKEN_RX, (full) => {
-    if (!looksLikeChordToken(full)) return full;
-    return transposeChordToken(full, semis, preferFlats);
-  });
+  return text.replace(CHORD_TOKEN_RX, (full) => transposeChordToken(full, semis, preferFlats));
 }
 
-function parseKey(key: string) {
-  const m = key.trim().match(/^([A-G])([#b]?)(m)?$/i);
-  if (!m) return { root: key.trim(), minor: false };
-  return {
-    root: m[1].toUpperCase() + (m[2] || ""),
-    minor: !!m[3],
-  };
+function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
+  const m = key.match(/^([A-G])([#b]?)(m)?$/i);
+  if (!m) return key;
+  const root = m[1].toUpperCase() + (m[2] || "");
+  const minor = m[3] ? "m" : "";
+  const newRoot = transposeNote(root, semis, preferFlats);
+  return `${newRoot}${minor}`;
 }
 
-function semisBetweenKeys(fromKey: string, toKey: string) {
-  const from = parseKey(fromKey).root;
-  const to = parseKey(toKey).root;
-  const a = noteToPc(from);
-  const b = noteToPc(to);
+// ---------- Key selector logic (auto flats/sharps) ----------
+const KEY_OPTIONS = [
+  "C",
+  "Db",
+  "D",
+  "Eb",
+  "E",
+  "F",
+  "Gb",
+  "G",
+  "Ab",
+  "A",
+  "Bb",
+  "B",
+];
+
+const FLAT_KEYS = new Set([
+  "F",
+  "Bb",
+  "Eb",
+  "Ab",
+  "Db",
+  "Gb",
+  "Cb",
+  "Dm",
+  "Gm",
+  "Cm",
+  "Fm",
+  "Bbm",
+  "Ebm",
+  "Abm",
+]);
+
+function splitKeyLabel(k: string): { root: string; minor: boolean } {
+  const m = k.trim().match(/^([A-G])([#b]?)(m)?$/i);
+  if (!m) return { root: k.trim(), minor: false };
+  return { root: m[1].toUpperCase() + (m[2] || ""), minor: !!m[3] };
+}
+
+function noteIndex(root: string) {
+  const s = normNoteToSharp(root);
+  return NOTES_SHARP.indexOf(s);
+}
+
+function keyPrefersFlats(keyLabel: string) {
+  const k = keyLabel.trim();
+  if (k.includes("b")) return true;
+  if (k.includes("#")) return false;
+  if (FLAT_KEYS.has(k)) return true;
+  return false; // default to sharps for naturals like E, A, D, G, B
+}
+
+function nearestSemitoneDelta(fromRoot: string, toRoot: string) {
+  const a = noteIndex(fromRoot);
+  const b = noteIndex(toRoot);
   if (a < 0 || b < 0) return 0;
-  let diff = (b - a + 12) % 12;
-  // Use a signed "smallest" diff (nice for showing + / -)
-  if (diff > 6) diff -= 12;
-  return diff;
-}
-
-function preferFlatsForKey(key: string) {
-  const { root } = parseKey(key);
-
-  // Flat keys (major) + also F major
-  const flatMajor = new Set(["F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb"]);
-  if (flatMajor.has(root)) return true;
-
-  // If user selected a flat name explicitly (Bb, Eb, etc.), prefer flats
-  if (root.includes("b")) return true;
-
-  return false;
+  let d = (b - a + 12) % 12; // 0..11
+  if (d > 6) d -= 12; // -5..+6 (nearest direction)
+  return d;
 }
 
 function btnStyle(dark: boolean): React.CSSProperties {
@@ -710,28 +707,6 @@ function pillStyle(active: boolean, dark: boolean): React.CSSProperties {
   };
 }
 
-// Key dropdown options (includes both enharmonics so YOU can force sharp/flat naming)
-const KEY_OPTIONS = [
-  "C",
-  "C#",
-  "Db",
-  "D",
-  "D#",
-  "Eb",
-  "E",
-  "F",
-  "F#",
-  "Gb",
-  "G",
-  "G#",
-  "Ab",
-  "A",
-  "A#",
-  "Bb",
-  "B",
-  "Cb",
-];
-
 export default function App() {
   const [selectedSong, setSelectedSong] = useState<Song | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("lyrics");
@@ -743,8 +718,11 @@ export default function App() {
 
   const [showVideo, setShowVideo] = useState(false);
 
-  // NEW: user-selected display key (drives transposition + flat/sharp spelling)
-  const [targetKey, setTargetKey] = useState<string>("");
+  const [transposeSemis, setTransposeSemis] = useState(0);
+  const [preferFlats, setPreferFlats] = useState(false);
+
+  const [targetKey, setTargetKey] = useState<string>("C");
+  const [showKeyPicker, setShowKeyPicker] = useState(false);
 
   // Force a re-render on rotation so the hint can appear/disappear
   const [, setViewportTick] = useState(0);
@@ -757,11 +735,6 @@ export default function App() {
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
-
-  // When selecting a song, default target key = song.key
-  useEffect(() => {
-    if (selectedSong) setTargetKey(selectedSong.key);
-  }, [selectedSong?.id]);
 
   const containerStyle: React.CSSProperties = useMemo(() => {
     const base: React.CSSProperties = {
@@ -817,31 +790,30 @@ export default function App() {
     };
   }, [keepAwake]);
 
-  const transposeSemis = useMemo(() => {
-    if (!selectedSong) return 0;
-    if (!targetKey) return 0;
-    return semisBetweenKeys(selectedSong.key, targetKey);
-  }, [selectedSong?.key, targetKey]);
-
-  const preferFlats = useMemo(() => {
-    if (!targetKey) return false;
-    return preferFlatsForKey(targetKey);
-  }, [targetKey]);
+  // When a song is selected, reset transposition and set default key + accidentals
+  useEffect(() => {
+    if (!selectedSong) return;
+    setTransposeSemis(0);
+    setTargetKey(selectedSong.key);
+    setPreferFlats(keyPrefersFlats(selectedSong.key));
+    setShowKeyPicker(false);
+  }, [selectedSong?.id]);
 
   // Lyrics + Chords view content (transposed)
   const bothText = useMemo(() => {
     if (!selectedSong) return "";
-    const raw = selectedSong.chords.split("\n").some((l) => /[a-zA-ZăâîșțĂÂÎȘȚ]/.test(l))
+    const raw = selectedSong.chords
+      .split("\n")
+      .some((l) => /[a-zA-ZăâîșțĂÂÎȘȚ]/.test(l))
       ? selectedSong.chords
       : `${selectedSong.chords}\n\n${selectedSong.lyrics}`;
-
     return transposeText(raw, transposeSemis, preferFlats);
   }, [selectedSong, transposeSemis, preferFlats]);
 
   const displayKey = useMemo(() => {
     if (!selectedSong) return "";
-    return targetKey || selectedSong.key;
-  }, [selectedSong, targetKey]);
+    return transposeKeyLabel(selectedSong.key, transposeSemis, preferFlats);
+  }, [selectedSong, transposeSemis, preferFlats]);
 
   useEffect(() => {
     setShowVideo(false);
@@ -858,46 +830,50 @@ export default function App() {
     fontSize: stageMode ? 18 : 14,
     opacity: dark ? 0.9 : 0.8,
     marginTop: 6,
+    position: "relative",
   };
 
-  const keySelectWrap: React.CSSProperties = {
+  const keyButtonStyle: React.CSSProperties = {
     display: "inline-flex",
     alignItems: "center",
-    gap: 8,
-    flexWrap: "wrap",
-    justifyContent: "center",
-  };
-
-  const selectHolder: React.CSSProperties = {
-    position: "relative",
-    display: "inline-block",
-  };
-
-  const selectStyle: React.CSSProperties = {
-    appearance: "none",
-    WebkitAppearance: "none",
-    MozAppearance: "none",
-    padding: "6px 34px 6px 12px",
+    gap: 6,
+    marginLeft: 8,
+    padding: "4px 10px",
     borderRadius: 999,
     border: dark ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(0,0,0,0.15)",
     background: dark ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.95)",
     color: dark ? "#fff" : "#111",
-    fontWeight: 900,
-    cursor: "pointer",
-    outline: "none",
-    fontSize: stageMode ? 16 : 14,
+    fontWeight: 800,
+    cursor: stageMode ? "default" : "pointer",
+    userSelect: "none",
   };
 
-  const arrowStyle: React.CSSProperties = {
+  const keyPickerStyle: React.CSSProperties = {
     position: "absolute",
-    right: 12,
-    top: "50%",
-    transform: "translateY(-50%)",
-    pointerEvents: "none",
-    fontSize: 12,
-    opacity: 0.85,
-    color: dark ? "#fff" : "#111",
+    left: "50%",
+    transform: "translateX(-50%)",
+    top: stageMode ? 34 : 30,
+    zIndex: 1000,
+    width: "min(520px, 92vw)",
+    padding: 12,
+    borderRadius: 14,
+    border: dark ? "1px solid rgba(255,255,255,0.22)" : "1px solid rgba(0,0,0,0.12)",
+    background: dark ? "rgba(0,0,0,0.88)" : "rgba(255,255,255,0.98)",
+    boxShadow: "0 12px 30px rgba(0,0,0,0.20)",
   };
+
+  function applyTargetKey(newKey: string) {
+    if (!selectedSong) return;
+
+    const from = splitKeyLabel(selectedSong.key);
+    const to = splitKeyLabel(newKey);
+
+    const d = nearestSemitoneDelta(from.root, to.root);
+    setTransposeSemis(d);
+    setPreferFlats(keyPrefersFlats(newKey));
+    setTargetKey(newKey);
+    setShowKeyPicker(false);
+  }
 
   return (
     <div style={containerStyle}>
@@ -947,8 +923,10 @@ export default function App() {
                   setViewMode("lyrics");
                   setStageMode(false);
                   setShowFlag(false);
-                  setShowVideo(false);
+                  setTransposeSemis(0);
+                  setPreferFlats(keyPrefersFlats(song.key));
                   setTargetKey(song.key);
+                  setShowVideo(false);
                 }}
                 style={{
                   cursor: "pointer",
@@ -974,8 +952,10 @@ export default function App() {
                 setSelectedSong(null);
                 setStageMode(false);
                 setShowFlag(false);
+                setTransposeSemis(0);
+                setPreferFlats(false);
                 setShowVideo(false);
-                setTargetKey("");
+                setShowKeyPicker(false);
               }}
               style={{
                 background: "none",
@@ -1037,60 +1017,82 @@ export default function App() {
 
           {selectedSong.youtube && !embedUrl && !stageMode && (
             <div style={{ textAlign: "center", marginTop: 6 }}>
-              {selectedSong.youtube}
+              <a href={selectedSong.youtube} target="_blank" rel="noopener noreferrer">
                 ▶ Open Audio/Link
               </a>
             </div>
           )}
 
           <div style={metaStyle}>
-            <div style={keySelectWrap}>
-              <span>
-                Key: <b>{displayKey}</b>
+            Key: <b>{displayKey}</b>
+            {!stageMode && (
+              <span
+                style={keyButtonStyle}
+                onClick={() => setShowKeyPicker((v) => !v)}
+                title="Select a new key (auto sharps/flats)"
+              >
+                {targetKey} <span style={{ opacity: 0.85 }}>▼</span>
               </span>
+            )}
+            {"  "}• Capo: <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
 
-              <span style={{ opacity: 0.75 }}>•</span>
+            {showKeyPicker && !stageMode && (
+              <div style={keyPickerStyle} onClick={(e) => e.stopPropagation()}>
+                <div style={{ fontWeight: 900, marginBottom: 10, opacity: dark ? 0.95 : 0.9 }}>
+                  Select Key
+                </div>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(6, minmax(0, 1fr))",
+                    gap: 8,
+                  }}
+                >
+                  {KEY_OPTIONS.map((k) => {
+                    const active = k === targetKey;
+                    return (
+                      <button
+                        key={k}
+                        onClick={() => applyTargetKey(k)}
+                        style={{
+                          padding: "10px 0",
+                          borderRadius: 12,
+                          border: active
+                            ? dark
+                              ? "1px solid #9BE7FF"
+                              : "1px solid #0B5FFF"
+                            : dark
+                            ? "1px solid rgba(255,255,255,0.22)"
+                            : "1px solid rgba(0,0,0,0.12)",
+                          background: active
+                            ? dark
+                              ? "rgba(155,231,255,0.18)"
+                              : "rgba(11,95,255,0.10)"
+                            : dark
+                            ? "rgba(255,255,255,0.06)"
+                            : "rgba(255,255,255,0.98)",
+                          color: dark ? "#fff" : "#111",
+                          fontWeight: 900,
+                          cursor: "pointer",
+                        }}
+                      >
+                        {k}
+                      </button>
+                    );
+                  })}
+                </div>
 
-              <span>
-                Capo: <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
-              </span>
+                <div style={{ marginTop: 10, fontSize: 12, opacity: dark ? 0.75 : 0.7 }}>
+                  Accidentals adjust automatically (ex: F → Bb, E → G#).
+                </div>
 
-              <span style={{ opacity: 0.75 }}>•</span>
-
-              <span style={{ opacity: 0.95 }}>
-                Select Key:
-                <span style={{ marginLeft: 8 }}>
-                  <span style={selectHolder}>
-                    <select
-                      value={displayKey}
-                      onChange={(e) => setTargetKey(e.target.value)}
-                      style={selectStyle}
-                      aria-label="Select key"
-                    >
-                      {KEY_OPTIONS.map((k) => (
-                        <option key={k} value={k}>
-                          {k}
-                        </option>
-                      ))}
-                    </select>
-                    <span style={arrowStyle}>▼</span>
-                  </span>
-                </span>
-              </span>
-
-              {transposeSemis !== 0 ? (
-                <>
-                  <span style={{ opacity: 0.75 }}>•</span>
-                  <span style={{ opacity: 0.95 }}>
-                    Transpose: <b>{transposeSemis > 0 ? `+${transposeSemis}` : transposeSemis}</b>
-                  </span>
-                </>
-              ) : null}
-            </div>
-
-            <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7 }}>
-              Chord spelling: <b>{preferFlats ? "Flats (Bb, Eb, Ab...)" : "Sharps (F#, C#, G#...)"}</b>
-            </div>
+                <div style={{ textAlign: "center", marginTop: 10 }}>
+                  <button onClick={() => setShowKeyPicker(false)} style={btnStyle(dark)}>
+                    Close
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           {!stageMode && (
@@ -1103,6 +1105,7 @@ export default function App() {
                   Lyrics + Chords
                 </button>
               </div>
+              {/* NOTE: Transpose buttons removed by request */}
             </>
           )}
 
@@ -1145,7 +1148,20 @@ export default function App() {
             overflow: "hidden",
           }}
         >
-          {embedUrl}
+          <iframe
+            src={embedUrl}
+            title="YouTube player"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              border: "none",
+            }}
+          />
           <button
             onClick={() => setShowVideo(false)}
             style={{
@@ -1169,3 +1185,4 @@ export default function App() {
     </div>
   );
 }
+
