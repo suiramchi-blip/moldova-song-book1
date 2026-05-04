@@ -657,13 +657,14 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
   // Slash bass handling
   if (rest.includes("/")) {
     const [beforeSlash, afterSlash] = rest.split("/", 2);
-    const bassMatch = afterSlash.match(/^([A-G])([#b]?)(.*)$/);
+    const bassMatch = afterSlash.match(/^([A-G])([#b]?)/);
 
     if (bassMatch) {
       const bassRoot = bassMatch[1] + (bassMatch[2] || "");
-      const bassRest = bassMatch[3] || "";
       const newBass  = transposeNote(bassRoot, semis, preferFlats);
-      rest = `${beforeSlash}/${newBass}${bassRest}`;
+
+      // ✅ FIX: discard leftover accidentals
+      rest = `${beforeSlash}/${newBass}`;
     }
   }
 
