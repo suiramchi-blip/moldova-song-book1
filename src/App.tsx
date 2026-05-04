@@ -743,12 +743,22 @@ export default function App() {
       color: stageMode ? "#fff" : "#000",
     };
 
-    if (showFlag && !stageMode) {
-      base.backgroundImage = `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('${MOLDOVA_TRICOLOR_URL}')`;
-      base.backgroundSize = "300% 100%";
-      base.backgroundPosition = "center";
-      base.backgroundRepeat = "no-repeat";
-    }
+    
+if (showFlag && !stageMode) {
+  base.backgroundImage = `
+    linear-gradient(
+      90deg,
+      rgba(0, 51, 160, 0.18) 0%,
+      rgba(0, 51, 160, 0.18) 33.33%,
+      rgba(255, 209, 0, 0.18) 33.33%,
+      rgba(255, 209, 0, 0.18) 66.66%,
+      rgba(206, 17, 38, 0.18) 66.66%,
+      rgba(206, 17, 38, 0.18) 100%
+    )
+  `;
+  base.backgroundRepeat = "no-repeat";
+}
+
     return base;
   }, [stageMode, showFlag, showVideo]);
 
