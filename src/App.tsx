@@ -425,7 +425,7 @@ function toYouTubeEmbedUrl(url: string) {
 }
 
 const MOLDOVA_TRICOLOR_URL =
-  "https://www.magnific.com/free-photo/flag-romania_1179643.htm#fromView=keyword&page=1&position=21&uuid=1d8702a8-b28b-4ede-ac83-21a9e9a2330b&query=Romania+flag+background";
+  "https://upload.wikimedia.org/wikipedia/commons/7/73/Flag_of_Romania.svg";
 
 
 // ---------- Section detection + chorus bold ----------
