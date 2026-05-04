@@ -424,8 +424,9 @@ function toYouTubeEmbedUrl(url: string) {
   return "";
 }
 
-const MOLDOVA_FLAG_URL =
-  "https://upload.wikimedia.org/wikipedia/commons/2/27/Flag_of_Moldova.svg";
+const MOLDOVA_TRICOLOR_URL =
+  "https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Romania.svg";
+
 
 // ---------- Section detection + chorus bold ----------
 function detectSectionLabel(line: string): {
@@ -743,7 +744,7 @@ export default function App() {
     };
 
     if (showFlag && !stageMode) {
-      base.backgroundImage = `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('${MOLDOVA_FLAG_URL}')`;
+      base.backgroundImage = `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('${MOLDOVA_TRICOLOR_URL}')`;
       base.backgroundSize = "100vw 100vh";
       base.backgroundPosition = "center";
       base.backgroundRepeat = "no-repeat";
