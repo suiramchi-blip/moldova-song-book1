@@ -744,7 +744,7 @@ export default function App() {
 
     if (showFlag && !stageMode) {
       base.backgroundImage = `linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('${MOLDOVA_FLAG_URL}')`;
-      base.backgroundSize = "cover";
+      base.backgroundSize = "100vw 100vh";
       base.backgroundPosition = "center";
       base.backgroundRepeat = "no-repeat";
     }
