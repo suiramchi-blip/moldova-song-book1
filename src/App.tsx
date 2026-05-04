@@ -604,7 +604,7 @@ function renderWithSectionStyling(
 
 // ---------- Transpose helpers ----------
 const NOTES_SHARP = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
-const NOTES_FLAT = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
+const NOTES_FLAT  = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
 
 const ENHARMONIC_TO_SHARP: Record<string, string> = {
   Db: "C#",
@@ -618,16 +618,33 @@ const ENHARMONIC_TO_SHARP: Record<string, string> = {
   "B#": "C",
 };
 
+// ✅ FIX: illegal enharmonic spellings cleanup
+const BAD_ENHARMONICS: Record<string, string> = {
+  "Eb#": "E",
+  "B#": "C",
+  "Cb": "B",
+  "Fb": "E",
+};
+
 function normNoteToSharp(n: string) {
   return ENHARMONIC_TO_SHARP[n] ?? n;
+}
+
+// ✅ FIX: normalize impossible spellings
+function fixEnharmonic(n: string) {
+  return BAD_ENHARMONICS[n] ?? n;
 }
 
 function transposeNote(note: string, semis: number, preferFlats: boolean) {
   const base = normNoteToSharp(note);
   const idx = NOTES_SHARP.indexOf(base);
   if (idx < 0) return note;
+
   const next = (idx + semis + 1200) % 12;
-  return preferFlats ? NOTES_FLAT[next] : NOTES_SHARP[next];
+  const out = preferFlats ? NOTES_FLAT[next] : NOTES_SHARP[next];
+
+  // ✅ FIX applied here
+  return fixEnharmonic(out);
 }
 
 function transposeChordToken(token: string, semis: number, preferFlats: boolean) {
@@ -637,13 +654,15 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
   const root = m[1] + (m[2] || "");
   let rest = m[3] || "";
 
+  // Slash bass handling
   if (rest.includes("/")) {
     const [beforeSlash, afterSlash] = rest.split("/", 2);
     const bassMatch = afterSlash.match(/^([A-G])([#b]?)(.*)$/);
+
     if (bassMatch) {
       const bassRoot = bassMatch[1] + (bassMatch[2] || "");
       const bassRest = bassMatch[3] || "";
-      const newBass = transposeNote(bassRoot, semis, preferFlats);
+      const newBass  = transposeNote(bassRoot, semis, preferFlats);
       rest = `${beforeSlash}/${newBass}${bassRest}`;
     }
   }
@@ -656,18 +675,21 @@ const CHORD_TOKEN_RX = /\b([A-G])(#|b)?([a-zA-Z0-9()+/-]*)\b/g;
 
 function transposeText(text: string, semis: number, preferFlats: boolean) {
   if (semis === 0) return text;
-  return text.replace(CHORD_TOKEN_RX, (full) => transposeChordToken(full, semis, preferFlats));
+  return text.replace(CHORD_TOKEN_RX, (full) =>
+    transposeChordToken(full, semis, preferFlats)
+  );
 }
 
 function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
   const m = key.match(/^([A-G])([#b]?)(m)?$/i);
   if (!m) return key;
-  const root = m[1].toUpperCase() + (m[2] || "");
+
+  const root  = m[1].toUpperCase() + (m[2] || "");
   const minor = m[3] ? "m" : "";
+
   const newRoot = transposeNote(root, semis, preferFlats);
   return `${newRoot}${minor}`;
 }
-
 // ---------- Key selector logic (auto flats/sharps) ----------
 const KEY_OPTIONS = [
   "C",
