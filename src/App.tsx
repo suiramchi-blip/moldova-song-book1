@@ -1,4 +1,6 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";import React, { useEffect,Mode = "lyrics" | "both";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+
+type ViewMode = "lyrics" | "both";
 type SectionType = "chorus" | "verse" | "bridge" | "other";
 
 type Song = {
@@ -10,6 +12,7 @@ type Song = {
   chords: string;
   youtube?: string;
 };
+
 
 const songsData: Song[] = [
   {
