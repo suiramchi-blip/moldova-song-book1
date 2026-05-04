@@ -401,6 +401,70 @@ Bateţi din palme, cântaţi,
 Sărbătoriţi-L pe El.
 `,
   },
+ {
+    id: 8,
+    title: "Acolo este țara ",
+    key: "E",
+    youtube: "https://www.youtube.com/watch?v=JjTIcKGzGjU",
+    lyrics: `
+1. 
+Calatoresc prin lume, pe calea catre cer eu merg, 
+Calatoresc in viata, si inspre tinta vreau s-alerg. 
+Nu poate sa ma tina, nimic pe acest pamant
+In fiecare zi, calatoresc spre locul sfant. 
+
+R.
+/:Acolo este tara:/ Unde vreau sa fiu si eu (si eu!)
+/:In raiul minunat:/ Sa fiu cu Dumnezeu
+/:In patria dorita:/ Acolo vreau sa fiu si eu (si eu!)
+/:In cerul stralucit:/ Sa fiu cu Dumnezeu
+
+2. 
+Pe drumul catre cer, Multe am de strabatut,
+Dealuri, munti si vai, Dar nu ma las nicicand batut. 
+Biblia imi spune: Atunci cand voi ajune sus, 
+La capat de drum, Ma va astepa Isus. 
+
+3.
+Anii au trecut, Si doar putini au mai ramas, 
+Dar de calea stramta, Eu niciodata nu ma las. 
+Ea nu e usoara, Placeri din lume pe as nu-s, 
+Dar e minunata, Fiindca duce la Isus.
+`,
+    chords: `
+1. 
+   E                                       F#m
+Calatoresc prin lume, pe calea catre cer eu merg, 
+  B                                           E
+Calatoresc in viata, si inspre tinta vreau s-alerg. 
+    E                                 F#m
+Nu poate sa ma tina, nimic pe acest pamant
+    B                                  E
+In fiecare zi, calatoresc spre locul sfant. 
+
+R.
+   E                                   F#m
+/:Acolo este tara:/ Unde vreau sa fiu si eu (si eu!)
+         B                           E
+/:In raiul minunat:/ Sa fiu cu Dumnezeu
+      E                                   F#m
+/:In patria dorita:/ Acolo vreau sa fiu si eu (si eu!)
+      B                                E
+/:In cerul stralucit:/ Sa fiu cu Dumnezeu
+
+2.
+Pe drumul catre cer, Multe am de strabatut,
+Dealuri, munti si vai, Dar nu ma las nicicand batut. 
+Biblia imi spune: Atunci cand voi ajune sus, 
+La capat de drum, Ma va astepa Isus. 
+
+3.
+Anii au trecut, Si doar putini au mai ramas, 
+Dar de calea stramta, Eu niciodata nu ma las. 
+Ea nu e usoara, Placeri din lume pe as nu-s, 
+Dar e minunata, Fiindca duce la Isus. 
+`,
+  },
 ];
 
 // ---------- YouTube helpers ----------
