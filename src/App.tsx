@@ -466,8 +466,6 @@ const isPhonePortrait = () => {
  * Render text with:
  * - normal mode: pre-wrap (wraps)
  * - mono mode (lyrics+chords): pre (NO WRAP) + horizontal scroll
- *   Uses whiteSpace: "pre" to avoid wrapping [1](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/white-space)
- *   Uses overflowX: "auto" for horizontal scrolling [2](https://www.geeksforgeeks.org/css/make-a-div-horizontally-scrollable-using-css/)
  */
 function renderWithSectionStyling(
   text: string,
@@ -477,7 +475,6 @@ function renderWithSectionStyling(
   let currentSection: SectionType = "other";
   const isPhone = typeof window !== "undefined" && window.innerWidth < 420;
 
-  // Inner content style
   const innerStyle: React.CSSProperties = {
     whiteSpace: opts.mono ? "pre" : "pre-wrap",
     fontFamily: opts.mono
@@ -488,11 +485,9 @@ function renderWithSectionStyling(
     color: opts.dark ? "#fff" : "#000",
     marginTop: 14,
 
-    // Prevent any unexpected breaking in mono mode
     overflowWrap: opts.mono ? "normal" : "anywhere",
     wordBreak: opts.mono ? "normal" : "normal",
 
-    // Make the inner block size to its content so horizontal scroll works cleanly
     display: opts.mono ? "inline-block" : "block",
     minWidth: opts.mono ? "max-content" : undefined,
   };
@@ -512,7 +507,6 @@ function renderWithSectionStyling(
     color: opts.dark ? "#fff" : type === "chorus" ? "#0B5FFF" : "#111",
   });
 
-  // Outer wrapper provides the single horizontal scroll surface (for mono mode)
   const outerStyle: React.CSSProperties = opts.mono
     ? {
         overflowX: "auto",
@@ -575,12 +569,41 @@ function normNoteToSharp(n: string) {
   return ENHARMONIC_TO_SHARP[n] ?? n;
 }
 
-function transposeNote(note: string, semis: number, preferFlats: boolean) {
+function noteToPc(note: string) {
   const base = normNoteToSharp(note);
-  const idx = NOTES_SHARP.indexOf(base);
+  return NOTES_SHARP.indexOf(base);
+}
+
+function transposeNote(note: string, semis: number, preferFlats: boolean) {
+  const idx = noteToPc(note);
   if (idx < 0) return note;
   const next = (idx + semis + 1200) % 12;
   return preferFlats ? NOTES_FLAT[next] : NOTES_SHARP[next];
+}
+
+// tighter chord detection: only transpose things that LOOK like chords (not Romanian words)
+function looksLikeChordToken(token: string) {
+  // Must start with A-G
+  if (!/^[A-G]/.test(token)) return false;
+
+  // Split slash (bass) if present
+  const [main] = token.split("/", 1);
+
+  // main like: A, Am, A7, Amaj7, Asus4, A(add9), A/C# etc
+  const m = main.match(/^([A-G])([#b]?)(.*)$/);
+  if (!m) return false;
+
+  const rest = (m[3] || "").trim();
+  if (!rest) return true;
+
+  // Remove symbols/digits and validate remaining letters are chord-ish
+  const restAlpha = rest.replace(/[^A-Za-z]/g, "").toLowerCase();
+
+  if (!restAlpha) return true;
+
+  // allow common chord words only
+  const okPrefixes = ["m", "maj", "min", "dim", "aug", "sus", "add"];
+  return okPrefixes.some((p) => restAlpha.startsWith(p));
 }
 
 function transposeChordToken(token: string, semis: number, preferFlats: boolean) {
@@ -605,20 +628,48 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
   return `${newRoot}${rest}`;
 }
 
-const CHORD_TOKEN_RX = /\b([A-G])(#|b)?([a-zA-Z0-9()+/-]*)\b/g;
+const CHORD_TOKEN_RX = /\b?:#|b?[A-Za-z0-9()+/.-]*\b/g;
 
 function transposeText(text: string, semis: number, preferFlats: boolean) {
   if (semis === 0) return text;
-  return text.replace(CHORD_TOKEN_RX, (full) => transposeChordToken(full, semis, preferFlats));
+  return text.replace(CHORD_TOKEN_RX, (full) => {
+    if (!looksLikeChordToken(full)) return full;
+    return transposeChordToken(full, semis, preferFlats);
+  });
 }
 
-function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
-  const m = key.match(/^([A-G])([#b]?)(m)?$/i);
-  if (!m) return key;
-  const root = m[1].toUpperCase() + (m[2] || "");
-  const minor = m[3] ? "m" : "";
-  const newRoot = transposeNote(root, semis, preferFlats);
-  return `${newRoot}${minor}`;
+function parseKey(key: string) {
+  const m = key.trim().match(/^([A-G])([#b]?)(m)?$/i);
+  if (!m) return { root: key.trim(), minor: false };
+  return {
+    root: m[1].toUpperCase() + (m[2] || ""),
+    minor: !!m[3],
+  };
+}
+
+function semisBetweenKeys(fromKey: string, toKey: string) {
+  const from = parseKey(fromKey).root;
+  const to = parseKey(toKey).root;
+  const a = noteToPc(from);
+  const b = noteToPc(to);
+  if (a < 0 || b < 0) return 0;
+  let diff = (b - a + 12) % 12;
+  // Use a signed "smallest" diff (nice for showing + / -)
+  if (diff > 6) diff -= 12;
+  return diff;
+}
+
+function preferFlatsForKey(key: string) {
+  const { root } = parseKey(key);
+
+  // Flat keys (major) + also F major
+  const flatMajor = new Set(["F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb"]);
+  if (flatMajor.has(root)) return true;
+
+  // If user selected a flat name explicitly (Bb, Eb, etc.), prefer flats
+  if (root.includes("b")) return true;
+
+  return false;
 }
 
 function btnStyle(dark: boolean): React.CSSProperties {
@@ -659,6 +710,28 @@ function pillStyle(active: boolean, dark: boolean): React.CSSProperties {
   };
 }
 
+// Key dropdown options (includes both enharmonics so YOU can force sharp/flat naming)
+const KEY_OPTIONS = [
+  "C",
+  "C#",
+  "Db",
+  "D",
+  "D#",
+  "Eb",
+  "E",
+  "F",
+  "F#",
+  "Gb",
+  "G",
+  "G#",
+  "Ab",
+  "A",
+  "A#",
+  "Bb",
+  "B",
+  "Cb",
+];
+
 export default function App() {
   const [selectedSong, setSelectedSong] = useState<Song | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("lyrics");
@@ -670,8 +743,8 @@ export default function App() {
 
   const [showVideo, setShowVideo] = useState(false);
 
-  const [transposeSemis, setTransposeSemis] = useState(0);
-  const [preferFlats, setPreferFlats] = useState(false);
+  // NEW: user-selected display key (drives transposition + flat/sharp spelling)
+  const [targetKey, setTargetKey] = useState<string>("");
 
   // Force a re-render on rotation so the hint can appear/disappear
   const [, setViewportTick] = useState(0);
@@ -685,10 +758,15 @@ export default function App() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  // When selecting a song, default target key = song.key
+  useEffect(() => {
+    if (selectedSong) setTargetKey(selectedSong.key);
+  }, [selectedSong?.id]);
+
   const containerStyle: React.CSSProperties = useMemo(() => {
     const base: React.CSSProperties = {
       minHeight: "100vh",
-      overflowY: "scroll", // keeps layout stable
+      overflowY: "scroll",
       padding: stageMode ? 28 : 20,
       paddingBottom: showVideo ? 260 : 20,
       fontFamily: "Arial, sans-serif",
@@ -739,19 +817,31 @@ export default function App() {
     };
   }, [keepAwake]);
 
+  const transposeSemis = useMemo(() => {
+    if (!selectedSong) return 0;
+    if (!targetKey) return 0;
+    return semisBetweenKeys(selectedSong.key, targetKey);
+  }, [selectedSong?.key, targetKey]);
+
+  const preferFlats = useMemo(() => {
+    if (!targetKey) return false;
+    return preferFlatsForKey(targetKey);
+  }, [targetKey]);
+
   // Lyrics + Chords view content (transposed)
   const bothText = useMemo(() => {
     if (!selectedSong) return "";
     const raw = selectedSong.chords.split("\n").some((l) => /[a-zA-ZăâîșțĂÂÎȘȚ]/.test(l))
       ? selectedSong.chords
       : `${selectedSong.chords}\n\n${selectedSong.lyrics}`;
+
     return transposeText(raw, transposeSemis, preferFlats);
   }, [selectedSong, transposeSemis, preferFlats]);
 
   const displayKey = useMemo(() => {
     if (!selectedSong) return "";
-    return transposeKeyLabel(selectedSong.key, transposeSemis, preferFlats);
-  }, [selectedSong, transposeSemis, preferFlats]);
+    return targetKey || selectedSong.key;
+  }, [selectedSong, targetKey]);
 
   useEffect(() => {
     setShowVideo(false);
@@ -768,6 +858,45 @@ export default function App() {
     fontSize: stageMode ? 18 : 14,
     opacity: dark ? 0.9 : 0.8,
     marginTop: 6,
+  };
+
+  const keySelectWrap: React.CSSProperties = {
+    display: "inline-flex",
+    alignItems: "center",
+    gap: 8,
+    flexWrap: "wrap",
+    justifyContent: "center",
+  };
+
+  const selectHolder: React.CSSProperties = {
+    position: "relative",
+    display: "inline-block",
+  };
+
+  const selectStyle: React.CSSProperties = {
+    appearance: "none",
+    WebkitAppearance: "none",
+    MozAppearance: "none",
+    padding: "6px 34px 6px 12px",
+    borderRadius: 999,
+    border: dark ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(0,0,0,0.15)",
+    background: dark ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.95)",
+    color: dark ? "#fff" : "#111",
+    fontWeight: 900,
+    cursor: "pointer",
+    outline: "none",
+    fontSize: stageMode ? 16 : 14,
+  };
+
+  const arrowStyle: React.CSSProperties = {
+    position: "absolute",
+    right: 12,
+    top: "50%",
+    transform: "translateY(-50%)",
+    pointerEvents: "none",
+    fontSize: 12,
+    opacity: 0.85,
+    color: dark ? "#fff" : "#111",
   };
 
   return (
@@ -818,9 +947,8 @@ export default function App() {
                   setViewMode("lyrics");
                   setStageMode(false);
                   setShowFlag(false);
-                  setTransposeSemis(0);
-                  setPreferFlats(false);
                   setShowVideo(false);
+                  setTargetKey(song.key);
                 }}
                 style={{
                   cursor: "pointer",
@@ -846,9 +974,8 @@ export default function App() {
                 setSelectedSong(null);
                 setStageMode(false);
                 setShowFlag(false);
-                setTransposeSemis(0);
-                setPreferFlats(false);
                 setShowVideo(false);
+                setTargetKey("");
               }}
               style={{
                 background: "none",
@@ -910,19 +1037,60 @@ export default function App() {
 
           {selectedSong.youtube && !embedUrl && !stageMode && (
             <div style={{ textAlign: "center", marginTop: 6 }}>
-              <a href={selectedSong.youtube} target="_blank" rel="noopener noreferrer">
+              {selectedSong.youtube}
                 ▶ Open Audio/Link
               </a>
             </div>
           )}
 
           <div style={metaStyle}>
-            Key: <b>{displayKey}</b> • Capo: <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
-            {transposeSemis !== 0 ? (
-              <span style={{ marginLeft: 10 }}>
-                (Transpose: <b>{transposeSemis > 0 ? `+${transposeSemis}` : transposeSemis}</b>)
+            <div style={keySelectWrap}>
+              <span>
+                Key: <b>{displayKey}</b>
               </span>
-            ) : null}
+
+              <span style={{ opacity: 0.75 }}>•</span>
+
+              <span>
+                Capo: <b>{selectedSong.capo && selectedSong.capo > 0 ? selectedSong.capo : "—"}</b>
+              </span>
+
+              <span style={{ opacity: 0.75 }}>•</span>
+
+              <span style={{ opacity: 0.95 }}>
+                Select Key:
+                <span style={{ marginLeft: 8 }}>
+                  <span style={selectHolder}>
+                    <select
+                      value={displayKey}
+                      onChange={(e) => setTargetKey(e.target.value)}
+                      style={selectStyle}
+                      aria-label="Select key"
+                    >
+                      {KEY_OPTIONS.map((k) => (
+                        <option key={k} value={k}>
+                          {k}
+                        </option>
+                      ))}
+                    </select>
+                    <span style={arrowStyle}>▼</span>
+                  </span>
+                </span>
+              </span>
+
+              {transposeSemis !== 0 ? (
+                <>
+                  <span style={{ opacity: 0.75 }}>•</span>
+                  <span style={{ opacity: 0.95 }}>
+                    Transpose: <b>{transposeSemis > 0 ? `+${transposeSemis}` : transposeSemis}</b>
+                  </span>
+                </>
+              ) : null}
+            </div>
+
+            <div style={{ marginTop: 6, fontSize: 12, opacity: 0.7 }}>
+              Chord spelling: <b>{preferFlats ? "Flats (Bb, Eb, Ab...)" : "Sharps (F#, C#, G#...)"}</b>
+            </div>
           </div>
 
           {!stageMode && (
@@ -935,28 +1103,6 @@ export default function App() {
                   Lyrics + Chords
                 </button>
               </div>
-
-              {viewMode === "both" && (
-                <div style={{ textAlign: "center", marginBottom: 8 }}>
-                  <button onClick={() => setTransposeSemis((v) => v - 1)} style={btnStyle(dark)}>
-                    -1
-                  </button>
-                  <button onClick={() => setTransposeSemis(0)} style={{ ...btnStyle(dark), margin: "0 8px" }}>
-                    Reset
-                  </button>
-                  <button onClick={() => setTransposeSemis((v) => v + 1)} style={btnStyle(dark)}>
-                    +1
-                  </button>
-
-                  <button
-                    onClick={() => setPreferFlats((v) => !v)}
-                    style={{ ...btnStyle(dark), marginLeft: 10 }}
-                    title="Switch between sharps (#) and flats (b) in transposed chords"
-                  >
-                    {preferFlats ? "Use Sharps (#)" : "Use Flats (b)"}
-                  </button>
-                </div>
-              )}
             </>
           )}
 
@@ -977,7 +1123,7 @@ export default function App() {
                 stageMode,
                 dark,
                 autoBoldChorus,
-                mono: true, // ✅ NO WRAP + horizontal scroll
+                mono: true,
               })}
         </div>
       )}
@@ -999,20 +1145,7 @@ export default function App() {
             overflow: "hidden",
           }}
         >
-          <iframe
-            src={embedUrl}
-            title="YouTube player"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowFullScreen
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              border: "none",
-            }}
-          />
+          {embedUrl}
           <button
             onClick={() => setShowVideo(false)}
             style={{
