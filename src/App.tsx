@@ -470,7 +470,7 @@ Dar e minunata, Fiindca duce la Isus.
   id: 9,
   title: "Sunt un pribeag",
   key: "Bm",
-  youtube: "",
+  youtube: "https://www.youtube.com/watch?v=hsZhryhQTac&list=RDhsZhryhQTac&start_radio=1",
   lyrics: `
 1.
 Sunt un pribeag fără de ţară,
