@@ -1001,8 +1001,8 @@ if (showFlag && !stageMode) {
     style={{
       position: "absolute",
       top: 8,
-      left: 4,
-      width: 90,
+      left: 1,
+      width: 80,
       opacity: 0.50,
       zIndex: 0,
       pointerEvents: "none",
