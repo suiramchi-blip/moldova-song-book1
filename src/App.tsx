@@ -565,15 +565,20 @@ function detectSectionLabel(line: string): {
   const s = line.trim();
   if (!s) return { isLabel: false, type: "other", labelText: "" };
 
-  if (/^(R|R:|R\.|Ref|Ref\.|Refren|Chorus)\b/i.test(s)) {
+  // ✅ Chorus: must be the FULL line
+  if (/^(R|R:|R\.|Ref|Ref\.|Refren|Chorus)\s*$/i.test(s)) {
     return { isLabel: true, type: "chorus", labelText: s };
   }
-  if (/^\d+\s*[:.]/.test(s) || /^\d+\s*$/.test(s)) {
-    return { isLabel: true, type: "verse", labelText: s.replace(/\s+/g, " ") };
+
+  // ✅ Verse numbers like "1." or "2:"
+  if (/^\d+\s*[:.]?$/.test(s)) {
+    return { isLabel: true, type: "verse", labelText: s };
   }
-  if (/^bridge\b/i.test(s)) {
+
+  if (/^bridge\s*$/i.test(s)) {
     return { isLabel: true, type: "bridge", labelText: "Bridge" };
   }
+
   return { isLabel: false, type: "other", labelText: "" };
 }
 
