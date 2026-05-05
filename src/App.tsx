@@ -239,7 +239,7 @@ R.
 Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
 Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
 Îmi ridic ochii către Tine, recunosc bunătatea Ta
-Eu sunt lucraarea Ta!
+Eu sunt lucrarea Ta!
 
 2. 
 Tu ești credincios, m-ai ales după planul Tău
@@ -248,13 +248,13 @@ Tu ești credincios, Tu ești Tatăl luminilor
 Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
 
 B.
-Eu sunt lucraarea Lui, lucraarea Tatălui!
+Eu sunt lucrarea Lui, lucraarea Tatălui!
 
 R Final. 
 /: Tot ce ai început în mine, Tu vei duce la bun sfârșit
 Tot ce ai început în mine, Tu vei duce la bun sfârșit!
 Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
-Eu sunt lucraarea ta, Tu bucuria mea! : /`,
+Eu sunt lucrarea ta, Tu bucuria mea! : /`,
     chords: `
  1.     
                D            G             D
@@ -274,7 +274,7 @@ Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
        G               A        D       A/C#  Bm  G
 Îmi ridic ochii către Tine, recunosc bunătatea Ta
 A                D
-Eu sunt lucraarea Ta!
+Eu sunt lucrarea Ta!
 
 2. 
 Tu ești credincios, m-ai ales după planul Tău
@@ -284,7 +284,7 @@ Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
 
 B.
 D                 G                 D
-Eu sunt lucraarea Lui, lucraarea Tatălui!
+Eu sunt lucrarea Lui, lucraarea Tatălui!
 
 R Final.
     G             A                  D      A/C#     Bm
@@ -294,7 +294,7 @@ Tot ce ai început în mine, Tu vei duce la bun sfârșit!
 G               A                 D         A/C#   Bm
 Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
                  G   A           A
-Eu sunt lucraarea ta, Tu bucuria mea! : /
+Eu sunt lucrarea ta, Tu bucuria mea! : /
 `,
   },
   {
