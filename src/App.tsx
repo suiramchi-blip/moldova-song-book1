@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import kingdomKidsLogo from "./image.png"
 
 type ViewMode = "lyrics" | "both";
 type SectionType = "chorus" | "verse" | "bridge" | "other";
@@ -239,7 +240,7 @@ R.
 Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
 Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
 Îmi ridic ochii către Tine, recunosc bunătatea Ta
-Eu sunt lucrarea Ta!
+Eu sunt lucraarea Ta!
 
 2. 
 Tu ești credincios, m-ai ales după planul Tău
@@ -248,13 +249,13 @@ Tu ești credincios, Tu ești Tatăl luminilor
 Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
 
 B.
-Eu sunt lucrarea Lui, lucraarea Tatălui!
+Eu sunt lucraarea Lui, lucraarea Tatălui!
 
 R Final. 
 /: Tot ce ai început în mine, Tu vei duce la bun sfârșit
 Tot ce ai început în mine, Tu vei duce la bun sfârșit!
 Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
-Eu sunt lucrarea ta, Tu bucuria mea! : /`,
+Eu sunt lucraarea ta, Tu bucuria mea! : /`,
     chords: `
  1.     
                D            G             D
@@ -274,7 +275,7 @@ Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
        G               A        D       A/C#  Bm  G
 Îmi ridic ochii către Tine, recunosc bunătatea Ta
 A                D
-Eu sunt lucrarea Ta!
+Eu sunt lucraarea Ta!
 
 2. 
 Tu ești credincios, m-ai ales după planul Tău
@@ -284,7 +285,7 @@ Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
 
 B.
 D                 G                 D
-Eu sunt lucrarea Lui, lucraarea Tatălui!
+Eu sunt lucraarea Lui, lucraarea Tatălui!
 
 R Final.
     G             A                  D      A/C#     Bm
@@ -294,7 +295,7 @@ Tot ce ai început în mine, Tu vei duce la bun sfârșit!
 G               A                 D         A/C#   Bm
 Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
                  G   A           A
-Eu sunt lucrarea ta, Tu bucuria mea! : /
+Eu sunt lucraarea ta, Tu bucuria mea! : /
 `,
   },
   {
@@ -843,6 +844,7 @@ export default function App() {
   const containerStyle: React.CSSProperties = useMemo(() => {
     const base: React.CSSProperties = {
       minHeight: "100vh",
+      minHeight: "100vh",
       overflowY: "scroll",
       padding: stageMode ? 28 : 20,
       paddingBottom: showVideo ? 260 : 20,
@@ -991,6 +993,23 @@ if (showFlag && !stageMode) {
 
   return (
     <div style={containerStyle}>
+      
+{!stageMode && (
+  <img
+    src={kingdomKidsLogo}
+    alt="Kingdom’s Kids"
+    style={{
+      position: "absolute",
+      top: 12,
+      left: 12,
+      width: 120,
+      opacity: 0.85,
+      pointerEvents: "none",
+      zIndex: 50,
+    }}
+  />
+)}
+
       <style>{`
         .moldovaTitle {
           font-weight: 900;
@@ -1295,4 +1314,3 @@ if (showFlag && !stageMode) {
     </div>
   );
 }
-
