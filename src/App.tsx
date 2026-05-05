@@ -471,7 +471,8 @@ Dar e minunata, Fiindca duce la Isus.
   title: "Sunt un pribeag",
   key: "Bm",
   youtube: "",
-  lyrics: `1.
+  lyrics: `
+1.
 Sunt un pribeag fără de ţară,
 Rătăcitor prin lung pustiu.
 Dar am în ceruri o comoară
@@ -498,11 +499,11 @@ Eu voi intra-n odihna Sa!`,
 1.
            Bm
 Sunt un pribeag fără de ţară,
-      Em  F#           Bm
+      Em       F#      Bm
 Rătăcitor prin lung pustiu.
           Bm
 Dar am în ceruri o comoară
-         Em  F#      Bm
+         Em    F     Bm
 Şi ţara mea e-n veşnicii.
 
 R. 
