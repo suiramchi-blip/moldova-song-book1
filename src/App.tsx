@@ -529,6 +529,45 @@ Nădejdea mea nu o să moară
 Eu voi intra-n odihna Sa!
 `,
 },
+  {
+  id: 10,
+  title: "Isus e Rege",
+  key: "C",
+  youtube: "",
+  lyrics: `
+R.
+Isus e Rege pe tot pământul,
+Azi mă închin în faţa Lui:
+În faţa Lui.
+
+1.
+Toată viaţa Îi voi cânta,
+Căci vreau s-ajung în ţara Sa.
+
+2.
+Laud pe Domnul şi-L preamăresc,
+Laud pe Domnul, căci Îl iubesc.`,
+  chords: `
+R.
+  C      Am   F        G
+/:Isus e Rege pe tot pământul,
+C         Am  F        G
+Azi mă închin în faţa Lui:/
+        C Am F G
+În faţa Lui.
+
+1.
+C       Am   F        G
+Toată viaţa Îi voi cânta,
+ C             Am  F       G
+Căci vreau s-ajung în ţara Sa.
+
+2. 
+Laud pe Domnul şi-L preamăresc,
+Laud pe Domnul, căci Îl iubesc.
+Fil 2:9-10
+`,
+},
 ];
 
 // ---------- YouTube helpers ----------
