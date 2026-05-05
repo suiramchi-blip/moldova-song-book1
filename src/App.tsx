@@ -1000,12 +1000,12 @@ if (showFlag && !stageMode) {
     alt="Kingdom’s Kids"
     style={{
       position: "absolute",
-      top: 12,
+      top: 8,
       left: 12,
-      width: 120,
-      opacity: 0.85,
+      width: 90,
+      opacity: 0.50,
+      zIndex: 0,
       pointerEvents: "none",
-      zIndex: 50,
     }}
   />
 )}
@@ -1044,7 +1044,7 @@ if (showFlag && !stageMode) {
       `}</style>
 
       {!selectedSong ? (
-        <div style={{ maxWidth: 720, margin: "0 auto" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <h1 className="moldovaTitle">Moldova 2026</h1>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 14, textAlign: "center" }}>
