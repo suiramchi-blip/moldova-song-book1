@@ -546,7 +546,9 @@ Căci vreau s-ajung în ţara Sa.
 
 2.
 Laud pe Domnul şi-L preamăresc,
-Laud pe Domnul, căci Îl iubesc.`,
+Laud pe Domnul, căci Îl iubesc.
+
+Fil 2:9-10`,
   chords: `
 R.
   C      Am   F        G
@@ -585,7 +587,9 @@ Tu ai venit pe pământ să ne salvezi,
 Sus pe cruce ai murit, iertaţi să fim,
 De pe cruce în mormânt,
 Din mormânt sus la cer,
-Să fii înălţat mereu!`,
+Să fii înălţat mereu!
+
+Fil 2:6-11.`,
   chords: `
 1.
 G           C           D C
@@ -608,6 +612,8 @@ De pe cruce în mormânt,
 Din mormânt sus la cer,
         Am7 D    G
 Să fii înălţat mereu! :/
+
+
 
 Fil 2:6-11.
 `,
