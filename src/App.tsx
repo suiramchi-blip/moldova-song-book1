@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import kingdomKidsLogo from "./image.png"
+import kingdomKidsLogo from "./Image.png"
 
 type ViewMode = "lyrics" | "both";
 type SectionType = "chorus" | "verse" | "bridge" | "other";
