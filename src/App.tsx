@@ -1153,14 +1153,25 @@ if (showFlag && !stageMode) {
                 setShowVideo(false);
                 setShowKeyPicker(false);
               }}
-              style={{
-                background: "none",
-                border: "none",
-                color: dark ? "#9BE7FF" : "#0066cc",
-                cursor: "pointer",
-                fontSize: 16,
-                padding: 0,
-              }}
+             style={{
+  background: "none",
+  border: "none",
+  color: dark ? "#9BE7FF" : "#0033A0",
+  cursor: "pointer",
+
+  // ✅ VISIBILITY
+  fontSize: 22,       // bigger
+  fontWeight: 900,    // bolder
+  letterSpacing: 0.3,
+
+  // ✅ POSITION (push below logo)
+  marginTop: 72,      // key line 👈 adjust if needed
+
+  // ✅ TOUCH FRIENDLY
+  padding: "6px 0",
+
+  alignSelf: "flex-start", // keeps it top-left in the row
+}}
             >
               ← Back
             </button>
