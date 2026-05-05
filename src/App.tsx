@@ -843,7 +843,7 @@ export default function App() {
 
   const containerStyle: React.CSSProperties = useMemo(() => {
     const base: React.CSSProperties = {
-      minHeight: "100vh",
+      position: "relative",
       minHeight: "100vh",
       overflowY: "scroll",
       padding: stageMode ? 28 : 20,
