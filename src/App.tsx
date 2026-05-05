@@ -503,7 +503,7 @@ Sunt un pribeag fără de ţară,
 Rătăcitor prin lung pustiu.
           Bm
 Dar am în ceruri o comoară
-         Em    F     Bm
+         Em   F#    Bm
 Şi ţara mea e-n veşnicii.
 
 R. 
