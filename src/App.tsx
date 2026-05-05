@@ -565,9 +565,53 @@ Căci vreau s-ajung în ţara Sa.
 2. 
 Laud pe Domnul şi-L preamăresc,
 Laud pe Domnul, căci Îl iubesc.
+
 Fil 2:9-10
 `,
 },
+ {
+  id: 11,
+  title: "Doamne, numele-Ţi înalţ",
+  key: "G",
+  youtube: "",
+  lyrics: `1.
+Doamne, numele-Ţi înalţ,
+Doamne laudă-Ţi cânt Ţie,
+Fericit sunt că Te am,
+Fericit de-a Ta iertare.
+
+R.
+Tu ai venit pe pământ să ne salvezi,
+Sus pe cruce ai murit, iertaţi să fim,
+De pe cruce în mormânt,
+Din mormânt sus la cer,
+Să fii înălţat mereu!`,
+  chords: `
+1.
+G           C           D C
+   Doamne, numele-Ţi înalţ,
+G          C            D C
+   Doamne laudă-Ţi cânt Ţie,
+G       C              D C
+   Fericit sunt că Te am,
+G       C              D  C
+   Fericit de-a Ta iertare.
+
+R.
+ G          C        D       C       G
+/: Tu ai venit pe pământ, să ne salvezi,
+         C         D       C       G
+Sus pe cruce ai murit, iertaţi să fim,
+        C          D
+De pe cruce în mormânt,
+        B7          E
+Din mormânt sus la cer,
+        Am7 D    G
+Să fii înălţat mereu! :/
+
+Fil 2:6-11.
+`,
+}, 
 ];
 
 // ---------- YouTube helpers ----------
