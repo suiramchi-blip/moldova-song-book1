@@ -759,6 +759,64 @@ Căci Domnul e cu noi!
 
 Rom 14:8
 `,
+},
+{
+  id: 16,
+  title: "Cel ce stă sub ocrotirea",
+  key: "A",
+  youtube: "",
+  lyrics: `1.
+Cel ce stă sub ocrotirea Celui Preaînalt,
+La umbra Celui Atotputernic,
+Face din El loc de scăpare, căci Domnul sfânt:
+E Dumnezeul meu în care mă-ncred!
+
+R.
+O mie să cadă alături de tine,
+Şi zece mii la dreapta ta de vor cădea,
+Cu ochii priveşte să vezi răsplătirea acelui rău,
+Doar harul Său te va salva!
+
+2.
+Să nu te temi de groaza din noaptea cea grea,
+Nici de săgeata ce zboară ziua,
+De ciuma rea din întuneric, să nu te temi,
+Căci Domnul îţi va păzi cărarea.
+
+Ps 91`,
+  chords: `
+1.
+        A E        Fm#               A
+Cel ce stă sub ocrotirea Celui Preaînalt,
+          Bm   A     G     E
+La umbra Celui Atotputernic,
+          A E          D                  A
+Face din El loc de scăpare, căci Domnul sfânt
+          Fm#          D E       A
+/: E Dumnezeul meu în care mă-ncred! :/
+
+
+R.
+   A           Fm#
+O mie să cadă alături de tine
+         D             B7         Esus E
+Şi zece mii la dreapta ta de vor cădea,
+    A                Fm#                      D
+Cu ochii priveşte să vezi răsplătirea acelui rău,
+            E           A
+Doar harul Său te va salva!
+
+
+2.
+Să nu te temi de groaza din noaptea cea grea,
+Nici de săgeata ce zboară ziua,
+De ciuma rea din întuneric, să nu te temi,
+/:Căci Domnu-ţi va păzi cărarea de ea! :/
+
+
+Ps 91
+
+`,
 },  
 ];
 
