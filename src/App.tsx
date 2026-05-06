@@ -617,7 +617,73 @@ Să fii înălţat mereu! :/
 
 Fil 2:6-11.
 `,
-}, 
+},
+{
+  id: 13,
+  title: "E-o minune când soarele apune",
+  key: "C",
+  youtube: "",
+  lyrics: `1.
+E-o minune când soarele apune,
+Minune din veşnicii.
+Dar mai mare-i minunea din inimă,
+Minunea că El m-a iubit.
+
+R.
+Minunat e Domnul meu,
+Mai minunat e El,
+Decât orice pe pământ,
+Minunat e Domnul sfânt!
+
+2.
+E-o minune şi vara şi iarna
+Şi cerul înstelat;
+Dar mai mare-i minunea din inimă,
+Minunea că El m-a salvat.
+
+3.
+E-o minune întreaga-mi făptură,
+Minune din veşnicii.
+Dar mai mare-i minunea din inimă,
+Minunea că El va veni.
+
+Ps 19, 97`,
+  chords: `
+1.
+       C                  Dm7
+E-o minune când soarele apune,
+   G             C
+Minune din veşnicii.
+                            F
+Dar mai mare-i minunea din inimă,
+     G                 C
+E minunea că El m-a iubit.
+
+R.
+     C           Dm7
+Minunat e Domnul meu.
+     G        C
+Mai minunat e El
+                  F
+Decât orice pe pământ
+    G              C
+Minunat e Domnul sfânt!
+
+2.
+E-o minune şi vara şi iarna
+Şi cerul înstelat;
+Dar mai mare-i minunea din inimă,
+Minunea că El m-a salvat.
+
+3.
+E-o minune întreaga-mi făptură,
+Minune din veşnicii.
+Dar mai mare-i minunea din inimă,
+Minunea că El va veni.
+
+Ps 19, 97
+`,
+},  
 ];
 
 // ---------- YouTube helpers ----------
