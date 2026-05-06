@@ -1027,6 +1027,69 @@ Numele Tău voi slăvi,
 Asta-i fericirea mea: Să cânt slava Ta!
 
 `,
+},
+{
+  id: 23,
+  title: "Eu eram în lume pierdut",
+  key: "G",
+  youtube: "",
+  lyrics: `1.
+Eu eram în lume pierdut
+Și fără adăpost
+Dar când în față mi-ai apărut
+Eu mi-am găsit un rost.
+
+R.
+Îți mulțumesc din inimă
+Iubite Salvator
+De mii de ori Tu m-ai scăpat
+Și mi-ai dat ajutor.
+
+2.
+De multe ori mi s-a întâmplat
+Să fiu fără ajutor
+De-atâtea ori Tu m-ai scăpat
+De-aceea-Ți sunt dator.
+
+3.
+Eu sunt dator să-Ți mulțumesc
+Pentru iubirea Ta
+Isuse, ce mult Te iubesc
+Iubesc venirea Ta.`,
+  chords: `
+1.
+G             Am7
+  Eu eram în lume pierdut
+D             G
+  Şi fără adăpost
+                         Am7
+  Dar când în faţă mi-ai apărut
+D                   G
+  Eu mi-am găsit un rost.
+
+R.
+G                   Am7
+  Îţi mulţumesc din inimă
+D              G
+  Iubite Salvator
+                    Am7
+  De mii de ori tu m-ai scăpat
+D                  G
+  Şi mi-ai dat ajutor.
+
+2.
+De multe ori mi s-a întâmplat
+Să fiu fără ajutor
+De-atâtea ori tu m-ai scăpat
+De-aceea-Ţi sunt dator.
+
+3.
+Eu sunt dator să-Ţi mulţumesc
+Pentru iubirea Ta
+Isuse, ce mult Te iubesc
+Iubesc venirea Ta.
+
+`,
 },  
 ];
 
