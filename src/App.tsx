@@ -709,9 +709,14 @@ Noi suntem ai Lui.
 
 2.
 Nu putem să ştim dacă mâine în zori
-Va fi o zi cu soare ori o zi cu nori,
-Ştim însă că Domnul va fi cu noi
-La bine şi-n nevoi.`,
+Va fi o zi cu soare ori o zi cu nori
+Ştim însă ca Domnul va fi cu noi
+La bine şi-n nevoi.
+Hotărâţi-nainte vom alerga
+Spre ceruri zi de zi ne vom înălţa
+Nici o clipă nu vom privi-napoi
+Căci Domnul e cu noi!
+`,
   chords: `
 1.
              Fm#               B
