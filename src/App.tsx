@@ -894,68 +894,47 @@ De trăiești cu Domnul tău mereu,
 Fericit îți este traiul tău;
 /:Pe-ale vieții tale căi,
 Peste dealuri și prin văi,
-El te duce-n sfinte fericiri.:/
+El te duce-n sfinte fericiri:/
 
 2.
 Lasă soarta ta în mâna Lui,
 Viața ta să fie-a Domnului!
 /:Să-I predai tot ce-i al tău,
 Să-mplinești Cuvântul Său!
-El te duce-n sfinte fericiri.:/
+El te duce-n sfinte fericiri:/
 
 3.
 Când ispita te va încerca
 Și durerea te va apăsa,
 /:Nici atunci nu șovăi!
 El și-atunci te va iubi;
-El te duce-n sfinte fericiri.:/`,
+El te duce-n sfinte fericiri:/`,
   chords: `
 1.
-D           Em7        A           D
-Doamne, bunătatea Ta, Îmi cuprinde inima
-D          Em7      G      A     D
-Și mă face fericit, Domnul meu iubit.
-D            Em7        A           D
-De cu zori până-n apus Numai harul Tău, Isus,
-D           Em7  A         D
-Îmi inundă inima și viaţa mea.
-
-R.
-G
-N-ai în lume-asemănare,
-D
-Nu e nimenea sub soare,
-A
-Nici în cer, nici pe pământ
-D                D7
-Cât eşti Tu de sfânt!
-G
-Dragostea-Ți mă copleşeşte,
-D
-Pacea Ta mă linişteşte,
-A
-Harul Tău îmi dă avânt,
-G        A          D
-Tot mai mult să-Ți cânt.
+       A                    E
+De trăiești cu Domnul tău mereu,
+                         A
+Fericit iți este traiul tău;
+          A          Fm#
+/:Pe-ale vieții tale căi,
+       D              Bm
+Peste dealuri și prin văi,
+       E                 A
+El te duce-n sfinte fericiri:/
 
 2.
-Norii negrii când apar
-Tu îmi ești un veşnic far,
-Drumul mi-l călăuzeşti
-Și mă ocroteşti.
-Și prin arșiță Îți cânt
-Numai Ție, Doamne sfânt,
-Că-n izvorul Tău ceresc
-Sufletu-mi sfințesc.
+Lasă soarta ta in mâna Lui,
+Viața ta să fie-a Domnului!
+/:Să-I predai tot ce-i al tău,
+Să-mplinești Cuvântul Său!
+El te-a duce-n sfinte fericiri:/
 
 3.
-Doamne, pune-n gura mea.  
-Totdeauna lauda Ta,
-Numai Ție să Îți cânt
-Pe acest pământ.
-Iar când zorii vor veni,
-Numele Tău voi slăvi,
-Asta-i fericirea mea: Să cânt slava Ta!
+Când ispita te va încerca
+Și durerea te va apăsa,
+/:Nici atunci nu șovăi!
+El și-atunci te va iubi;
+El te-a duce-n sfinte fericiri:/
 
 `,
 },  
