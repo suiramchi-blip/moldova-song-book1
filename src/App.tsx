@@ -683,6 +683,77 @@ Minunea că El va veni.
 
 Ps 19, 97
 `,
+},
+{
+  id: 14,
+  title: "Domnul ne-a creat după chipul Său",
+  key: "E",
+  youtube: "",
+  lyrics: `1.
+Domnul ne-a creat după chipul Său,
+El ne-a învăţat să urâm ce-i rău,
+Să nu ne mai întoarcem pe unde am fost,
+Că n-are nici un rost.
+Nu mai vrem în lume să rătăcim,
+Vrem de azi viaţa cu El s-o trăim,
+Tot ce-avem să punem în mâna Lui,
+În mâna Domnului.
+
+R.
+Căci dacă trăim,
+Pentru Domnul trăim,
+Şi dacă murim,
+Pentru Domnul murim.
+Fie că trăim, fie că murim,
+Noi suntem ai Lui.
+
+2.
+Nu putem să ştim dacă mâine în zori
+Va fi o zi cu soare ori o zi cu nori,
+Ştim însă că Domnul va fi cu noi
+La bine şi-n nevoi.`,
+  chords: `
+1.
+             Fm#               B
+Domnul ne-a creat după chipul Său
+             E               Cm#
+El ne-a învăţat să urâm ce e rău
+               Fm#                 B
+Să nu ne mai întoarcem pe unde am fost
+                  E   B
+Că n-are nici un rost.
+
+Nu mai vrem în lume să rătăcim
+Vrem de azi viaţa cu El s-o trăim
+Tot ce-avem să punem în mâna Lui
+În mâna Domnului.
+
+R.
+               E
+/:Căci dacă trăim,
+                 B
+Pentru Domnul trăim
+          Cm#
+Şi dacă murim,
+                 A
+Pentru Domnul murim.
+         E             B
+Fie că trăim, fie că murim
+               E  B
+Noi suntem ai Lui. :/
+
+2.
+Nu putem să ştim dacă mâine în zori
+Va fi o zi cu soare ori o zi cu nori
+Ştim însă ca Domnul va fi cu noi
+La bine şi-n nevoi.
+Hotărâţi-nainte vom alerga
+Spre ceruri zi de zi ne vom înălţa
+Nici o clipă nu vom privi-napoi
+Căci Domnul e cu noi!
+
+Rom 14:8
+`,
 },  
 ];
 
