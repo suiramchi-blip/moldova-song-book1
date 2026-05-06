@@ -817,6 +817,72 @@ De ciuma rea din întuneric, să nu te temi,
 Ps 91
 
 `,
+},
+{
+  id: 17,
+  title: "Destinul tău e să învingi",
+  key: "D",
+  youtube: "",
+  lyrics: `1.
+Destinul tău e să învingi
+Când eşti căzut să te ridici
+Destinul tău l-a scris cândva Isus
+Numele tău de mult e scris
+În cartea vieţii din Paradis
+Destinul tău e cerul Său, să ştii.
+
+R.
+Nu suntem aici statornici
+O ţară-avem şi ea e sus
+Calea se sfârşeşte-acolo
+Când vom vedea toţi pe Isus!
+
+2.
+Deci să te porţi cum e cinstit
+Cu Tatăl tău ce te-a iubit
+Şi te-a plătit cu mare preţ, să ştii.
+Pe braţul meu Eu te-am purtat
+Şi-am să te port neîncetat
+El, Dumnezeu, spune aşa în cartea Sa.
+
+Fil 4:3`,
+  chords: `
+1.
+          G          A
+Destinul tău e să învingi
+            D           Bm
+Când eşti căzut să te ridici
+         Em                A    D
+Destinul tău l-a scris cândva Isus
+        G               A
+Numele tău de mult e scris
+           D             Bm
+În cartea vieţii din Paradis
+         Em           A        D
+Destinul tău e cerul Său, să ştii.
+
+
+R.
+       D           A
+Nu suntem aici statornici
+        G           A
+O ţar-avem şi ea e sus
+      D              A
+Calea se sfârşeşte-acolo
+            G        A    D
+Când vom vedea toţi pe Isus :/
+
+
+2.
+Deci să te porţi cum e cinstit
+Cu Tatăl tău ce te-a iubit
+Şi te-a plătit cu mare preţ, să ştii.
+Pe braţul meu Eu te-am purtat
+Şi-am să te port neîncetat
+El, Dumnezeu, spune aşa în cartea Sa.
+
+Fil 4:3
+`,
 },  
 ];
 
