@@ -1651,6 +1651,22 @@ if (showFlag && !stageMode) {
     return transposeText(raw, transposeSemis, preferFlats);
   }, [selectedSong, transposeSemis, preferFlats]);
 
+// --- chords-only text (transposed) for diagrams ---
+const transposedChordsText = useMemo(() => {
+  if (!selectedSong) return "";
+  return transposeText(selectedSong.chords || "", transposeSemis, preferFlats);
+}, [selectedSong, transposeSemis, preferFlats]);
+
+// --- extract + order chords as 1,4,5,6,2,3 ---
+const usedChords = useMemo(() => {
+  return extractChordTokens(transposedChordsText);
+}, [transposedChordsText]);
+
+const orderedChordsForStrip = useMemo(() => {
+  if (!selectedSong) return [];
+  return chordsByDegreeOrder(usedChords, displayKey, preferFlats);
+}, [selectedSong?.id, usedChords, displayKey, preferFlats]);
+
   const displayKey = useMemo(() => {
     if (!selectedSong) return "";
     return transposeKeyLabel(selectedSong.key, transposeSemis, preferFlats);
