@@ -1371,7 +1371,6 @@ function extractChordTokens(text: string) {
 
   return found;
 }
-``
 
 function chordRoot(token: string) {
   const m = token.match(/^([A-G])([#b]?)/);
@@ -1388,6 +1387,10 @@ function stripSlash(token: string) {
 
 const MAJOR_DEGREE_OFFSETS = [0, 2, 4, 5, 7, 9, 11];
 
+// ✅ add this (natural minor)
+const MINOR_DEGREE_OFFSETS = [0, 2, 3, 5, 7, 8, 10];
+
+
 function degreeRootNote(
   root: string,
   degree: number,
@@ -1402,7 +1405,6 @@ function degreeRootNote(
     : NOTES_SHARP[(idx + off) % 12];
   return fixEnharmonic(out);
 }
-``
 
 function chordsByDegreeOrder(
   used: string[],
@@ -1547,7 +1549,6 @@ function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
     </svg>
   );
 }
-``
 
 function ChordStrip({ chords, dark }: { chords: string[]; dark: boolean }) {
   if (!chords.length) return null;
