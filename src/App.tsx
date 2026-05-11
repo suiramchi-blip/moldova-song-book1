@@ -1641,15 +1641,15 @@ if (showFlag && !stageMode) {
   }, [selectedSong?.id]);
 
   // Lyrics + Chords view content (transposed)
-  const bothText = useMemo(() => {
-    if (!selectedSong) return "";
-    const raw = selectedSong.chords
-      .split("\n")
-      .some((l) => /[a-zA-ZăâîșțĂÂÎȘȚ]/.test(l))
-      ? selectedSong.chords
-      : `${selectedSong.chords}\n\n${selectedSong.lyrics}`;
-    return transposeText(raw, transposeSemis, preferFlats);
-  }, [selectedSong, transposeSemis, preferFlats]);
+const bothText = useMemo(() => {
+  if (!selectedSong) return "";
+  const raw = selectedSong.chords
+    .split("\n")
+    .some((l) => /[a-zA-ZăâîșțĂÂÎȘȚ]/.test(l))
+    ? selectedSong.chords
+    : `${selectedSong.chords}\n\n${selectedSong.lyrics}`;
+  return transposeText(raw, transposeSemis, preferFlats);
+}, [selectedSong, transposeSemis, preferFlats]);
 
 // --- chords-only text (transposed) for diagrams ---
 const transposedChordsText = useMemo(() => {
@@ -1657,20 +1657,23 @@ const transposedChordsText = useMemo(() => {
   return transposeText(selectedSong.chords || "", transposeSemis, preferFlats);
 }, [selectedSong, transposeSemis, preferFlats]);
 
-// --- extract + order chords as 1,4,5,6,2,3 ---
+// --- extract used chords ---
 const usedChords = useMemo(() => {
   return extractChordTokens(transposedChordsText);
 }, [transposedChordsText]);
 
+// ✅ displayKey MUST be defined before orderedChordsForStrip uses it
+const displayKey = useMemo(() => {
+  if (!selectedSong) return "";
+  return transposeKeyLabel(selectedSong.key, transposeSemis, preferFlats);
+}, [selectedSong, transposeSemis, preferFlats]);
+
+// --- order chords as 1,4,5,6,2,3 ---
 const orderedChordsForStrip = useMemo(() => {
   if (!selectedSong) return [];
   return chordsByDegreeOrder(usedChords, displayKey, preferFlats);
 }, [selectedSong?.id, usedChords, displayKey, preferFlats]);
 
-  const displayKey = useMemo(() => {
-    if (!selectedSong) return "";
-    return transposeKeyLabel(selectedSong.key, transposeSemis, preferFlats);
-  }, [selectedSong, transposeSemis, preferFlats]);
 
   useEffect(() => {
     setShowVideo(false);
