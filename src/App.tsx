@@ -1514,7 +1514,7 @@ function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
       {barre && (
         <rect
           x={left}
-          y={top + 1*yStep - 5}
+          y={top + ((1 - 1) * yStep) + yStep / 2 - 3}
           width={5*xStep}
           height={6}
           rx={3}
