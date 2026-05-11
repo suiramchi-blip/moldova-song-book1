@@ -1309,7 +1309,8 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
 // Matches chords even if they end with # (A/C#, F/A# etc)
 // Keeps separators so spacing is preserved
 const CHORD_TOKEN_RX =
-  /(^|[^A-Za-z0-9_])([A-G])(#|b)?([a-zA-Z0-9()+\/#-]*)(?=$|[^A-Za-z0-9_])/g;
+  /(^|[\s|:])([A-G])(#|b)?(m|maj|min|dim|aug|sus|add)?([0-9]*)?(\/[A-G][#b]?)?(?=\s|$)/g;
+
 
 
 // Safety pass (optional but harmless): fix any leftover weird spellings if they appear
@@ -1505,7 +1506,7 @@ function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
           <circle
             key={i}
             cx={12 + i * 13}
-            cy={20 + (f + 0.5) * 16}
+            cy={20 + ((f - 1) * 16) + 8}
             r={5}
             fill={dark ? "#9BE7FF" : "#0B5FFF"}
           />
