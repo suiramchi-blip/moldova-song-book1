@@ -1309,7 +1309,7 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
 // Matches chords even if they end with # (A/C#, F/A# etc)
 // Keeps separators so spacing is preserved
 const CHORD_TOKEN_RX =
-  /(^|\s)([A-G])(#|b)?(m|maj|min|dim|aug|sus|add)?([0-9]{0,2})?(\/[A-G][#b]?)?(?=\s|$)/g;
+  /(^|[^A-Za-z0-9_])([A-G])([#b]?)(?:(maj|min|dim|aug|sus|add|m)?([0-9]{0,2})?)?(?:\/([A-G])([#b]?))?(?=$|[^A-Za-z0-9_])/g;
 
 
 
@@ -1328,8 +1328,12 @@ function transposeText(text: string, semis: number, preferFlats: boolean) {
 
   return text.replace(
     CHORD_TOKEN_RX,
-    (full, lead, letter, accidental, rest) => {
-      const token = `${letter}${accidental || ""}${rest || ""}`;
+    (full, lead, letter, accidental, qual, digits, bassLetter, bassAcc) => {
+      const token =
+        `${letter}${accidental || ""}` +
+        `${qual || ""}${digits || ""}` +
+        (bassLetter ? `/${bassLetter}${bassAcc || ""}` : "");
+
       return `${lead}${transposeChordToken(token, semis, preferFlats)}`;
     }
   );
@@ -1350,16 +1354,27 @@ function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
 function extractChordTokens(text: string) {
   const found: string[] = [];
   const seen = new Set<string>();
-  const rx =
-    /(^|[^A-Za-z0-9_])([A-G])(#|b)?([a-zA-Z0-9()+\/#-]*)(?=$|[^A-Za-z0-9_])/g;
 
-  let m: RegExpExecArray | null;
-  while ((m = rx.exec(text)) !== null) {
-    const token = `${m[2]}${m[3] || ""}${m[4] || ""}`.trim();
-    if (!token || seen.has(token)) continue;
-    seen.add(token);
-    found.push(token);
+  const lines = text.split("\n");
+
+  for (const line of lines) {
+    // Ignore lyric lines (lowercase Romanian letters)
+    if (/[a-zăâîșț]/.test(line)) continue;
+
+    const rx = /(^|\s)([A-G])(#|b)?(m|maj|min|dim|aug|sus|add)?([0-9]{0,2})?(\/[A-G][#b]?)?(?=\s|$)/g;
+
+    let m: RegExpExecArray | null;
+    while ((m = rx.exec(line)) !== null) {
+      const token =
+        `${m[2]}${m[3] || ""}${m[4] || ""}${m[5] || ""}` +
+        (m[6] || "");
+
+      if (!token || seen.has(token)) continue;
+      seen.add(token);
+      found.push(token);
+    }
   }
+
   return found;
 }
 
@@ -1414,12 +1429,12 @@ function chordsByDegreeOrder(
 }
 
 function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
-  // ---- parse chord root + minor ----
-  const m = chord.match(/^([A-G])([#b]?)(m)?/);
-  const root = m ? m[1] + (m[2] || "") : "C";
-  const isMinor = !!(m && m[3]);
+  // parse chord root + minor
+  const mm = chord.match(/^([A-G])([#b]?)(m)?/);
+  const root = mm ? mm[1] + (mm[2] || "") : "C";
+  const isMinor = !!(mm && mm[3]);
 
-  // ---- known open-chord shapes (low E → high E) ----
+  // open-chord shapes (low E → high E). 0 means open; numbers are frets.
   const openChords: Record<string, number[]> = {
     C:  [0, 3, 2, 0, 1, 0],
     G:  [3, 2, 0, 0, 0, 3],
@@ -1434,88 +1449,95 @@ function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
   const key = root + (isMinor ? "m" : "");
   const openShape = openChords[key];
 
-  // ---- fallback: E-shape barre ----
+  // fallback E-shape (barre)
   const fallbackShape = isMinor
-    ? [0, 2, 2, 0, 0, 0]   // Em-shape
-    : [0, 2, 2, 1, 0, 0];  // E-shape
+    ? [0, 2, 2, 0, 0, 0]   // Em shape
+    : [0, 2, 2, 1, 0, 0];  // E shape
 
-  // ✅ THIS is the line you were missing conceptually
   const shape = openShape ?? fallbackShape;
 
-  // ---- transpose only if NOT open chord ----
-  const semisFromE =
-    openShape ? 0 : (noteIndex(root) - noteIndex("E") + 12) % 12;
+  // semitone shift from E only for barre fallback
+  const semisFromE = openShape ? 0 : (noteIndex(root) - noteIndex("E") + 12) % 12;
 
-  const frets = shape.map(f => (f === 0 ? 0 : f + semisFromE));
+  // absolute frets
+  const absFrets = shape.map(f => (f === 0 ? 0 : f + semisFromE));
+
+  // If barre chord, show diagram starting at the barre fret
+  const startFret = openShape || semisFromE === 0 ? 1 : semisFromE; // e.g., B -> 7
+
+  // convert absolute -> relative frets for drawing window (1..4)
+  const relFrets = absFrets.map(f => (f === 0 ? 0 : f - startFret + 1));
   const barre = !openShape && semisFromE > 0;
 
-  // ---- rendering ----
+  // drawing constants
+  const W = 90, H = 120;
+  const left = 12, top = 20;
+  const xStep = 13;
+  const yStep = 16;
+
+  const stroke = dark ? "#aaa" : "#555";
+  const dot = dark ? "#9BE7FF" : "#0B5FFF";
+  const text = dark ? "#fff" : "#111";
+
   return (
-    <svg width={90} height={120}>
-      {/* chord name */}
-      <text
-        x="45"
-        y="12"
-        textAnchor="middle"
-        fontSize="12"
-        fontWeight="800"
-        fill={dark ? "#fff" : "#111"}
-      >
+    <svg width={W} height={H}>
+      <text x="45" y="12" textAnchor="middle" fontSize="12" fontWeight="800" fill={text}>
         {chord}
       </text>
 
+      {/* start fret label for barre chords */}
+      {startFret > 1 && (
+        <text x="6" y="32" fontSize="10" fontWeight="800" fill={text}>
+          {startFret}fr
+        </text>
+      )}
+
       {/* strings */}
       {[0,1,2,3,4,5].map(i => (
-        <line
-          key={i}
-          x1={12 + i * 13}
-          y1={20}
-          x2={12 + i * 13}
-          y2={100}
-          stroke={dark ? "#aaa" : "#555"}
-        />
+        <line key={"s"+i} x1={left + i*xStep} y1={top} x2={left + i*xStep} y2={top + 4*yStep} stroke={stroke} />
       ))}
 
-      {/* frets */}
+      {/* frets (0..4 lines = 4 fret spaces) */}
       {[0,1,2,3,4].map(i => (
         <line
-          key={i}
-          x1={12}
-          y1={20 + i * 16}
-          x2={12 + 5 * 13}
-          y2={20 + i * 16}
-          stroke={dark ? "#aaa" : "#555"}
-          strokeWidth={i === 0 && openShape ? 3 : 1}
+          key={"f"+i}
+          x1={left}
+          y1={top + i*yStep}
+          x2={left + 5*xStep}
+          y2={top + i*yStep}
+          stroke={stroke}
+          strokeWidth={i === 0 && startFret === 1 ? 3 : 1}
         />
       ))}
 
-      {/* barre */}
+      {/* barre line shown at fret 1 position within the window */}
       {barre && (
         <rect
-          x={12}
-          y={20 + 16 - 5}
-          width={5 * 13}
+          x={left}
+          y={top + 1*yStep - 5}
+          width={5*xStep}
           height={6}
           rx={3}
-          fill={dark ? "#9BE7FF" : "#0B5FFF"}
+          fill={dot}
         />
       )}
 
-      {/* finger dots */}
-      {frets.map((f, i) =>
+      {/* dots */}
+      {relFrets.map((f, i) =>
         f > 0 && f <= 4 ? (
           <circle
-            key={i}
-            cx={12 + i * 13}
-            cy={20 + ((f - 1) * 16) + 8}
+            key={"d"+i}
+            cx={left + i*xStep}
+            cy={top + ((f - 1) * yStep) + yStep/2}
             r={5}
-            fill={dark ? "#9BE7FF" : "#0B5FFF"}
+            fill={dot}
           />
         ) : null
       )}
     </svg>
   );
-}``
+}
+``
 
 function ChordStrip({ chords, dark }: { chords: string[]; dark: boolean }) {
   if (!chords.length) return null;
