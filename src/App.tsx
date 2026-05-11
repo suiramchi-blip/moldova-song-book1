@@ -1996,6 +1996,10 @@ const orderedChordsForStrip = useMemo(() => {
             </div>
           )}
 
+{viewMode === "both" && (
+  <ChordStrip chords={orderedChordsForStrip} dark={dark} />
+)}
+
           {viewMode === "lyrics"
             ? renderWithSectionStyling(selectedSong.lyrics, {
                 stageMode,
