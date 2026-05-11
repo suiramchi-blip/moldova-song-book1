@@ -1178,7 +1178,315 @@ function renderWithSectionStyling(
     display: opts.mono ? "inline-block" : "block",
     minWidth: opts.mono ? "max-content" : undefined,
   };
+// ---------- Chord diagram library ----------
+// frets array = low E → high E. -1 = mute, 0 = open, N = fret N.
+// baseFret shifts the displayed starting fret (for higher-position chords).
+type ChordShape = {
+  frets: number[];
+  baseFret?: number;     // default 1
+  barreFromTo?: [number, number]; // optional barre indices (0..5)
+};
 
+const CHORD_LIB: Record<string, ChordShape> = {
+  // Majors
+  "C":    { frets: [-1, 3, 2, 0, 1, 0] },
+  "C#":   { frets: [-1, -1, 3, 1, 2, 1] },
+  "D":    { frets: [-1, -1, 0, 2, 3, 2] },
+  "D#":   { frets: [-1, -1, 1, 3, 4, 3] },
+  "E":    { frets: [0, 2, 2, 1, 0, 0] },
+  "F":    { frets: [1, 3, 3, 2, 1, 1], barreFromTo: [0, 5] },
+  "F#":   { frets: [2, 4, 4, 3, 2, 2], barreFromTo: [0, 5] },
+  "G":    { frets: [3, 2, 0, 0, 0, 3] },
+  "G#":   { frets: [4, 6, 6, 5, 4, 4], barreFromTo: [0, 5] },
+  "A":    { frets: [-1, 0, 2, 2, 2, 0] },
+  "A#":   { frets: [-1, 1, 3, 3, 3, 1], barreFromTo: [1, 5] },
+  "B":    { frets: [-1, 2, 4, 4, 4, 2], barreFromTo: [1, 5] },
+
+  // Minors
+  "Cm":   { frets: [-1, 3, 5, 5, 4, 3], barreFromTo: [1, 5] },
+  "C#m":  { frets: [-1, 4, 6, 6, 5, 4], barreFromTo: [1, 5] },
+  "Dm":   { frets: [-1, -1, 0, 2, 3, 1] },
+  "Ebm":  { frets: [-1, -1, 4, 3, 4, 2] },
+  "Em":   { frets: [0, 2, 2, 0, 0, 0] },
+  "Fm":   { frets: [1, 3, 3, 1, 1, 1], barreFromTo: [0, 5] },
+  "F#m":  { frets: [2, 4, 4, 2, 2, 2], barreFromTo: [0, 5] },
+  "Gm":   { frets: [3, 5, 5, 3, 3, 3], barreFromTo: [0, 5] },
+  "G#m":  { frets: [4, 6, 6, 4, 4, 4], barreFromTo: [0, 5] },
+  "Am":   { frets: [-1, 0, 2, 2, 1, 0] },
+  "A#m":  { frets: [-1, 1, 3, 3, 2, 1], barreFromTo: [1, 5] },
+  "Bm":   { frets: [-1, 2, 4, 4, 3, 2], barreFromTo: [1, 5] },
+
+  // 7ths
+  "A7":   { frets: [-1, 0, 2, 0, 2, 0] },
+  "B7":   { frets: [-1, 2, 1, 2, 0, 2] },
+  "C7":   { frets: [-1, 3, 2, 3, 1, 0] },
+  "D7":   { frets: [-1, -1, 0, 2, 1, 2] },
+  "E7":   { frets: [0, 2, 0, 1, 0, 0] },
+  "F7":   { frets: [1, 3, 1, 2, 1, 1], barreFromTo: [0, 5] },
+  "F#7":  { frets: [2, 4, 2, 3, 2, 2], barreFromTo: [0, 5] },
+  "G7":   { frets: [3, 2, 0, 0, 0, 1] },
+  "Am7":  { frets: [-1, 0, 2, 0, 1, 0] },
+  "Bm7":  { frets: [-1, 2, 4, 2, 3, 2] },
+  "Dm7":  { frets: [-1, -1, 0, 2, 1, 1] },
+  "Em7":  { frets: [0, 2, 2, 0, 3, 0] },
+  "D7sus": { frets: [-1, -1, 0, 2, 1, 3] },
+
+  // Sus
+  "Esus": { frets: [0, 2, 2, 2, 0, 0] },
+  "Asus": { frets: [-1, 0, 2, 2, 3, 0] },
+  "Dsus": { frets: [-1, -1, 0, 2, 3, 3] },
+
+  // Slash chords
+  "A/C#": { frets: [-1, 4, 2, 2, 2, 0] },
+  "D/F#": { frets: [2, 0, 0, 2, 3, 2] },
+  "G/B":  { frets: [-1, 2, 0, 0, 0, 3] },
+  "C/E":  { frets: [0, 3, 2, 0, 1, 0] },
+  "Em/B": { frets: [-1, 2, 2, 0, 0, 0] },
+};
+
+// Normalize a chord token to a key in CHORD_LIB.
+// Strips extensions we don't have a unique shape for and falls back to plain triad.
+function lookupChordShape(name: string): { shape: ChordShape | null; canonical: string } {
+  const cleaned = name.replace(/\s/g, "");
+  if (CHORD_LIB[cleaned]) return { shape: CHORD_LIB[cleaned], canonical: cleaned };
+
+  // Try root + quality fallback (e.g. "Cmaj7" -> "C", "Dadd9" -> "D", "Am9" -> "Am")
+  const m = cleaned.match(/^([A-G][#b]?)(m)?/);
+  if (m) {
+    const fallback = (m[1] || "") + (m[2] || "");
+    if (CHORD_LIB[fallback]) return { shape: CHORD_LIB[fallback], canonical: fallback };
+  }
+  return { shape: null, canonical: cleaned };
+}
+
+// ---------- Chord diagram SVG component ----------
+function ChordDiagram({
+  name,
+  shape,
+  dark,
+}: {
+  name: string;
+  shape: ChordShape;
+  dark: boolean;
+}) {
+  const W = 70;
+  const H = 90;
+  const padX = 10;
+  const padY = 18;
+  const gridW = W - padX * 2;
+  const gridH = H - padY - 14;
+  const strings = 6;
+  const fretsShown = 4;
+  const stringSpacing = gridW / (strings - 1);
+  const fretSpacing = gridH / fretsShown;
+
+  const fg = dark ? "#fff" : "#222";
+  const dotFill = "#F5C518"; // yellow like your sketch
+  const muteOpen = dark ? "#fff" : "#222";
+
+  // Compute min fret > 0 to decide if we need a position marker (e.g. "3fr")
+  const playedFrets = shape.frets.filter((f) => f > 0);
+  const minFret = playedFrets.length ? Math.min(...playedFrets) : 1;
+  const positionOffset = minFret > 4 ? minFret - 1 : 0; // shift if high up the neck
+
+  return (
+    <div style={{ textAlign: "center" }}>
+      <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`}>
+        {/* Nut or position label */}
+        {positionOffset === 0 ? (
+          <rect x={padX - 1} y={padY - 4} width={gridW + 2} height={4} fill={fg} />
+        ) : (
+          <text x={padX + gridW + 4} y={padY + 4} fontSize="9" fill={fg}>
+            {minFret}fr
+          </text>
+        )}
+
+        {/* Frets */}
+        {Array.from({ length: fretsShown + 1 }).map((_, i) => (
+          <line
+            key={`f${i}`}
+            x1={padX}
+            y1={padY + i * fretSpacing}
+            x2={padX + gridW}
+            y2={padY + i * fretSpacing}
+            stroke={fg}
+            strokeWidth={0.8}
+          />
+        ))}
+
+        {/* Strings */}
+        {Array.from({ length: strings }).map((_, i) => (
+          <line
+            key={`s${i}`}
+            x1={padX + i * stringSpacing}
+            y1={padY}
+            x2={padX + i * stringSpacing}
+            y2={padY + gridH}
+            stroke={fg}
+            strokeWidth={0.8}
+          />
+        ))}
+
+        {/* Open / mute markers above nut */}
+        {shape.frets.map((f, i) => {
+          const cx = padX + i * stringSpacing;
+          if (f === 0) {
+            return (
+              <circle
+                key={`o${i}`}
+                cx={cx}
+                cy={padY - 9}
+                r={3}
+                fill="none"
+                stroke={muteOpen}
+                strokeWidth={1}
+              />
+            );
+          }
+          if (f === -1) {
+            return (
+              <text
+                key={`x${i}`}
+                x={cx}
+                y={padY - 6}
+                fontSize="9"
+                fontWeight="700"
+                textAnchor="middle"
+                fill={muteOpen}
+              >
+                ×
+              </text>
+            );
+          }
+          return null;
+        })}
+
+        {/* Barre */}
+        {shape.barreFromTo && minFret <= 4 && (
+          (() => {
+            const [a, b] = shape.barreFromTo!;
+            const x1 = padX + a * stringSpacing;
+            const x2 = padX + b * stringSpacing;
+            const y = padY + (minFret - positionOffset - 0.5) * fretSpacing;
+            return (
+              <rect
+                x={x1 - 4}
+                y={y - 4}
+                width={x2 - x1 + 8}
+                height={8}
+                rx={4}
+                fill={dotFill}
+                opacity={0.55}
+              />
+            );
+          })()
+        )}
+
+        {/* Fingered notes */}
+        {shape.frets.map((f, i) => {
+          if (f <= 0) return null;
+          const displayFret = f - positionOffset;
+          if (displayFret > fretsShown) return null;
+          const cx = padX + i * stringSpacing;
+          const cy = padY + (displayFret - 0.5) * fretSpacing;
+          return <circle key={`d${i}`} cx={cx} cy={cy} r={5} fill={dotFill} stroke={fg} strokeWidth={0.6} />;
+        })}
+      </svg>
+      <div style={{ fontWeight: 800, fontSize: 13, color: fg, marginTop: 2 }}>{name}</div>
+    </div>
+  );
+}
+
+// ---------- Harmonic ordering ----------
+// Major scale degrees in semitones, with their priority for display order.
+const MAJOR_DEGREE_PRIORITY: Record<number, number> = {
+  0: 1,   // I
+  5: 2,   // IV
+  7: 3,   // V
+  9: 4,   // vi
+  2: 5,   // ii
+  4: 6,   // iii
+  11: 7,  // vii°
+};
+const MINOR_DEGREE_PRIORITY: Record<number, number> = {
+  0: 1,   // i
+  5: 2,   // iv
+  7: 3,   // v
+  8: 4,   // VI
+  3: 5,   // III
+  10: 6,  // VII
+  2: 7,   // ii°
+};
+
+function chordDegreePriority(chordRoot: string, keyRoot: string, isMinorKey: boolean): number {
+  const a = NOTES_SHARP.indexOf(normNoteToSharp(keyRoot));
+  const b = NOTES_SHARP.indexOf(normNoteToSharp(chordRoot));
+  if (a < 0 || b < 0) return 999;
+  const semis = (b - a + 12) % 12;
+  const table = isMinorKey ? MINOR_DEGREE_PRIORITY : MAJOR_DEGREE_PRIORITY;
+  return table[semis] ?? 100 + semis;
+}
+
+function extractUniqueChords(chordText: string): string[] {
+  const found = new Set<string>();
+  chordText.replace(CHORD_TOKEN_RX, (_full, _lead, letter, accidental, rest) => {
+    const token = `${letter}${accidental || ""}${rest || ""}`;
+    found.add(token);
+    return _full;
+  });
+  return Array.from(found);
+}
+
+function ChordsUsedStrip({
+  chordText,
+  keyLabel,
+  dark,
+}: {
+  chordText: string;
+  keyLabel: string;
+  dark: boolean;
+}) {
+  const { root: keyRoot, minor: isMinorKey } = splitKeyLabel(keyLabel);
+
+  const chords = useMemo(() => {
+    const unique = extractUniqueChords(chordText);
+    return unique
+      .map((name) => {
+        const m = name.match(/^([A-G][#b]?)(m)?/);
+        const root = m ? m[1] : name;
+        const minor = !!(m && m[2]);
+        const { shape, canonical } = lookupChordShape(name);
+        return {
+          name,
+          canonical,
+          shape,
+          priority: chordDegreePriority(root, keyRoot, isMinorKey) + (minor && !isMinorKey ? 0.1 : 0),
+        };
+      })
+      .filter((c) => c.shape) // only show diagrams we have shapes for
+      .sort((a, b) => a.priority - b.priority);
+  }, [chordText, keyRoot, isMinorKey]);
+
+  if (chords.length === 0) return null;
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: 12,
+        justifyContent: "center",
+        padding: "10px 4px 14px",
+        borderBottom: dark ? "1px solid rgba(255,255,255,0.15)" : "1px solid rgba(0,0,0,0.08)",
+        marginBottom: 8,
+      }}
+    >
+      {chords.map((c) => (
+        <ChordDiagram key={c.name} name={c.name} shape={c.shape!} dark={dark} />
+      ))}
+    </div>
+  );
+}
   const labelStyle = (type: SectionType): React.CSSProperties => ({
     display: "inline-block",
     padding: opts.stageMode ? "6px 12px" : "4px 10px",
@@ -1885,19 +2193,24 @@ if (showFlag && !stageMode) {
             </div>
           )}
 
-          {viewMode === "lyrics"
-            ? renderWithSectionStyling(selectedSong.lyrics, {
-                stageMode,
-                dark,
-                autoBoldChorus,
-                mono: false,
-              })
-            : renderWithSectionStyling(bothText, {
-                stageMode,
-                dark,
-                autoBoldChorus,
-                mono: true,
-              })}
+          {viewMode === "lyrics" ? (
+  renderWithSectionStyling(selectedSong.lyrics, {
+    stageMode,
+    dark,
+    autoBoldChorus,
+    mono: false,
+  })
+) : (
+  <>
+    <ChordsUsedStrip chordText={bothText} keyLabel={displayKey} dark={dark} />
+    {renderWithSectionStyling(bothText, {
+      stageMode,
+      dark,
+      autoBoldChorus,
+      mono: true,
+    })}
+  </>
+)}
         </div>
       )}
 
