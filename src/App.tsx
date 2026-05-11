@@ -1309,7 +1309,8 @@ function transposeChordToken(token: string, semis: number, preferFlats: boolean)
 // Matches chords even if they end with # (A/C#, F/A# etc)
 // Keeps separators so spacing is preserved
 const CHORD_TOKEN_RX =
-  /(^|[\s|:])([A-G])(#|b)?(m|maj|min|dim|aug|sus|add)?([0-9]*)?(\/[A-G][#b]?)?(?=\s|$)/g;
+  /(^|\s|:)([A-G])(#|b)?(m|maj|min|dim|aug|sus|add)?([0-9]{0,2})?(\/[A-G][#b]?)?(?=\s|$)/g;
+
 
 
 
