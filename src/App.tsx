@@ -1397,7 +1397,7 @@ function chordsByDegreeOrder(
   used.forEach((c) => {
     const r = chordRoot(stripSlash(c));
     if (!byRoot.has(r)) byRoot.set(r, []);
-    byRoot.get(r)!.push(stripSlash(c));
+    byRoot.get(r)!.push(c);
   });
 
   return order
@@ -1412,21 +1412,45 @@ function chordsByDegreeOrder(
 }
 
 function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
+  // ---- parse chord root + minor ----
   const m = chord.match(/^([A-G])([#b]?)(m)?/);
   const root = m ? m[1] + (m[2] || "") : "C";
   const isMinor = !!(m && m[3]);
 
-  const semisFromE = (noteIndex(root) - noteIndex("E") + 12) % 12;
+  // ---- known open-chord shapes (low E → high E) ----
+  const openChords: Record<string, number[]> = {
+    C:  [0, 3, 2, 0, 1, 0],
+    G:  [3, 2, 0, 0, 0, 3],
+    D:  [0, 0, 0, 2, 3, 2],
+    A:  [0, 0, 2, 2, 2, 0],
+    E:  [0, 2, 2, 1, 0, 0],
+    Am: [0, 0, 2, 2, 1, 0],
+    Em: [0, 2, 2, 0, 0, 0],
+    Dm: [0, 0, 0, 2, 3, 1],
+  };
 
-  const shape = isMinor
-    ? [0, 2, 2, 0, 0, 0]   // Em
-    : [0, 2, 2, 1, 0, 0]; // E
+  const key = root + (isMinor ? "m" : "");
+  const openShape = openChords[key];
+
+  // ---- fallback: E-shape barre ----
+  const fallbackShape = isMinor
+    ? [0, 2, 2, 0, 0, 0]   // Em-shape
+    : [0, 2, 2, 1, 0, 0];  // E-shape
+
+  // ✅ THIS is the line you were missing conceptually
+  const shape = openShape ?? fallbackShape;
+
+  // ---- transpose only if NOT open chord ----
+  const semisFromE =
+    openShape ? 0 : (noteIndex(root) - noteIndex("E") + 12) % 12;
 
   const frets = shape.map(f => (f === 0 ? 0 : f + semisFromE));
-  const barre = semisFromE > 0 ? semisFromE : null;
+  const barre = !openShape && semisFromE > 0;
 
+  // ---- rendering ----
   return (
     <svg width={90} height={120}>
+      {/* chord name */}
       <text
         x="45"
         y="12"
@@ -1438,9 +1462,10 @@ function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
         {chord}
       </text>
 
+      {/* strings */}
       {[0,1,2,3,4,5].map(i => (
         <line
-          key={"s"+i}
+          key={i}
           x1={12 + i * 13}
           y1={20}
           x2={12 + i * 13}
@@ -1449,22 +1474,24 @@ function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
         />
       ))}
 
+      {/* frets */}
       {[0,1,2,3,4].map(i => (
         <line
-          key={"f"+i}
+          key={i}
           x1={12}
           y1={20 + i * 16}
           x2={12 + 5 * 13}
           y2={20 + i * 16}
           stroke={dark ? "#aaa" : "#555"}
-          strokeWidth={i === 0 && !barre ? 3 : 1}
+          strokeWidth={i === 0 && openShape ? 3 : 1}
         />
       ))}
 
+      {/* barre */}
       {barre && (
         <rect
           x={12}
-          y={20 + 16 - 6}
+          y={20 + 16 - 5}
           width={5 * 13}
           height={6}
           rx={3}
@@ -1472,10 +1499,11 @@ function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
         />
       )}
 
+      {/* finger dots */}
       {frets.map((f, i) =>
         f > 0 && f <= 4 ? (
           <circle
-            key={"d"+i}
+            key={i}
             cx={12 + i * 13}
             cy={20 + (f + 0.5) * 16}
             r={5}
@@ -1485,8 +1513,7 @@ function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
       )}
     </svg>
   );
-}
-``
+}``
 
 function ChordStrip({ chords, dark }: { chords: string[]; dark: boolean }) {
   if (!chords.length) return null;
