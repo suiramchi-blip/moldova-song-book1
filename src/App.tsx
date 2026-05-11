@@ -1355,28 +1355,23 @@ function extractChordTokens(text: string) {
   const found: string[] = [];
   const seen = new Set<string>();
 
-  const lines = text.split("\n");
+  const rx =
+    /(^|[^A-Za-z0-9_])([A-G])([#b]?)(?:(maj|min|dim|aug|sus|add|m)?([0-9]{0,2})?)?(?:\/([A-G])([#b]?))?(?=$|[^A-Za-z0-9_])/g;
 
-  for (const line of lines) {
-    // Ignore lyric lines (lowercase Romanian letters)
-    if (/[a-zăâîșț]/.test(line)) continue;
+  let m: RegExpExecArray | null;
+  while ((m = rx.exec(text)) !== null) {
+    const token =
+      `${m[2]}${m[3] || ""}${m[4] || ""}${m[5] || ""}` +
+      (m[6] ? `/${m[6]}${m[7] || ""}` : "");
 
-    const rx = /(^|\s)([A-G])(#|b)?(m|maj|min|dim|aug|sus|add)?([0-9]{0,2})?(\/[A-G][#b]?)?(?=\s|$)/g;
-
-    let m: RegExpExecArray | null;
-    while ((m = rx.exec(line)) !== null) {
-      const token =
-        `${m[2]}${m[3] || ""}${m[4] || ""}${m[5] || ""}` +
-        (m[6] || "");
-
-      if (!token || seen.has(token)) continue;
-      seen.add(token);
-      found.push(token);
-    }
+    if (!token || seen.has(token)) continue;
+    seen.add(token);
+    found.push(token);
   }
 
   return found;
 }
+``
 
 function chordRoot(token: string) {
   const m = token.match(/^([A-G])([#b]?)/);
