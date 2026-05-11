@@ -1388,22 +1388,32 @@ function stripSlash(token: string) {
 
 const MAJOR_DEGREE_OFFSETS = [0, 2, 4, 5, 7, 9, 11];
 
-function degreeRootNote(root: string, degree: number, preferFlats: boolean) {
+function degreeRootNote(
+  root: string,
+  degree: number,
+  preferFlats: boolean,
+  isMinor: boolean
+) {
   const idx = noteIndex(root);
-  const off = MAJOR_DEGREE_OFFSETS[degree - 1];
+  const offsets = isMinor ? MINOR_DEGREE_OFFSETS : MAJOR_DEGREE_OFFSETS;
+  const off = offsets[degree - 1];
   const out = preferFlats
     ? NOTES_FLAT[(idx + off) % 12]
     : NOTES_SHARP[(idx + off) % 12];
   return fixEnharmonic(out);
 }
+``
 
 function chordsByDegreeOrder(
   used: string[],
   displayKey: string,
   preferFlats: boolean
 ) {
-  const { root } = splitKeyLabel(displayKey);
-  const order = [1, 4, 5, 6, 2, 3];
+  const { root, minor } = splitKeyLabel(displayKey);
+
+  const order = minor
+    ? [1, 4, 5, 6, 7, 3]   // ✅ minor keys
+    : [1, 4, 5, 6, 2, 3]; // ✅ major keys
 
   const byRoot = new Map<string, string[]>();
   used.forEach((c) => {
@@ -1414,10 +1424,15 @@ function chordsByDegreeOrder(
 
   return order
     .map((d) => {
-      const r = degreeRootNote(root, d, preferFlats);
+      const r = degreeRootNote(root, d, preferFlats, minor);
       const list = byRoot.get(r) || [];
       if (!list.length) return null;
-      const wantMinor = d === 2 || d === 3 || d === 6;
+
+      // minor expectations
+      const wantMinor = minor
+        ? d === 1 || d === 4
+        : d === 2 || d === 3 || d === 6;
+
       return list.find((c) => chordIsMinor(c) === wantMinor) || list[0];
     })
     .filter(Boolean) as string[];
