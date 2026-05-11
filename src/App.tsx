@@ -1343,6 +1343,101 @@ function transposeKeyLabel(key: string, semis: number, preferFlats: boolean) {
   const newRoot = transposeNote(root, semis, preferFlats);
   return `${newRoot}${minor}`;
 }
+// ---------- Chord extraction + degree ordering + diagrams ----------
+
+function extractChordTokens(text: string) {
+  const found: string[] = [];
+  const seen = new Set<string>();
+  const rx =
+    /(^|[^A-Za-z0-9_])([A-G])(#|b)?([a-zA-Z0-9()+\/#-]*)(?=$|[^A-Za-z0-9_])/g;
+
+  let m: RegExpExecArray | null;
+  while ((m = rx.exec(text)) !== null) {
+    const token = `${m[2]}${m[3] || ""}${m[4] || ""}`.trim();
+    if (!token || seen.has(token)) continue;
+    seen.add(token);
+    found.push(token);
+  }
+  return found;
+}
+
+function chordRoot(token: string) {
+  const m = token.match(/^([A-G])([#b]?)/);
+  return m ? m[1] + (m[2] || "") : "";
+}
+
+function chordIsMinor(token: string) {
+  return /^([A-G])([#b]?)(m)(?!aj)/i.test(token);
+}
+
+function stripSlash(token: string) {
+  return token.split("/")[0];
+}
+
+const MAJOR_DEGREE_OFFSETS = [0, 2, 4, 5, 7, 9, 11];
+
+function degreeRootNote(root: string, degree: number, preferFlats: boolean) {
+  const idx = noteIndex(root);
+  const off = MAJOR_DEGREE_OFFSETS[degree - 1];
+  const out = preferFlats
+    ? NOTES_FLAT[(idx + off) % 12]
+    : NOTES_SHARP[(idx + off) % 12];
+  return fixEnharmonic(out);
+}
+
+function chordsByDegreeOrder(
+  used: string[],
+  displayKey: string,
+  preferFlats: boolean
+) {
+  const { root } = splitKeyLabel(displayKey);
+  const order = [1, 4, 5, 6, 2, 3];
+
+  const byRoot = new Map<string, string[]>();
+  used.forEach((c) => {
+    const r = chordRoot(stripSlash(c));
+    if (!byRoot.has(r)) byRoot.set(r, []);
+    byRoot.get(r)!.push(stripSlash(c));
+  });
+
+  return order
+    .map((d) => {
+      const r = degreeRootNote(root, d, preferFlats);
+      const list = byRoot.get(r) || [];
+      if (!list.length) return null;
+      const wantMinor = d === 2 || d === 3 || d === 6;
+      return list.find((c) => chordIsMinor(c) === wantMinor) || list[0];
+    })
+    .filter(Boolean) as string[];
+}
+
+function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
+  return (
+    <div
+      style={{
+        fontSize: 12,
+        fontWeight: 800,
+        padding: 10,
+        borderRadius: 10,
+        background: dark ? "#111" : "#fff",
+        border: dark ? "1px solid #444" : "1px solid #ccc",
+      }}
+    >
+      {chord}
+    </div>
+  );
+}
+
+function ChordStrip({ chords, dark }: { chords: string[]; dark: boolean }) {
+  if (!chords.length) return null;
+  return (
+    <div style={{ display: "flex", gap: 12, overflowX: "auto" }}>
+      {chords.map((c) => (
+        <ChordDiagram key={c} chord={c} dark={dark} />
+      ))}
+    </div>
+  );
+}
 // ---------- Key selector logic (auto flats/sharps) ----------
 const KEY_OPTIONS = [
   "C",
