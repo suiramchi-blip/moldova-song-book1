@@ -1923,19 +1923,24 @@ if (showFlag && !stageMode) {
             </div>
           )}
 
-          {viewMode === "lyrics"
-            ? renderWithSectionStyling(selectedSong.lyrics, {
-                stageMode,
-                dark,
-                autoBoldChorus,
-                mono: false,
-              })
-            : renderWithSectionStyling(bothText, {
-                stageMode,
-                dark,
-                autoBoldChorus,
-                mono: true,
-              })}
+          {viewMode === "lyrics" ? (
+  renderWithSectionStyling(selectedSong.lyrics, {
+    stageMode,
+    dark,
+    autoBoldChorus,
+    mono: false,
+  })
+) : (
+  <>
+    <ChordsUsedStrip chordText={bothText} keyLabel={displayKey} dark={dark} />
+    {renderWithSectionStyling(bothText, {
+      stageMode,
+      dark,
+      autoBoldChorus,
+      mono: true,
+    })}
+  </>
+)}
         </div>
       )}
 
