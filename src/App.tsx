@@ -1412,21 +1412,81 @@ function chordsByDegreeOrder(
 }
 
 function ChordDiagram({ chord, dark }: { chord: string; dark: boolean }) {
+  const m = chord.match(/^([A-G])([#b]?)(m)?/);
+  const root = m ? m[1] + (m[2] || "") : "C";
+  const isMinor = !!(m && m[3]);
+
+  const semisFromE = (noteIndex(root) - noteIndex("E") + 12) % 12;
+
+  const shape = isMinor
+    ? [0, 2, 2, 0, 0, 0]   // Em
+    : [0, 2, 2, 1, 0, 0]; // E
+
+  const frets = shape.map(f => (f === 0 ? 0 : f + semisFromE));
+  const barre = semisFromE > 0 ? semisFromE : null;
+
   return (
-    <div
-      style={{
-        fontSize: 12,
-        fontWeight: 800,
-        padding: 10,
-        borderRadius: 10,
-        background: dark ? "#111" : "#fff",
-        border: dark ? "1px solid #444" : "1px solid #ccc",
-      }}
-    >
-      {chord}
-    </div>
+    <svg width={90} height={120}>
+      <text
+        x="45"
+        y="12"
+        textAnchor="middle"
+        fontSize="12"
+        fontWeight="800"
+        fill={dark ? "#fff" : "#111"}
+      >
+        {chord}
+      </text>
+
+      {[0,1,2,3,4,5].map(i => (
+        <line
+          key={"s"+i}
+          x1={12 + i * 13}
+          y1={20}
+          x2={12 + i * 13}
+          y2={100}
+          stroke={dark ? "#aaa" : "#555"}
+        />
+      ))}
+
+      {[0,1,2,3,4].map(i => (
+        <line
+          key={"f"+i}
+          x1={12}
+          y1={20 + i * 16}
+          x2={12 + 5 * 13}
+          y2={20 + i * 16}
+          stroke={dark ? "#aaa" : "#555"}
+          strokeWidth={i === 0 && !barre ? 3 : 1}
+        />
+      ))}
+
+      {barre && (
+        <rect
+          x={12}
+          y={20 + 16 - 6}
+          width={5 * 13}
+          height={6}
+          rx={3}
+          fill={dark ? "#9BE7FF" : "#0B5FFF"}
+        />
+      )}
+
+      {frets.map((f, i) =>
+        f > 0 && f <= 4 ? (
+          <circle
+            key={"d"+i}
+            cx={12 + i * 13}
+            cy={20 + (f + 0.5) * 16}
+            r={5}
+            fill={dark ? "#9BE7FF" : "#0B5FFF"}
+          />
+        ) : null
+      )}
+    </svg>
   );
 }
+``
 
 function ChordStrip({ chords, dark }: { chords: string[]; dark: boolean }) {
   if (!chords.length) return null;
