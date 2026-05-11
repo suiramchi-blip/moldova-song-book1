@@ -1441,7 +1441,45 @@ function pillStyle(active: boolean, dark: boolean): React.CSSProperties {
     fontWeight: active ? 800 : 500,
   };
 }
+function pillStyle(active: boolean, dark: boolean): React.CSSProperties {
+  return {
+    // ...
+  };
+}
 
+// ---------- Chord diagram library ----------     ← PASTE STARTS HERE
+type ChordShape = {
+  frets: number[];
+  baseFret?: number;
+  barreFromTo?: [number, number];
+};
+
+const CHORD_LIB: Record<string, ChordShape> = {
+  // ... all the chord shapes
+};
+
+function lookupChordShape(name: string) {
+  // ...
+}
+
+function ChordDiagram({ name, shape, dark }: { ... }) {
+  // ...
+}
+
+const MAJOR_DEGREE_PRIORITY: Record<number, number> = { ... };
+const MINOR_DEGREE_PRIORITY: Record<number, number> = { ... };
+
+function chordDegreePriority(...) { ... }
+function extractUniqueChords(...) { ... }
+
+function ChordsUsedStrip({ chordText, keyLabel, dark }: { ... }) {
+  // ...
+}
+// ---------- end of chord library ----------      ← PASTE ENDS HERE
+
+export default function App() {
+  // ...
+}
 export default function App() {
   const [selectedSong, setSelectedSong] = useState<Song | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("lyrics");
