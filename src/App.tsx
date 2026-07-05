@@ -151,7 +151,8 @@ Tu ești vrednic să-Ți dăm slavă
 2. 
 Căci Tu ai murit la Golgota pe cruce,
 Sfântă iertare ne-ai dat;
-Tu ești vrednic să-Ți dăm slavă,  Să fi adorat   
+Tu ești vrednic să-Ți dăm slavă,
+Să fi adorat   
 `,
     chords: `
 R:   
