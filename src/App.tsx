@@ -132,64 +132,52 @@ Să fii înălţat mereu! :/
   },
   {
     id: 3,
-    title: "Când eram doar un plod fără chip",
-    key: "C",
+    title: "Tu ești vrednic",
+    key: "A",
     youtube: "https://www.youtube.com/watch?v=C1fBEod-8jA",
-    lyrics: `1.
-/: Când eram doar un plod fără chip 
-Ochii Tăi mă vedeau 
-În Cartea Ta de mult erau scrise 
-Zilele ce m-așteptau. : / 
- 
-R: 
-Tu-mi știi viitorul și ești lângă mine 
-De ce să mă îngrijorez? 
-Mi-ai promis că vei sta lângă mine 
-Nicicând n-ai să mă părăsești. 
- 
+    lyrics: `
+R:   
+Tu ești vrednic, Tu ești vrednic
+Slavă, cinste să-Ți dăm!
+Tu ești vrednic de-nchinare
+Și să Te adorăm!
+
+1.
+Căci Tu ai creat Universul și omul,  
+Viața din Tine primim;
+Tu ești vrednic să-Ți dăm slavă
+Și să-Ți mulțumim!
+
 2. 
-/: De voi încerca să m-ascund de Tine 
-Nu voi reuși 
-Oriunde m-aș duce, chiar la marginea mării 
-Mâna Ta mă va călăuzi. :/ 
- 
-3. 
-/: Tu mă cunoști întru totul Doamne 
-Când stau jos sau mă ridic 
-Îmi cunoști toate căile mele 
-Nu pot ascunde nimic. : /`,
+Căci Tu ai murit la Golgota pe cruce,
+Sfântă iertare ne-ai dat;
+Tu ești vrednic să-Ți dăm slavă,  Să fi adorat   
+`,
     chords: `
-1.  
-    C                F 
-/: Când eram doar un plod fără chip 
-G              C 
-Ochii Tăi mă vedeau 
-    C           F 
-În Cartea Ta de mult erau scrise 
-    G           C  
-Zilele ce m-așteptau. : / 
- 
-R:
-       C               F
-Tu-mi știi viitorul și ești lângă mine 
-    G              C
-De ce să mă îngrijorez? 
-C                     F    
-Mi-ai promis că vei sta lângă mine 
-    G                   C 
-Nicicând n-ai să mă părăsești. 
+R:   
+ A                D
+Tu ești vrednic, Tu ești vrednic
+A      f#            E
+Slavă, cinste să-Ți dăm!
+A                D
+Tu ești vrednic de-nchinare
+A        E   A
+Și să Te adorăm!
+
+1.
+     E               A
+Căci Tu ai creat Universul și omul,
+E                  A      
+Viața din Tine primim;
+A        A7      D          B7/D#
+Tu ești vrednic să-Ți dăm slavă
+A         E    A
+Și să-Ți mulțumim!
 
 2. 
-/: De voi încerca să m-ascund de Tine
-Nu voi reuși
-Oriunde m-aș duce, chiar la marginea mării
-Mâna Ta mă va călăuzi. : /
-
-3. 
-/: Tu mă cunoști întru totul Doamne
-Când stau jos sau mă ridic
-Îmi cunoști toate căile mele
-Nu pot ascunde nimic. : /
+Căci Tu ai murit la Golgota pe cruce,
+Sfântă iertare ne-ai dat;
+Tu ești vrednic să-Ți dăm slavă,  Să fi adorat   
 `,
   },
   {
