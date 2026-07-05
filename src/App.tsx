@@ -17,51 +17,73 @@ type Song = {
 const songsData: Song[] = [
   {
     id: 1,
-    title: "Binecuvintează Doamne Tu Moldova",
-    key: "E",
-    youtube: "https://youtu.be/Vy74JQwt8is?si=F1yqCk_X6yxD_Yh7",
-    lyrics: `R:
-Binecuvintează Doamne, Tu Moldova!
-Binecuvintează țara mea;
-Vino cu putere, vino cu trezire,
-Te rugăm, Isus, ai milă de ea.
+    title: "Cânt lui Dumnezeu glorie",
+    key: "G",
+    youtube: "https://www.youtube.com/watch?v=JKoox3ZWKXk&list=RDJKoox3ZWKXk&start_radio=1",
+    lyrics: `
+1. Cânt Domnului că mi-a făcut bine,
+Lui Dumnezeu glorie!
+Mi se bucură inima-n mine,
+Lui Dumnezeu glorie!
 
-1:
-Noi Te chemăm, arată-Ți puterea,
-Dă-ne credință din nou, Te rugăm;
-Ajută-ne să Te cunoaștem,
-Să Te-ascultăm, Doamne, să Te iubim.
-
-2:
-Suntem flămânzi, Doamne, de Tine,
-Pâinea vieții doar Tu ne-o poți da;
-Suntem setoși de neprihănire
-Cu apa vieții inundă țara mea.`,
-    chords: `
 R: 
-  E         A     B            E
-/:Binecuvintează Doamne, Tu Moldova!
-E        A           E B
-Binecuvintează țara mea;
-E          A    B          E
-Vino cu putere, vino cu trezire,
-E           A       B      E
-Te rugăm, Isus, ai milă de ea. :/
-1. 
-E   B                      E
-Noi Te chemăm, arată-Ți puterea,
-A         E         B         E
-Dă-ne credință din nou, Te rugăm;
-E B                E
-Ajută-ne să Te cunoaștem,
-A          E            B      E
-Să Te-ascultăm, Doamne, să Te iubim.
+Cânt lui Dumnezeu glorie
+Și tot pământul să-I cânte
+Lui Dumnezeu glorie!
+El ne-a adus mântuire,
+De-aceea-i cânt pe vecie
+Lui Dumnezeu glorie.
 
-2. 
-Suntem flămânzi, Doamne, de Tine,
-Pâinea vieții doar Tu ne-o poți da.
-Suntem setoși de neprihănire
-Cu apa vieții inundă țara mea.
+
+2.
+Cu natura-ntreagă îi cânt și eu
+Lui Dumnezeu glorie!
+Să-L slăvească munții și apele,
+Lui Dumnezeu glorie!
+
+3.
+Cu cei ce-L iubesc în veci voi cânta
+Lui Dumnezeu glorie!
+Căci în slava veșnică vom intra,
+Lui Dumnezeu glorie.
+`,
+    chords: `
+1.
+         G                C    G
+Cânt Domnului că mi-a făcut bine,
+               Em  D
+Lui Dumnezeu glorie!
+       G         C     G
+Mi se bucură inima-n mine,
+Em             D  G
+Lui Dumnezeu glorie!
+
+R:
+       G
+Cânt lui Dumnezeu glorie
+    C                   G
+Și tot pământul să-I cânte
+Em            A   D
+Lui Dumnezeu glorie!
+    G              G7
+El ne-a adus mântuire,
+     C              G
+De-aceea-i cânt pe vecie
+Em            D   G
+Lui Dumnezeu glorie.
+
+
+2.
+Cu natura-ntreagă îi cânt și eu
+Lui Dumnezeu glorie!
+Să-L slăvească munții și apele,
+Lui Dumnezeu glorie!
+
+3.
+Cu cei ce-L iubesc în veci voi cânta
+Lui Dumnezeu glorie!
+Căci în slava veșnică vom intra,
+Lui Dumnezeu glorie.
 `,
   },
   {
