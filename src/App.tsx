@@ -134,7 +134,7 @@ Să fii înălţat mereu! :/
     id: 3,
     title: "Tu ești vrednic",
     key: "A",
-    youtube: "https://www.youtube.com/watch?v=C1fBEod-8jA",
+    youtube: "",
     lyrics: `
 R:   
 Tu ești vrednic, Tu ești vrednic
