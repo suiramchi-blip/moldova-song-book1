@@ -185,7 +185,7 @@ Tu ești vrednic să-Ți dăm slavă,  Să fi adorat
     id: 4,
     title: "Când eram doar un plod",
     key: "C",
-    youtube: "https://www.youtube.com/watch?v=39qmNUJzFns",
+    youtube: "https://www.youtube.com/watch?v=C1fBEod-8jA&list=RDC1fBEod-8jA&start_radio=1",
     lyrics: `
 1.  
 /: Când eram doar un plod fără chip
