@@ -88,23 +88,47 @@ Lui Dumnezeu glorie.
   },
   {
     id: 2,
-    title: "Iată-mă Tu trimite-mă",
-    key: "E",
+    title: "Doamne, numele-Ţi înalţ",
+    key: "G",
     youtube:
-      "https://www.scoala-duminicala.ro/wp-content/uploads/2017/01/Iata-ma.mp3",
-    lyrics: `Iată-mă, Tu trimite-mă
-Oriunde vrei, folosește-mă
-Pe strada mea sau în depărtări
-Iată-mă, Tu trimite-mă.`,
+      "https://www.youtube.com/watch?v=WSYW6SyqioA&list=RDWSYW6SyqioA&start_radio=1",
+    lyrics: `
+1.
+Doamne, numele-Ţi înalţ,	
+Doamne laudă-Ţi cânt Ţie,
+Fericit sunt că Te am,
+Fericit de-a Ta iertare.
+
+R:
+/: Tu ai venit pe pământ, să ne salvezi,
+Sus pe cruce ai murit, iertaţi să fim,
+De pe cruce în mormânt,
+Din mormânt sus la cer,
+Să fii înălţat mereu! :/                                 
+`,
     chords: `
- E             A
-Iată-mă, Tu trimite-mă
-B                 E
-Oriunde vrei, folosește-mă
-    E                A
-Pe strada mea sau în depărtări
-     E         B    E
-Iată-mă, Tu trimite-mă.`,
+1.
+G          C          D  C
+  Doamne, numele-Ţi înalţ,	
+G         C             D  C
+  Doamne laudă-Ţi cânt Ţie,
+G      C             D  C
+  Fericit sunt că Te am,
+G      C              D   C
+  Fericit de-a Ta iertare.
+
+R:
+   G          C        D       C      G
+  /: Tu ai venit pe pământ, să ne salvezi,
+         C         D       C       G
+Sus pe cruce ai murit, iertaţi să fim,
+        C          D
+De pe cruce în mormânt,
+       B7           e
+Din mormânt sus la cer,
+        a7   D    G
+Să fii înălţat mereu! :/                                 
+`,
   },
   {
     id: 3,
