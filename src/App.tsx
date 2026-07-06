@@ -126,7 +126,7 @@ Sus pe cruce ai murit, iertaţi să fim,
 De pe cruce în mormânt,
        B7           e
 Din mormânt sus la cer,
-        Am7   D    G
+        a7   D    G
 Să fii înălţat mereu! :/                                 
 `,
   },
@@ -158,7 +158,7 @@ Să fi adorat
 R:   
  A                D
 Tu ești vrednic, Tu ești vrednic
-A      Fm#            E
+A      f#            E
 Slavă, cinste să-Ți dăm!
 A                D
 Tu ești vrednic de-nchinare
@@ -279,21 +279,21 @@ Eu știu prea bine și spun mereu:
 1.
         C   F      C
 Ce bucurie am în Isus!
-         Am   D        Gsus G
+         a   D        Gsus G
 O viață nouă El mi-a adus.
           C   F       C
 Pentru vecie m-a mântuit
- Am      Dm     G      C
+ a       d     G      C
 Și moștenire mi-a dăruit.
 
 R:
            C        F      C
 În veci cânta-voi că-s fericit:
-         Am   D       Gsus G
+          a    D       Gsus G
 Isus pe cruce m-a mântuit!
           C     F          C
 În veci aceasta eu voi cânta:
-  Am       Dm     G          C
+   a        d     G          C
 „Te-ador, Isuse, ești viața mea!”
 
 2.
@@ -633,49 +633,66 @@ Iosua, Iosua unu cu nouă.
 },
  {
   id: 11,
-  title: "Doamne, numele-Ţi înalţ",
-  key: "G",
-  youtube: "",
-  lyrics: `1.
-Doamne, numele-Ţi înalţ,
-Doamne laudă-Ţi cânt Ţie,
-Fericit sunt că Te am,
-Fericit de-a Ta iertare.
+  title: "M-a aflat pe căi străine",
+  key: "C",
+  youtube: "https://youtu.be/aFsixV56K3o?si=2xvGz1XAe5f3_MfV ",
+  lyrics: `
+1.
+M-a aflat pe căi străine
+Bunul meu Păstor, Isus.
+Din adânc și întuneric,
+La lumină m-a adus.
 
-R.
-Tu ai venit pe pământ să ne salvezi,
-Sus pe cruce ai murit, iertaţi să fim,
-De pe cruce în mormânt,
-Din mormânt sus la cer,
-Să fii înălţat mereu!
+R:
+Aleluia! Aleluia!
+Voi cânta neîncetat
+Prin Isus am mântuire,
+Fie veșnic lăudat!
 
-Fil 2:6-11.`,
+2
+M-a luat cu drag pe brațe,
+De păcat m-a vindecat,
+Hrană din Cuvântul vieții
+Și putere El mi-a dat!
+
+3
+M-a spălat Mântuitorul,  
+Haină albă am primit,
+M-a sfințit prin al Său sânge,
+O, cât sunt de fericit!
+`,
   chords: `
 1.
-G           C           D C
-   Doamne, numele-Ţi înalţ,
-G          C            D C
-   Doamne laudă-Ţi cânt Ţie,
-G       C              D C
-   Fericit sunt că Te am,
-G       C              D  C
-   Fericit de-a Ta iertare.
+       C      Am     G
+M-a aflat pe căi străine
+       F     G      C
+Bunul meu Păstor, Isus.
+G     C      Am   G
+Din adânc și întuneric,
+      F    G    C
+La lumină m-a adus.
 
-R.
- G          C        D       C       G
-/: Tu ai venit pe pământ, să ne salvezi,
-         C         D       C       G
-Sus pe cruce ai murit, iertaţi să fim,
-        C          D
-De pe cruce în mormânt,
-        B7          E
-Din mormânt sus la cer,
-        Am7 D    G
-Să fii înălţat mereu! :/
+R:
+    Am   G   F C
+Aleluia! Aleluia!
+       Am    G   F
+Voi cânta neîncetat
+       C     Am   G
+Prin Isus am mântuire,
+     F      G  C
+Fie veșnic lăudat!
 
+2
+M-a luat cu drag pe brațe,
+De păcat m-a vindecat,
+Hrană din Cuvântul vieții
+Și putere El mi-a dat!
 
-
-Fil 2:6-11.
+3
+M-a spălat Mântuitorul,  
+Haină albă am primit,
+M-a sfințit prin al Său sânge,
+O, cât sunt de fericit!
 `,
 },
 {
