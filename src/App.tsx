@@ -393,46 +393,89 @@ M-aşteaptă-n cer fericirea.
   },
   {
     id: 7,
-    title: "Isus m-a eliberat",
-    key: "E",
-    youtube: "https://www.youtube.com/watch?v=jkHU3kSbWfM",
+    title: "Ridică-te, oștirea lui Cristos",
+    key: "D",
+    youtube: "https://www.youtube.com/watch?v=4QQ0-0g6v6Y",
     lyrics: `
-1. 
-/: Isus m-a eliberat
-Prin braţul Său puternic,
-Sunt liber, liber,
-Liber, liber. :/
+1.
+Ridică-te, oștirea lui Cristos, 
+La chemarea Lui răspunde!
+Chiar cei mai slabi să spună „Tari suntem”
+Întăriți de-a Lui putere”.
+Iar prin credință și-adevăr, Minciuna celui rău surpând,
+Vom căuta, de dragoste mânați, 
+Din foc pe mulți să-i scoatem.
 
-R. 
-/:Nu mai sunt rob,
-Sunt fiu de Împărat. :/
+2.
+De dragul sufletelor prinse-n laț,
+Noi luptăm cu-amăgitorul,
+Iar sabia ce vindecă răniți,
+Mânuim cu vrednici—e.
+Chiar în vâltoarea luptei prinși,
+Rămânem ferm încredințați:
+Cristos va lua, răsplata jertfei Lui, Neamurile moștenire.
 
-C. 
-Bateţi din palme, cântaţi,
-Sărbătoriţi-L pe El.
+3.
+Vino și vezi iubirea, mila Lui,   
+Când Cristos e frânt pe cruce.
+Apoi dușmanii Lui ce zac zdrobiți
+Călcând din moarte EL învi—e.
+El se ivește din mormânt
+Și-ncepe-al biruinței cânt
+Ce curge-adânc și crește neoprit Până-n ziua veșnici—ei.  
+
+4.
+O, Sfinte Duh, dă har să biruim  
+Orice piedică pe cale.
+Și cu credință, alergând spre țel,
+Să primim cununa slavei.
+În timp ce-un nor de martori vii
+Vestesc a harului isprăvi,
+Tânjim și noi s-ajungem ziua când  Cu Isus vom sta în slavă.
 `,
     chords: `
-1. 
-   E         A
-/: Isus m-a eliberat
-      B              E
-Prin braţul Său puternic,
-      E     A
-Sunt liber, liber,
-B       E
-Liber, liber. :/
+1.
+  G/A  D           G/B    A/C#
+Ridică-te, oștirea lui Cristos, 
+      D/F#   G      A  D
+La chemarea Lui răspunde!
+      G/A       D             G/B   A/C#
+Chiar cei mai slabi să spună „Tari suntem”
+    D/F#       G    A  D
+Întăriți de-a Lui putere”.
+     D/F#    G    D/F#   A       D/F#  G     D      A
+Iar prin credință și-adevăr, Minciuna celui rău surpând,
+    G/A D          G/B    A/C#
+Vom căuta, de dragoste mânați, 
+    D/F#   G            A  D
+Din foc pe mulți să-i scoatem.
 
-R.
-  E            B
-/:Nu mai sunt rob,
-      A         E
-Sunt fiu de Împărat. :/
+2.
+De dragul sufletelor prinse-n laț,
+Noi luptăm cu-amăgitorul,
+Iar sabia ce vindecă răniți,
+Mânuim cu vrednici—e.
+Chiar în vâltoarea luptei prinși,
+Rămânem ferm încredințați:
+Cristos va lua, răsplata jertfei Lui, Neamurile moștenire.
 
-C.
-E          B
-Bateţi din palme, cântaţi,
-         E
-Sărbătoriţi-L pe El.
+3.
+Vino și vezi iubirea, mila Lui,   
+Când Cristos e frânt pe cruce.
+Apoi dușmanii Lui ce zac zdrobiți
+Călcând din moarte EL învi—e.
+El se ivește din mormânt
+Și-ncepe-al biruinței cânt
+Ce curge-adânc și crește neoprit Până-n ziua veșnici—ei.  
+
+4.
+O, Sfinte Duh, dă har să biruim  
+Orice piedică pe cale.
+Și cu credință, alergând spre țel,
+Să primim cununa slavei.
+În timp ce-un nor de martori vii
+Vestesc a harului isprăvi,
+Tânjim și noi s-ajungem ziua când  Cu Isus vom sta în slavă.    
 `,
   },
  {
