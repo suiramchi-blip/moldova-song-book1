@@ -263,7 +263,7 @@ Isus pe cruce m-a mântuit!
 În veci aceasta eu voi cânta:
 „Te-ador, Isuse, ești viața mea!”
 
-2. 
+2.
 Cu bucurie inima mea
 Una cu Domnul să fie-ar vrea.
 El pace sfântă îmi dă din plin,
@@ -311,62 +311,84 @@ Eu știu prea bine și spun mereu:
   },
   {
     id: 6,
-    title: "Leagă-ți inima de cer",
+    title: "Domnul îmi este adăpost",
     key: "D",
-    youtube: "https://www.youtube.com/watch?v=TuiogypPJPE",
-    lyrics: `R.
-/: Leagă-ți inima de Cer,
-Leagă-ți viața ta de Dumnezeu,
-Viitorul tău este în mâna Sa!
-Prin credință-naintezi,
-Deschide ochii inimii să-L vezi,
-Este lângă tine, trebuie doar să crezi! :/
+    youtube: "",
+    lyrics: `
+1.   
+Domnul îmi este adăpost,
+Cetate tare-n vreme rea!
+Deşi e valul furios,
+Îmi e scutită inima.
+                  
+R: 
+Da, eu mă-ncred în Domnul
+Cetatea mea, cetatea mea, Cetatea mea...
+O, Isuse eu Ţie mă-ncredinţez,
+Cetate tare-n vreme rea.
 
-1. 
-Predă-ți viața, în brațul Domnului,
-Să conducă-al tău destin, spre Cer!
-Oferă-I totul, chiar și când nu-nțelegi,
-E suveran și-n viața ta!
 
-C.
-/: Inima, mintea mea,
-Sunt legate de Cer!
-Transformă-mi viața,
-După-al Tău plan perfect! :/`,
+2.
+Scut de arşiţa soarelui,
+Cetate tare-n vreme rea!
+E ca lumina farului,
+Ce străluceşte-n noaptea grea.
+
+
+3.
+Cu-al Tău cuvânt marea alini,
+Cetate tare-n vreme rea!
+Sufletu-mi l-acest scut să vii
+Şi nici un rău nu s-a-ntâmpla.
+
+
+4.
+Tu eşti a mea mântuire,
+Cetate tare-n vreme rea!
+Tu-mi dai credinţă, iertare,
+M-aşteaptă-n cer fericirea.
+`,
     chords: `
-R.
-             D        A
-/: Leagă-ți inima de Cer,
-         Bm           G
-Leagă-ți viața ta de Dumnezeu,
-  D           A           G
-Viitorul tău este în mâna Sa!
-         D       A
-Prin credință-naintezi,
-          Bm      G
-Deschide ochii inimii să-L vezi,
-      D             A               G
-Este lângă tine, trebuie doar să crezi:/
-
 1.
-D                   A          Bm
-Predă-ți viața, în brațul Domnului,
-       G             D         A
-Să conducă-al tău destin, spre Cer!
-Em       D           A             Bm
-Oferă-I totul, chiar și când nu-nțelegi,
-       C            G A
-E suveran și-n viața ta!
+    D
+Domnul îmi este adăpost,
+                     A
+Cetate tare-n vreme rea!
+  D             Bm
+Deşi e valul furios,
+                 D
+Îmi e scutită inima.
 
-C.
-   D  A    Bm        G
-/: Inima, mintea mea,
-       D A      G
-Sunt legate de Cer!
-      D  A     Bm G
-Transformă-mi viața,
-         D   A       G
-După-al Tău plan perfect! :/
+R:
+    G                   
+Da, eu mă-ncred în Domnul
+   D            A            D     D7
+Cetatea mea, cetatea mea, Cetatea mea...
+   G                 D     Bm
+O, Isuse eu Ţie mă-ncredinţez,
+   D            A    D
+Cetate tare-n vreme rea.
+
+
+2.
+Scut de arşiţa soarelui,
+Cetate tare-n vreme rea!
+E ca lumina farului,
+Ce străluceşte-n noaptea grea.
+
+
+3.
+Cu-al Tău cuvânt marea alini,
+Cetate tare-n vreme rea!
+Sufletu-mi l-acest scut să vii
+Şi nici un rău nu s-a-ntâmpla.
+
+
+4.
+Tu eşti a mea mântuire,
+Cetate tare-n vreme rea!
+Tu-mi dai credinţă, iertare,
+M-aşteaptă-n cer fericirea.
 `,
   },
   {
