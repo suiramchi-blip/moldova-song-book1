@@ -480,66 +480,83 @@ Tânjim și noi s-ajungem ziua când  Cu Isus vom sta în slavă.
   },
  {
     id: 8,
-    title: "Acolo este țara ",
-    key: "E",
-    youtube: "https://www.youtube.com/watch?v=JjTIcKGzGjU",
+    title: "Valoarea mea nu stă-n averi",
+    key: "C",
+    youtube: "https://youtu.be/IrnfxwkKu_E?si=sCenh4Tz8lNtBBHt",
     lyrics: `
-1. 
-Calatoresc prin lume, pe calea catre cer eu merg, 
-Calatoresc in viata, si inspre tinta vreau s-alerg. 
-Nu poate sa ma tina, nimic pe acest pamant
-In fiecare zi, calatoresc spre locul sfant. 
-
-R.
-/:Acolo este tara:/ Unde vreau sa fiu si eu (si eu!)
-/:In raiul minunat:/ Sa fiu cu Dumnezeu
-/:In patria dorita:/ Acolo vreau sa fiu si eu (si eu!)
-/:In cerul stralucit:/ Sa fiu cu Dumnezeu
-
-2. 
-Pe drumul catre cer, Multe am de strabatut,
-Dealuri, munti si vai, Dar nu ma las nicicand batut. 
-Biblia imi spune: Atunci cand voi ajune sus, 
-La capat de drum, Ma va astepa Isus. 
-
-3.
-Anii au trecut, Si doar putini au mai ramas, 
-Dar de calea stramta, Eu niciodata nu ma las. 
-Ea nu e usoara, Placeri din lume pe as nu-s, 
-Dar e minunata, Fiindca duce la Isus.
-`,
-    chords: `
-1. 
-   E                                       F#m
-Calatoresc prin lume, pe calea catre cer eu merg, 
-  B                                           E
-Calatoresc in viata, si inspre tinta vreau s-alerg. 
-    E                                 F#m
-Nu poate sa ma tina, nimic pe acest pamant
-    B                                  E
-In fiecare zi, calatoresc spre locul sfant. 
-
-R.
-   E                                   F#m
-/:Acolo este tara:/ Unde vreau sa fiu si eu (si eu!)
-         B                           E
-/:In raiul minunat:/ Sa fiu cu Dumnezeu
-      E                                   F#m
-/:In patria dorita:/ Acolo vreau sa fiu si eu (si eu!)
-      B                                E
-/:In cerul stralucit:/ Sa fiu cu Dumnezeu
+1.
+Valoarea mea nu stă-n averi,
+Sau ale trupului puteri,
+Ci-n ale dragostei dureri, la Calvar.
 
 2.
-Pe drumul catre cer, Multe am de strabatut,
-Dealuri, munti si vai, Dar nu ma las nicicand batut. 
-Biblia imi spune: Atunci cand voi ajune sus, 
-La capat de drum, Ma va astepa Isus. 
+Valoare n-am că-s înzestrat,
+Nici că-s înfrânt sau înălţat,
+Ci-n sângele cel sfânt, vărsat, la Calvar.
+
+R:
+Doar Cristos mi-e bucurie,
+Apă vie, și comoara mea!
+Mă încred în El, nu-n altul,
+Căci numai El îmi umple inima!
 
 3.
-Anii au trecut, Si doar putini au mai ramas, 
-Dar de calea stramta, Eu niciodata nu ma las. 
-Ea nu e usoara, Placeri din lume pe as nu-s, 
-Dar e minunata, Fiindca duce la Isus. 
+Precum pier florile din câmp,
+Se duc și ani, și faimă-n vânt,
+Dar veșnicia stă chemând, la Calvar.
+
+4.
+Cum să mă laud cu averi,
+Cu cele omenești ce pier?
+Mă laud că-L cunosc pe El, la Calvar.
+
+REFREN  
+
+5.
+Două minuni declar voios:
+Nevrednic sunt, dar valoros,
+Iar prețu-mi l-a plătit Cristos, la Calvar!
+`,
+    chords: `
+1.
+   C            F       C
+Valoarea mea nu stă-n averi,
+     C        F     C
+Sau ale trupului puteri,
+      C        G/B   Am    F      C
+Ci-n ale dragostei dureri, la Calvar.
+
+2.
+Valoare n-am că-s înzestrat,
+Nici că-s înfrânt sau înălţat,
+Ci-n sângele cel sfânt, vărsat, la Calvar.
+
+R:
+ F                 G   Am
+Doar Cristos mi-e bucurie,
+     F         C     G
+Apă vie, și comoara mea!
+F            G         Am
+Mă încred în El, nu-n altul,
+          C/E     F     G  C
+Căci numai El îmi umple inima!
+
+3.
+Precum pier florile din câmp,
+Se duc și ani, și faimă-n vânt,
+Dar veșnicia stă chemând, la Calvar.
+
+4.
+Cum să mă laud cu averi,
+Cu cele omenești ce pier?
+Mă laud că-L cunosc pe El, la Calvar.
+
+REFREN  
+
+5.
+Două minuni declar voios:
+Nevrednic sunt, dar valoros,
+Iar prețu-mi l-a plătit Cristos, la Calvar! 
 `,
   },
   {
