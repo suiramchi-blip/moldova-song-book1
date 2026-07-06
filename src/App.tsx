@@ -605,44 +605,30 @@ Ps 46
 },
   {
   id: 10,
-  title: "Isus e Rege",
-  key: "C",
-  youtube: "",
+  title: "Oare nu ți-am poruncit",
+  key: "Dm",
+  youtube: "https://www.youtube.com/watch?v=SEzRyLV9YYE",
   lyrics: `
-R.
-Isus e Rege pe tot pământul,
-Azi mă închin în faţa Lui:
-În faţa Lui.
-
-1.
-Toată viaţa Îi voi cânta,
-Căci vreau s-ajung în ţara Sa.
-
-2.
-Laud pe Domnul şi-L preamăresc,
-Laud pe Domnul, căci Îl iubesc.
-
-Fil 2:9-10`,
+/: Oare nu ți-am poruncit curaj, întăreștete :/
+Nu te înspăimânta și nu te-ngrozi
+Căci Domnul Dumnezeu 
+E cu tine, oriunde, oriunde, 
+Oriunde vei merge    
+Iosua, Iosua unu cu nouă.
+`,
   chords: `
-R.
-  C      Am   F        G
-/:Isus e Rege pe tot pământul,
-C         Am  F        G
-Azi mă închin în faţa Lui:/
-        C Am F G
-În faţa Lui.
-
-1.
-C       Am   F        G
-Toată viaţa Îi voi cânta,
- C             Am  F       G
-Căci vreau s-ajung în ţara Sa.
-
-2. 
-Laud pe Domnul şi-L preamăresc,
-Laud pe Domnul, căci Îl iubesc.
-
-Fil 2:9-10
+    Dm                      A        Dm
+/: Oare nu ți-am poruncit curaj, întăreștete :/
+Gm                       Dm
+Nu te înspăimânta și nu te-ngrozi
+            Gm
+Căci Domnul Dumnezeu 
+      Dm     Gm       Dm
+E cu tine, oriunde, oriunde, 
+   A          Dm
+Oriunde vei merge    
+Dm     Gm    Dm     A  Dm
+Iosua, Iosua unu cu nouă.
 `,
 },
  {
