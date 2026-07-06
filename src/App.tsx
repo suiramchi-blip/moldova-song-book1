@@ -263,12 +263,14 @@ Isus pe cruce m-a mântuit!
 În veci aceasta eu voi cânta:
 „Te-ador, Isuse, ești viața mea!”
 
-2. Cu bucurie inima mea
+2. 
+Cu bucurie inima mea
 Una cu Domnul să fie-ar vrea.
 El pace sfântă îmi dă din plin,
 Înviorat sunt prin har divin.
 
-3. Ce fericit sunt și liniștit,
+3.
+Ce fericit sunt și liniștit,
 Când e cu mine sunt ocrotit.
 Eu știu prea bine și spun mereu:
 „Domnul e viața și e al meu!”
@@ -294,12 +296,14 @@ Isus pe cruce m-a mântuit!
    a        d     G          C
 „Te-ador, Isuse, ești viața mea!”
 
-2. Cu bucurie inima mea
+2.
+Cu bucurie inima mea
 Una cu Domnul să fie-ar vrea.
 El pace sfântă îmi dă din plin,
 Înviorat sunt prin har divin.
 
-3. Ce fericit sunt și liniștit,
+3.
+Ce fericit sunt și liniștit,
 Când e cu mine sunt ocrotit.
 Eu știu prea bine și spun mereu:
 „Domnul e viața și e al meu!”
