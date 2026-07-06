@@ -126,7 +126,7 @@ Sus pe cruce ai murit, iertaţi să fim,
 De pe cruce în mormânt,
        B7           e
 Din mormânt sus la cer,
-        a7   D    G
+        Am7   D    G
 Să fii înălţat mereu! :/                                 
 `,
   },
@@ -158,7 +158,7 @@ Să fi adorat
 R:   
  A                D
 Tu ești vrednic, Tu ești vrednic
-A      f#            E
+A      Fm#            E
 Slavă, cinste să-Ți dăm!
 A                D
 Tu ești vrednic de-nchinare
@@ -279,21 +279,21 @@ Eu știu prea bine și spun mereu:
 1.
         C   F      C
 Ce bucurie am în Isus!
-         a   D        Gsus G
+         Am   D        Gsus G
 O viață nouă El mi-a adus.
           C   F       C
 Pentru vecie m-a mântuit
- a       d     G      C
+ Am      Dm     G      C
 Și moștenire mi-a dăruit.
 
 R:
            C        F      C
 În veci cânta-voi că-s fericit:
-          a    D       Gsus G
+         Am   D       Gsus G
 Isus pe cruce m-a mântuit!
           C     F          C
 În veci aceasta eu voi cânta:
-   a        d     G          C
+  Am       Dm     G          C
 „Te-ador, Isuse, ești viața mea!”
 
 2.
