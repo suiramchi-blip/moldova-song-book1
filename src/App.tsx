@@ -249,7 +249,7 @@ Nu pot ascunde nimic. : /
     id: 5,
     title: "Ce bucurie am în Isus",
     key: "C",
-    youtube: "",
+    youtube: "https://youtu.be/MENlE86ora4?si=mQeW3YrZv6-PjUff",
     lyrics: `
 1.
 Ce bucurie am în Isus!
