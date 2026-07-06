@@ -561,65 +561,46 @@ Iar prețu-mi l-a plătit Cristos, la Calvar!
   },
   {
   id: 9,
-  title: "Sunt un pribeag",
-  key: "Bm",
-  youtube: "https://www.youtube.com/watch?v=hsZhryhQTac&list=RDhsZhryhQTac&start_radio=1",
+  title: "Dumnezeu este adăpostul",
+  key: "G",
+  youtube: "https://youtu.be/R4ozztUP1sg?si=x7Uiwu29Zxy3zprC",
   lyrics: `
 1.
-Sunt un pribeag fără de ţară,
-Rătăcitor prin lung pustiu.
-Dar am în ceruri o comoară
-Şi ţara mea e-n veşnicii.
+Dumnezeu este adăpostul,   
+Și sprijinul nostru,
+Un ajutor care nu lipseşte,
+Niciodata în nevoi. 
 
-R.
-Mă-ndrept spre cer să-L văd pe Domnul
-Să nu mai fiu un pelegrin!
-Căci după ce-am să trec Iordanul
-Se va sfârşi al meu suspin!
+R:
+De aceea, nu ne temem,
+Chiar de s-ar clătina pământul.
+Și s-ar zgudui munții
+În inima mărilor.
 
-2.
-Tu vezi ce grea mi-e înaintarea
-Mă lupt să biruiesc mereu
-Un dor nestins mă cheamă acasă
-E dorul după Dumnezeu.
-
-3.
-Voi lepăda a mea povară
-Eliberat sub crucea grea
-Nădejdea mea nu o să moară
-Eu voi intra-n odihna Sa!`,
+Ps 46
+`,
   chords: `
 1.
-           Bm
-Sunt un pribeag fără de ţară,
-      Em       F#      Bm
-Rătăcitor prin lung pustiu.
-          Bm
-Dar am în ceruri o comoară
-         Em   F#    Bm
-Şi ţara mea e-n veşnicii.
+      G             Am7
+Dumnezeu este adăpostul,   
+     D        G
+Și sprijinul nostru,
+       G              Am7
+Un ajutor care nu lipseşte,
+D               G
+Niciodata în nevoi. 
 
-R. 
-                G       A       D
-Mă-ndrept spre cer să-L văd pe Domnul
-           G  A        D F#7
-Să nu mai fiu un pelegrin!
-           F#                Bm
-Căci după ce-am  să trec Iordanul
-          Em   F#       Bm
-Se va sfârşi  al meu suspin!
+R:
+     C           G
+De aceea, nu ne temem,
+       D                 G
+Chiar de s-ar clătina pământul.
+    C       G
+Și s-ar zgudui munții
+   D          G
+În inima mărilor.
 
-2.
-Tu vezi ce grea mi-e ‘naintarea
-Mă lupt să biruiesc mereu
-Un dor nestins mă cheamă acasă
-E dorul după Dumnezeu.
-
-3.
-Voi lepăda a mea povară
-Eliberat sub crucea grea
-Nădejdea mea nu o să moară
-Eu voi intra-n odihna Sa!
+Ps 46
 `,
 },
   {
