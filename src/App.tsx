@@ -247,75 +247,62 @@ Nu pot ascunde nimic. : /
   },
   {
     id: 5,
-    title: "Tu ești credincios",
-    key: "D",
-    youtube: "https://www.youtube.com/watch?v=NlPpPw_o1KA",
-    lyrics: `1.    
-Tu ești credincios, tot ce faci e desăvârșit
-Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!
-Tu ești credincios, m-ai convins cu iubirea Ta
-Tu ești Doamne minunea mea, o, Tată, Tu ești credincios!
+    title: "Ce bucurie am în Isus",
+    key: "C",
+    youtube: "",
+    lyrics: `
+1.
+Ce bucurie am în Isus!
+O viață nouă El mi-a adus.
+Pentru vecie m-a mântuit
+Și moștenire mi-a dăruit.
 
-R.
-Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
-Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
-Îmi ridic ochii către Tine, recunosc bunătatea Ta
-Eu sunt lucraarea Ta!
+R:
+În veci cânta-voi că-s fericit:
+Isus pe cruce m-a mântuit!
+În veci aceasta eu voi cânta:
+„Te-ador, Isuse, ești viața mea!”
 
-2. 
-Tu ești credincios, m-ai ales după planul Tău
-Îmi vorbești azi prin Duhul Tău, o, Tată, Tu ești credincios!
-Tu ești credincios, Tu ești Tatăl luminilor
-Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
+2. Cu bucurie inima mea
+Una cu Domnul să fie-ar vrea.
+El pace sfântă îmi dă din plin,
+Înviorat sunt prin har divin.
 
-B.
-Eu sunt lucraarea Lui, lucraarea Tatălui!
-
-R Final. 
-/: Tot ce ai început în mine, Tu vei duce la bun sfârșit
-Tot ce ai început în mine, Tu vei duce la bun sfârșit!
-Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
-Eu sunt lucraarea ta, Tu bucuria mea! : /`,
+3. Ce fericit sunt și liniștit,
+Când e cu mine sunt ocrotit.
+Eu știu prea bine și spun mereu:
+„Domnul e viața și e al meu!”
+`,
     chords: `
- 1.     
-               D            G             D
-Tu ești credincios, tot ce faci e desăvârșit
-    G                   A          G                  D G
-Ce începi duci la bun sfârșit, o, Tată, Tu ești credincios!
-               D             G              D
-Tu ești credincios, m-ai convins cu iubirea Ta
-        G               A       G                   D G
-Tu ești Doamne minunea mea, o, Tată, Tu ești credincios!
+1.
+        C   F      C
+Ce bucurie am în Isus!
+         a   D        Gsus G
+O viață nouă El mi-a adus.
+          C   F       C
+Pentru vecie m-a mântuit
+ a       d     G      C
+Și moștenire mi-a dăruit.
 
-R.
-       G               A         D       A/C#      Bm
-Îmi ridic mâinile spre Tine, în Tine-i nădejdea mea
-       G                A          D         Em   D/F#
-Tu lucrezi Tată pentru mine, Tu nu mă vei abandona
-       G               A        D       A/C#  Bm  G
-Îmi ridic ochii către Tine, recunosc bunătatea Ta
-A                D
-Eu sunt lucraarea Ta!
+R:
+           C        F      C
+În veci cânta-voi că-s fericit:
+          a    D       Gsus G
+Isus pe cruce m-a mântuit!
+          C     F          C
+În veci aceasta eu voi cânta:
+   a        d     G          C
+„Te-ador, Isuse, ești viața mea!”
 
-2. 
-Tu ești credincios, m-ai ales după planul Tău
-Îmi vorbești azi prin Duhul Tău, o, Tată, Tu ești credincios!
-Tu ești credincios, Tu ești Tatăl luminilor
-Vreau s-arăt asta tuturor, o, Tată, Tu ești credincios!
+2. Cu bucurie inima mea
+Una cu Domnul să fie-ar vrea.
+El pace sfântă îmi dă din plin,
+Înviorat sunt prin har divin.
 
-B.
-D                 G                 D
-Eu sunt lucraarea Lui, lucraarea Tatălui!
-
-R Final.
-    G             A                  D      A/C#     Bm
-/: Tot ce ai început în mine, Tu vei duce la bun sfârșit
-G              A                   D      A/C#    Bm
-Tot ce ai început în mine, Tu vei duce la bun sfârșit!
-G               A                 D         A/C#   Bm
-Frică eu nu mai am în mine, dragostea Ta m-a izbăvit
-                 G   A           A
-Eu sunt lucraarea ta, Tu bucuria mea! : /
+3. Ce fericit sunt și liniștit,
+Când e cu mine sunt ocrotit.
+Eu știu prea bine și spun mereu:
+„Domnul e viața și e al meu!”
 `,
   },
   {
