@@ -313,7 +313,7 @@ Eu știu prea bine și spun mereu:
     id: 6,
     title: "Domnul îmi este adăpost",
     key: "D",
-    youtube: "",
+    youtube: "https://youtu.be/8yQsTWsXHEw?si=XiGPyaIT-OmI2xKU",
     lyrics: `
 1.   
 Domnul îmi este adăpost,
