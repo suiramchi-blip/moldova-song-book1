@@ -843,60 +843,59 @@ Să le-mplineşti prin sfântul Tău Cuvânt!
 },
 {
   id: 16,
-  title: "Cel ce stă sub ocrotirea",
-  key: "A",
-  youtube: "",
+  title: "Sprijin mi-e Cristos",
+  key: "G",
+  youtube: "https://youtu.be/cL0L8DuG4z8?si=o8DTpO1DjApThZDU",
   lyrics: `1.
-Cel ce stă sub ocrotirea Celui Preaînalt,
-La umbra Celui Atotputernic,
-Face din El loc de scăpare, căci Domnul sfânt:
-E Dumnezeul meu în care mă-ncred!
+Când credința-mi s-ar clinti, sprijin mi-e Cristos,
+Când cel rău ar izbuti, sprijin mi-e Cristos.
+Cum să pot înainta când e-ntunecos?
+Când mi-e rece dragostea, sprijin mi-e Cristos.
 
-R.
-O mie să cadă alături de tine,
-Şi zece mii la dreapta ta de vor cădea,
-Cu ochii priveşte să vezi răsplătirea acelui rău,
-Doar harul Său te va salva!
+R:
+Sprijin mi-e Cristos, sprijin mi-e Cristos,
+Sunt iubit în chip nespus, sprijin mi-e Isus.
 
 2.
-Să nu te temi de groaza din noaptea cea grea,
-Nici de săgeata ce zboară ziua,
-De ciuma rea din întuneric, să nu te temi,
-Căci Domnul îţi va păzi cărarea.
+Domnul se desfată-n sfinți, sprijin mi-e Cristos,
+Înaintea lui sunt scumpi, sprijin mi-e Cristos.
+Sufletu-mi va fi păzit, va-mplini ce-a spus,
+Cu preț mare m-a plătit, sprijin mi-e Cristos.
 
-Ps 91`,
+3.
+Pentru mine a murit, sprijin mi-e Cristos,
+El dreptatea a-mplinit, sprijin mi-e Cristos,
+El e învierea mea, sprijin mi-e Cristos,
+Ce-am crezut voi și vedea la venirea Sa!  
+`,
   chords: `
 1.
-        A E        Fm#               A
-Cel ce stă sub ocrotirea Celui Preaînalt,
-          Bm   A     G     E
-La umbra Celui Atotputernic,
-          A E          D                  A
-Face din El loc de scăpare, căci Domnul sfânt
-          Fm#          D E       A
-/: E Dumnezeul meu în care mă-ncred! :/
+  G               G/B     C            D        G
+Când credința-mi s-ar clinti, sprijin mi-e Cristos,
+  G             G/B  C            D       G
+Când cel rău ar izbuti, sprijin mi-e Cristos.
+ Em    D/F#  G   C          B   Em
+Cum să pot înainta când e-ntunecos?
+  Em      D/F#  G     C             D       G
+Când mi-e rece dragostea, sprijin mi-e Cristos.
 
-
-R.
-   A           Fm#
-O mie să cadă alături de tine
-         D             B7         Esus E
-Şi zece mii la dreapta ta de vor cădea,
-    A                Fm#                      D
-Cu ochii priveşte să vezi răsplătirea acelui rău,
-            E           A
-Doar harul Său te va salva!
-
+R:
+  C       D      Em           D/F#      G
+Sprijin mi-e Cristos, sprijin mi-e Cristos,
+ G                     C             D    G
+Sunt iubit în chip nespus, sprijin mi-e Isus.
 
 2.
-Să nu te temi de groaza din noaptea cea grea,
-Nici de săgeata ce zboară ziua,
-De ciuma rea din întuneric, să nu te temi,
-/:Căci Domnu-ţi va păzi cărarea de ea! :/
+Domnul se desfată-n sfinți, sprijin mi-e Cristos,
+Înaintea lui sunt scumpi, sprijin mi-e Cristos.
+Sufletu-mi va fi păzit, va-mplini ce-a spus,
+Cu preț mare m-a plătit, sprijin mi-e Cristos.
 
-
-Ps 91
-
+3.
+Pentru mine a murit, sprijin mi-e Cristos,
+El dreptatea a-mplinit, sprijin mi-e Cristos,
+El e învierea mea, sprijin mi-e Cristos,
+Ce-am crezut voi și vedea la venirea Sa!  
 `,
 },
 {
