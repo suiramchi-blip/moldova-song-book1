@@ -779,78 +779,66 @@ Asta-i fericirea mea: Să cânt slava Ta!
 },
 {
   id: 14,
-  title: "Domnul ne-a creat după chipul Său",
-  key: "E",
-  youtube: "",
+  title: "Aş vrea, Isuse scump",
+  key: "D",
+  youtube: "https://youtu.be/kV8kytlH7NY?si=mkyYFQYJdIyf4PhX",
   lyrics: `1.
-Domnul ne-a creat după chipul Său,
-El ne-a învăţat să urâm ce-i rău,
-Să nu ne mai întoarcem pe unde am fost,
-Că n-are nici un rost.
-Nu mai vrem în lume să rătăcim,
-Vrem de azi viaţa cu El s-o trăim,
-Tot ce-avem să punem în mâna Lui,
-În mâna Domnului.
+Aş vrea, Isuse scump, să fiu ca Tine
+În pribegia mea pe-acest pământ;
+De-atâtea ori când grea ispită vine,
+S-o biruiesc prin sfântul Tău Cuvânt.
 
-R.
-Căci dacă trăim,
-Pentru Domnul trăim,
-Şi dacă murim,
-Pentru Domnul murim.
-Fie că trăim, fie că murim,
-Noi suntem ai Lui.
+R: 
+Aş vrea, Isuse scump, a Ta comoară
+De mângâieri, pe veci să-mi dăruieşti;
+Aş vrea în mine tot ce-i vechi să moară,
+Iar Tu să faci din mine ce doreşti.
 
 2.
-Nu putem să ştim dacă mâine în zori
-Va fi o zi cu soare ori o zi cu nori
-Ştim însă ca Domnul va fi cu noi
-La bine şi-n nevoi.
-Hotărâţi-nainte vom alerga
-Spre ceruri zi de zi ne vom înălţa
-Nici o clipă nu vom privi-napoi
-Căci Domnul e cu noi!
+Şi-aş vrea, Isuse scump, a Ta viaţă
+Să se-oglindească pururi în a mea,
+Şi să dispară vălul greu de ceaţă
+Ce-mpiedică să-Ți văd mărirea Ta.
+
+3.
+Şi câte n-aş mai vrea, o, scump Isuse,
+În pribegia mea pe-acest pământ!
+Dorinţele ce îmi rămân nespuse
+Să le-mplineşti prin sfântul Tău Cuvânt! 
+
 `,
   chords: `
 1.
-             Fm#               B
-Domnul ne-a creat după chipul Său
-             E               Cm#
-El ne-a învăţat să urâm ce e rău
-               Fm#                 B
-Să nu ne mai întoarcem pe unde am fost
-                  E   B
-Că n-are nici un rost.
+           D     G               D Bm
+Aş vrea, Isuse scump, să fiu ca Tine
+         A                  D
+În pribegia mea pe-acest pământ;
+           D         G          D Bm
+De-atâtea ori când grea ispită vine,
+         A                        D  D7
+S-o biruiesc prin sfântul Tău Cuvânt.
 
-Nu mai vrem în lume să rătăcim
-Vrem de azi viaţa cu El s-o trăim
-Tot ce-avem să punem în mâna Lui
-În mâna Domnului.
-
-R.
-               E
-/:Căci dacă trăim,
-                 B
-Pentru Domnul trăim
-          Cm#
-Şi dacă murim,
-                 A
-Pentru Domnul murim.
-         E             B
-Fie că trăim, fie că murim
-               E  B
-Noi suntem ai Lui. :/
+R: 
+           G                   D
+Aş vrea, Isuse scump, a Ta comoară
+         G        Em             A
+De mângâieri, pe veci să-mi dăruieşti;
+             D   G                 D Bm
+Aş vrea în mine tot ce-i vechi să moară,
+           A                   D
+Iar Tu să faci din mine ce doreşti.
 
 2.
-Nu putem să ştim dacă mâine în zori
-Va fi o zi cu soare ori o zi cu nori
-Ştim însă ca Domnul va fi cu noi
-La bine şi-n nevoi.
-Hotărâţi-nainte vom alerga
-Spre ceruri zi de zi ne vom înălţa
-Nici o clipă nu vom privi-napoi
-Căci Domnul e cu noi!
+Şi-aş vrea, Isuse scump, a Ta viaţă
+Să se-oglindească pururi în a mea,
+Şi să dispară vălul greu de ceaţă
+Ce-mpiedică să-Ți văd mărirea Ta.
 
-Rom 14:8
+3.
+Şi câte n-aş mai vrea, o, scump Isuse,
+În pribegia mea pe-acest pământ!
+Dorinţele ce îmi rămân nespuse
+Să le-mplineşti prin sfântul Tău Cuvânt! 
 `,
 },
 {
