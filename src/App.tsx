@@ -1106,7 +1106,6 @@ Iar cât in ceruri El va sta,
 Pârâșul meu va fi învins,
 //: Pârâșul meu va fi învins ://
 
-
 2.
 Satan când mă va acuza
 Spunându-mi că sunt vinovat,
@@ -1152,7 +1151,6 @@ Pârâșul meu va fi învins,
       D/F#   G        A    D
 //: Pârâșul meu va fi învins ://
 
-
 2.
 Satan când mă va acuza
 Spunându-mi că sunt vinovat,
@@ -1174,6 +1172,82 @@ Voi fi cu El în veșnicii,
 Cu Domnul meu glorificat! :/ x2
 
 Cu Domnul meu glorificat!
+`,
+},
+{
+  id: 24,
+  title: "Vine-o zi",
+  key: "A",
+  youtube: "https://youtu.be/DPd49tI0n9s?si=OGxlTJQzXITJlQhi",
+  lyrics: `1.
+Într-o zi va fi totul nou, Isus. 
+Rănile ce dor vei lega
+Toate trec doar Tu-n veci rămâi, 
+Domnul meu.
+
+2.
+Totul voi pricepe-ntr-o zi, Isus. 
+Orice îndoieli vor muri;
+Toată teama o voi lăsa 
+în urma mea...
+
+R: 
+Când în cer vom ajunge
+O, ce zi glorioasă-atunci va fi
+Când vom fi cu Isus
+Fața Lui o vom privi.
+
+3.
+Într-o zi Îl vom întâlni pe Isus  
+Copleșiți de-al Sau mare har
+Și într-o clipă vom fi schimbați/x3
+O, ce zi!
+
+4.
+Vine o zi când liberi vom fi, Isus
+Când lupta noastră se va sfârși
+Gloria Ta atunci vom vedea.
+O, ce zi!
+
+`,
+  chords: `
+1.
+A            Bm      F#m
+Într-o zi va fi totul nou, Isus. 
+Bm         A        E
+Rănile ce dor vei lega
+D                E         F#m
+Toate trec doar Tu-n veci rămâi, 
+Bm  A   E
+Domnul meu.
+
+2.
+Totul voi pricepe-ntr-o zi, Isus. 
+Orice îndoieli vor muri;
+Toată teama o voi lăsa 
+în urma mea...
+
+R: 
+        A A4      A
+Când în cer vom ajunge
+      F#m     D              E
+O, ce zi glorioasă-atunci va fi
+        A/C#    D
+Când vom fi cu Isus
+A/E   E          A
+Fața Lui o vom privi.
+
+3.
+Într-o zi Îl vom întâlni pe Isus  
+Copleșiți de-al Sau mare har
+Și într-o clipă vom fi schimbați/x3
+O, ce zi!
+
+4.
+Vine o zi când liberi vom fi, Isus
+Când lupta noastră se va sfârși
+Gloria Ta atunci vom vedea.
+O, ce zi!
 `,
 },  
 ];
