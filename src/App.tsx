@@ -1085,7 +1085,7 @@ Adăpost noi vom găsi, când ne va fi greu.
 
 3.
 Cei ce sunteți azi pierduți, să veniți la El,
-Veți primi Salvare-n dar, doar prin jertfa Lui. 
+Veți primi salvare-n dar, doar prin jertfa Lui. 
 `,
 },
 {
