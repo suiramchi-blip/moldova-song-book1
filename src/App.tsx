@@ -927,8 +927,7 @@ Vina omului când a purtat?
 Domn etern, prin moarte umilit,
 Viu e-acum, pe tron stă proslăvit!
 
-Bridge. 
-(Opțional)
+Bridge (Opțional)
 Tu domnești de-a pururi!
 Tu domnești de-a pururi!
 Tu domnești de-a pururi! 
@@ -967,8 +966,7 @@ Vina omului când a purtat?
 Domn etern, prin moarte umilit,
 Viu e-acum, pe tron stă proslăvit!
 
-Bridge.
-(Opțional)
+Bridge (Opțional)
  A                D
 Tu domnești de-a pururi!
  A                D
@@ -981,56 +979,57 @@ Tu domnești de-a pururi!
 },
 {
   id: 21,
-  title: "De trăiești cu Domnul tău mereu",
-  key: "A",
-  youtube: "",
+  title: "Cristos, ancora cea tare",
+  key: "C",
+  youtube: "https://youtu.be/kllNj-cLOW8?si=6ty5hPTUaDpFvKmG",
   lyrics: `1.
-De trăiești cu Domnul tău mereu,
-Fericit îți este traiul tău;
-/:Pe-ale vieții tale căi,
-Peste dealuri și prin văi,
-El te duce-n sfinte fericiri:/
+Cristos, ancora cea tare, cu furtuna când mă lupt,
+Când bat vânturi de-ndoială si când pânzele-mi se rup.
+Prin dureri și-n suferință, când speranță nu mai am,
+Neclintit rămâne Domnul, Cel în care-s ancorat.
 
 2.
-Lasă soarta ta în mâna Lui,
-Viața ta să fie-a Domnului!
-/:Să-I predai tot ce-i al tău,
-Să-mplinești Cuvântul Său!
-El te duce-n sfinte fericiri:/
+Hristos, ancora cea tare, când furtuna bate greu,
+Când ispita mă învinge și e noapte-n jurul meu.
+Mai adânc mă-ncred în Domnul, deși drept sunt acuzat.
+Neclintit rămâne Domnul, Cel în care-s ancorat!
 
 3.
-Când ispita te va încerca
-Și durerea te va apăsa,
-/:Nici atunci nu șovăi!
-El și-atunci te va iubi;
-El te duce-n sfinte fericiri:/`,
+Hristos, ancora cea tare, necredința când m-a-nvins.
+Disperat ești al meu suflet, dar privește la Isus.
+La calvar ai siguranță, dragostea Și-a demonstrat.
+Neclintit rămâne Domnul, Cel în care-s ancorat!
+
+C: 
+Hristos Stânca mântuirii, credincios și-adevărat.
+Neclintit rămâne veșnic, în El suntem ancorați. 
+`,
   chords: `
 1.
-       A                    E
-De trăiești cu Domnul tău mereu,
-                         A
-Fericit iți este traiul tău;
-          A          Fm#
-/:Pe-ale vieții tale căi,
-       D              Bm
-Peste dealuri și prin văi,
-       E                 A
-El te duce-n sfinte fericiri:/
+          C          F                        D
+Cristos, ancora cea tare, cu furtuna când mă lupt,
+          C            Am            G             G7
+Când bat vânturi de-ndoială si când pânzele-mi se rup.
+        F             C             C            Am
+Prin dureri și-n suferință, când speranță nu mai am,
+       C         Am              G          C C Am F
+Neclintit rămâne Domnul, Cel în care-s ancorat.
 
 2.
-Lasă soarta ta in mâna Lui,
-Viața ta să fie-a Domnului!
-/:Să-I predai tot ce-i al tău,
-Să-mplinești Cuvântul Său!
-El te-a duce-n sfinte fericiri:/
+Hristos, ancora cea tare, când furtuna bate greu,
+Când ispita mă învinge și e noapte-n jurul meu.
+Mai adânc mă-ncred în Domnul, deși drept sunt acuzat.
+Neclintit rămâne Domnul, Cel în care-s ancorat!
 
 3.
-Când ispita te va încerca
-Și durerea te va apăsa,
-/:Nici atunci nu șovăi!
-El și-atunci te va iubi;
-El te-a duce-n sfinte fericiri:/
+Hristos, ancora cea tare, necredința când m-a-nvins.
+Disperat ești al meu suflet, dar privește la Isus.
+La calvar ai siguranță, dragostea Și-a demonstrat.
+Neclintit rămâne Domnul, Cel în care-s ancorat!
 
+C: 
+Hristos Stânca mântuirii, credincios și-adevărat.
+Neclintit rămâne veșnic, în El suntem ancorați. 
 `,
 },
 {
