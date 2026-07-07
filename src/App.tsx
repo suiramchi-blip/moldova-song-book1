@@ -697,68 +697,84 @@ O, cât sunt de fericit!
 },
 {
   id: 13,
-  title: "E-o minune când soarele apune",
-  key: "C",
-  youtube: "",
-  lyrics: `1.
-E-o minune când soarele apune,
-Minune din veşnicii.
-Dar mai mare-i minunea din inimă,
-Minunea că El m-a iubit.
+  title: "Doamne, bunătatea Ta",
+  key: "D",
+  youtube: "https://www.youtube.com/watch?v=UPL5iFPw2pQ",
+  lyrics: `
+1.
+Doamne, bunătatea Ta, Îmi cuprinde inima
+Și mă face fericit, Domnul meu iubit.
+De cu zori până-n apus Numai harul Tău, Isus,
+Îmi inundă inima și viaţa mea.
 
-R.
-Minunat e Domnul meu,
-Mai minunat e El,
-Decât orice pe pământ,
-Minunat e Domnul sfânt!
+R:
+N-ai în lume-asemănare, 
+Nu e nimenea sub soare,
+Nici în cer, nici pe pământ
+Cât eşti Tu de sfânt!
+Dragostea-Ți mă copleşeşte,
+Pacea Ta mă linişteşte,
+Harul Tău îmi dă avânt, 
+Tot mai mult să-Ți cânt.
 
 2.
-E-o minune şi vara şi iarna
-Şi cerul înstelat;
-Dar mai mare-i minunea din inimă,
-Minunea că El m-a salvat.
+Norii negrii când apar Tu îmi ești un veşnic far,
+Drumul mi-l călăuzeşti Și mă ocroteşti.
+Și prin arșiță Îți cânt Numai Ție, Doamne sfânt,
+Că-n izvorul Tău ceresc Sufletu-mi sfințesc.
 
 3.
-E-o minune întreaga-mi făptură,
-Minune din veşnicii.
-Dar mai mare-i minunea din inimă,
-Minunea că El va veni.
-
-Ps 19, 97`,
+Doamne, pune-n gura mea.  
+Totdeauna lauda Ta,
+Numai Ție să Îți cânt
+Pe acest pământ.
+Iar când zorii vor veni,
+Numele Tău voi slăvi,
+Asta-i fericirea mea: Să cânt slava Ta!
+`,
   chords: `
 1.
-       C                  Dm7
-E-o minune când soarele apune,
-   G             C
-Minune din veşnicii.
-                            F
-Dar mai mare-i minunea din inimă,
-     G                 C
-E minunea că El m-a iubit.
+ D          Em7        A            D
+Doamne, bunătatea Ta, Îmi cuprinde inima
+D          Em7       G      A     D
+Și mă face fericit, Domnul meu iubit.
+D             Em7       A           D
+De cu zori până-n apus Numai harul Tău, Isus,
+D          Em7   A         D
+Îmi inundă inima și viaţa mea.
 
-R.
-     C           Dm7
-Minunat e Domnul meu.
-     G        C
-Mai minunat e El
-                  F
-Decât orice pe pământ
-    G              C
-Minunat e Domnul sfânt!
+R:
+ G
+N-ai în lume-asemănare, 
+D
+Nu e nimenea sub soare,
+A
+Nici în cer, nici pe pământ
+D                D7
+Cât eşti Tu de sfânt!
+G
+Dragostea-Ți mă copleşeşte,
+D
+Pacea Ta mă linişteşte,
+A
+Harul Tău îmi dă avânt, 
+G        A          D
+Tot mai mult să-Ți cânt.
 
 2.
-E-o minune şi vara şi iarna
-Şi cerul înstelat;
-Dar mai mare-i minunea din inimă,
-Minunea că El m-a salvat.
+Norii negrii când apar Tu îmi ești un veşnic far,
+Drumul mi-l călăuzeşti Și mă ocroteşti.
+Și prin arșiță Îți cânt Numai Ție, Doamne sfânt,
+Că-n izvorul Tău ceresc Sufletu-mi sfințesc.
 
 3.
-E-o minune întreaga-mi făptură,
-Minune din veşnicii.
-Dar mai mare-i minunea din inimă,
-Minunea că El va veni.
-
-Ps 19, 97
+Doamne, pune-n gura mea.  
+Totdeauna lauda Ta,
+Numai Ție să Îți cânt
+Pe acest pământ.
+Iar când zorii vor veni,
+Numele Tău voi slăvi,
+Asta-i fericirea mea: Să cânt slava Ta!
 `,
 },
 {
