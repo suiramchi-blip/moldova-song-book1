@@ -1034,92 +1034,58 @@ Neclintit rămâne veșnic, în El suntem ancorați.
 },
 {
   id: 22,
-  title: "Doamne, bunătatea Ta",
-  key: "D",
-  youtube: "",
+  title: "Stânca tare e Hristos",
+  key: "C",
+  youtube: "https://youtu.be/cFMXmhOkp8M?si=PA5obpdjzp6uOW2Y",
   lyrics: `1.
-Doamne, bunătatea Ta
-Îmi cuprinde inima
-Și mă face fericit,
-Domnul meu iubit.
-De cu zori până-n apus
-Numai harul Tău, Isus,
-Îmi inundă inima
-Și viața mea.
+Dacă suntem însetați, să venim la El.
+Doar Isus ne poate da, apa vieții-n dar
+Toți acei ce suntem slabi, să venim la El
+Doar Isus ne va-ntări, ne va da puteri.
 
-R.
-N-ai în lume-asemănare,
-Nu e nimenea sub soare,
-Nici în cer, nici pe pământ
-Cât ești Tu de sfânt!
-Dragostea-Ți mă copleșește,
-Pacea Ta mă liniștește,
-Harul Tău îmi dă avânt
-Tot mai mult să-Ți cânt.
+R:
+Domnul nostru-i bun și credincios.
+Zi și noapte e cu noi.
+Stânca noastră tare e Hristos,
+Nu ne vom clinti!
 
 2.
-Norii negri când apar
-Tu îmi ești un veșnic far,
-Drumul mi-l călăuzești
-Și mă ocrotești.
+Dacă temeri s-or ivi, să venim la El,
+Adăpost noi vom găsi, când ne va fi greu.
 
 3.
-Doamne, pune-n gura mea.  
-Totdeauna lauda Ta,
-Numai Ție să Îți cânt
-Pe acest pământ.
-Iar când zorii vor veni,
-Numele Tău voi slăvi,
-Asta-i fericirea mea: Să cânt slava Ta!
+Cei ce sunteți azi pierduți, să veniți la El,
+Veți primi Salvare-n dar, doar prin jertfa Lui. 
+
 `,
   chords: `
 1.
-D           Em7        A           D
-Doamne, bunătatea Ta, Îmi cuprinde inima
-D          Em7      G      A     D
-Și mă face fericit, Domnul meu iubit.
-D            Em7        A           D
-De cu zori până-n apus Numai harul Tău, Isus,
-D           Em7  A         D
-Îmi inundă inima și viaţa mea.
+ C   C/E    F    C    Am   G      C
+Dacă suntem însetați, să venim la El.
+ C    C/E     F     C  Am   G       C
+Doar Isus ne poate da, apa vieții-n dar
+ C    C/E     F       C    Am    G     C
+Toți acei ce suntem slabi, să venim la El
+ C    C/E     F    C   Am    G     C
+Doar Isus ne va-ntări, ne va da puteri.
 
-R.
-G
-N-ai în lume-asemănare,
-D
-Nu e nimenea sub soare,
-A
-Nici în cer, nici pe pământ
-D                D7
-Cât eşti Tu de sfânt!
-G
-Dragostea-Ți mă copleşeşte,
-D
-Pacea Ta mă linişteşte,
-A
-Harul Tău îmi dă avânt,
-G        A          D
-Tot mai mult să-Ți cânt.
+R:
+C       F        C       G     C
+Domnul nostru-i bun și credincios.
+       F     C     G
+Zi și noapte e cu noi.
+        F       C   G     Am
+Stânca noastră tare e Hristos,
+ F     G      C 
+Nu ne vom clinti!
 
 2.
-Norii negrii când apar
-Tu îmi ești un veşnic far,
-Drumul mi-l călăuzeşti
-Și mă ocroteşti.
-Și prin arșiță Îți cânt
-Numai Ție, Doamne sfânt,
-Că-n izvorul Tău ceresc
-Sufletu-mi sfințesc.
+Dacă temeri s-or ivi, să venim la El,
+Adăpost noi vom găsi, când ne va fi greu.
 
 3.
-Doamne, pune-n gura mea.  
-Totdeauna lauda Ta,
-Numai Ție să Îți cânt
-Pe acest pământ.
-Iar când zorii vor veni,
-Numele Tău voi slăvi,
-Asta-i fericirea mea: Să cânt slava Ta!
-
+Cei ce sunteți azi pierduți, să veniți la El,
+Veți primi Salvare-n dar, doar prin jertfa Lui. 
 `,
 },
 {
