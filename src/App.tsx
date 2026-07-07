@@ -1085,70 +1085,95 @@ Adăpost noi vom găsi, când ne va fi greu.
 
 3.
 Cei ce sunteți azi pierduți, să veniți la El,
-Veți primi salvare-n dar, doar prin jertfa Lui. 
+Veți primi Salvare-n dar, doar prin jertfa Lui. 
 `,
 },
 {
   id: 23,
-  title: "Eu eram în lume pierdut",
-  key: "G",
-  youtube: "",
+  title: "În fața tronului de sus",
+  key: "D",
+  youtube: "https://youtu.be/wm8k1WN7jkk?si=oUNWaOIBEO9_hxeb",
   lyrics: `1.
-Eu eram în lume pierdut
-Și fără adăpost
-Dar când în față mi-ai apărut
-Eu mi-am găsit un rost.
+În fața tronului de sus
+Eu am un bun apărător,
+Un mare Preot, pe Isus
+La care aflu ajutor.
 
-R.
-Îți mulțumesc din inimă
-Iubite Salvator
-De mii de ori Tu m-ai scăpat
-Și mi-ai dat ajutor.
+R:
+Săpat eu sunt în palma Sa
+Și pe-a Lui inimă sunt scris
+Iar cât in ceruri El va sta,
+Pârâșul meu va fi învins,
+//: Pârâșul meu va fi învins ://
+
 
 2.
-De multe ori mi s-a întâmplat
-Să fiu fără ajutor
-De-atâtea ori Tu m-ai scăpat
-De-aceea-Ți sunt dator.
+Satan când mă va acuza
+Spunându-mi că sunt vinovat,
+Privesc la Domnul, Stânca mea
+Ce-a șters pe cruce-al meu păcat.
+Fiindcă Domnul a murit,
+Eu am ajuns neprihănit;
+Dreptatea s-a îndeplinit,
+/: Prin moartea Lui sunt mântuit, :/ X2
 
 3.
-Eu sunt dator să-Ți mulțumesc
-Pentru iubirea Ta
-Isuse, ce mult Te iubesc
-Iubesc venirea Ta.`,
+Și iată Mielul înălțat,  
+Cel nepătat, neprihănit,
+Cuvântul viu și întrupat
+E Rege-al regilor slăvit.
+/: Unit cu El nu voi muri,
+Cu sânge m-a răscumpărat;
+Voi fi cu El în veșnicii,
+Cu Domnul meu glorificat! :/ x2
+
+Cu Domnul meu glorificat!
+`,
   chords: `
 1.
-G             Am7
-  Eu eram în lume pierdut
-D             G
-  Şi fără adăpost
-                         Am7
-  Dar când în faţă mi-ai apărut
-D                   G
-  Eu mi-am găsit un rost.
+          D   G      D
+În fața tronului de sus
+          D       F#m
+Eu am un bun apărător,
+          G    A    Bm
+Un mare Preot, pe Isus
+        G    A   D
+La care aflu ajutor.
 
-R.
-G                   Am7
-  Îţi mulţumesc din inimă
-D              G
-  Iubite Salvator
-                    Am7
-  De mii de ori tu m-ai scăpat
-D                  G
-  Şi mi-ai dat ajutor.
+R:
+  D/F#    G             A
+Săpat eu sunt în palma Sa
+    D/F#    G   A         Bm
+Și pe-a Lui inimă sunt scris
+    D/F#          A      Bm
+Iar cât in ceruri El va sta,
+  D/F#   G        A  Bm
+Pârâșul meu va fi învins,
+      D/F#   G        A    D
+//: Pârâșul meu va fi învins ://
+
 
 2.
-De multe ori mi s-a întâmplat
-Să fiu fără ajutor
-De-atâtea ori tu m-ai scăpat
-De-aceea-Ţi sunt dator.
+Satan când mă va acuza
+Spunându-mi că sunt vinovat,
+Privesc la Domnul, Stânca mea
+Ce-a șters pe cruce-al meu păcat.
+Fiindcă Domnul a murit,
+Eu am ajuns neprihănit;
+Dreptatea s-a îndeplinit,
+/: Prin moartea Lui sunt mântuit, :/ X2
 
 3.
-Eu sunt dator să-Ţi mulţumesc
-Pentru iubirea Ta
-Isuse, ce mult Te iubesc
-Iubesc venirea Ta.
+Și iată Mielul înălțat,  
+Cel nepătat, neprihănit,
+Cuvântul viu și întrupat
+E Rege-al regilor slăvit.
+/: Unit cu El nu voi muri,
+Cu sânge m-a răscumpărat;
+Voi fi cu El în veșnicii,
+Cu Domnul meu glorificat! :/ x2
 
+Cu Domnul meu glorificat!
 `,
 },  
 ];
