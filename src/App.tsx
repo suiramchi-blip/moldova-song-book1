@@ -900,68 +900,81 @@ Ce-am crezut voi și vedea la venirea Sa!
 },
 {
   id: 17,
-  title: "Destinul tău e să învingi",
-  key: "D",
-  youtube: "",
+  title: "Cine-a dat oceanelor hotar?",
+  key: "A",
+  youtube: "https://youtu.be/0R7NacfLQNs?si=SmMHtuUo8AHWqLHV",
   lyrics: `1.
-Destinul tău e să învingi
-Când eşti căzut să te ridici
-Destinul tău l-a scris cândva Isus
-Numele tău de mult e scris
-În cartea vieţii din Paradis
-Destinul tău e cerul Său, să ştii.
+Cine-a dat oceanelor hotar?
+Cine-a pus nisipul pe cântar?
+Regi și țări se tem de-al Său Cuvânt,
+Iar natura se ridică-n cânt !
 
-R.
-Nu suntem aici statornici
-O ţară-avem şi ea e sus
-Calea se sfârşeşte-acolo
-Când vom vedea toţi pe Isus!
+R:
+E-al nostru Domn, stă pe tron în cer,
+Să ne închinăm Lui!
+E-al nostru Domn, nimeni nu-i ca El,
+Să ne închinăm Lui!
 
 2.
-Deci să te porţi cum e cinstit
-Cu Tatăl tău ce te-a iubit
-Şi te-a plătit cu mare preţ, să ştii.
-Pe braţul meu Eu te-am purtat
-Şi-am să te port neîncetat
-El, Dumnezeu, spune aşa în cartea Sa.
+Cine poate sfaturi Lui a-I da?
+Cine Legea Sa o va nega?
+Ce să-nveți pe Cel ce-i infinit?
+Poți sonda minuni de negrăit?
 
-Fil 4:3`,
+3.
+Cine-n mâini piroane a-ndurat,  
+Vina omului când a purtat?
+Domn etern, prin moarte umilit,
+Viu e-acum, pe tron stă proslăvit!
+
+Bridge (Opțional)
+Tu domnești de-a pururi!
+Tu domnești de-a pururi!
+Tu domnești de-a pururi! 
+Tu domnești de-a pururi! 
+`,
   chords: `
 1.
-          G          A
-Destinul tău e să învingi
-            D           Bm
-Când eşti căzut să te ridici
-         Em                A    D
-Destinul tău l-a scris cândva Isus
-        G               A
-Numele tău de mult e scris
-           D             Bm
-În cartea vieţii din Paradis
-         Em           A        D
-Destinul tău e cerul Său, să ştii.
+  A          Cm#
+Cine-a dat oceanelor hotar?
+ A           Cm#
+Cine-a pus nisipul pe cântar?
+ D               E
+Regi și țări se tem de-al Său Cuvânt,
+Fm#        Cm#           E
+Iar natura se ridică-n cânt !
 
-
-R.
-       D           A
-Nu suntem aici statornici
-        G           A
-O ţar-avem şi ea e sus
-      D              A
-Calea se sfârşeşte-acolo
-            G        A    D
-Când vom vedea toţi pe Isus :/
-
+R:
+      A  E  Fm#                   D
+E-al nostru Domn, stă pe tron în cer,
+            A   E
+Să ne închinăm Lui!
+      A  E  Fm#                  D
+E-al nostru Domn, nimeni nu-i ca El,
+            A   E
+Să ne închinăm Lui!
 
 2.
-Deci să te porţi cum e cinstit
-Cu Tatăl tău ce te-a iubit
-Şi te-a plătit cu mare preţ, să ştii.
-Pe braţul meu Eu te-am purtat
-Şi-am să te port neîncetat
-El, Dumnezeu, spune aşa în cartea Sa.
+Cine poate sfaturi Lui a-I da?
+Cine Legea Sa o va nega?
+Ce să-nveți pe Cel ce-i infinit?
+Poți sonda minuni de negrăit?
 
-Fil 4:3
+3.
+Cine-n mâini piroane a-ndurat,  
+Vina omului când a purtat?
+Domn etern, prin moarte umilit,
+Viu e-acum, pe tron stă proslăvit!
+
+Bridge (Opțional)
+ A                D
+Tu domnești de-a pururi!
+ A                D
+Tu domnești de-a pururi!
+Fm#               D
+Tu domnești de-a pururi! 
+Fm#               D
+Tu domnești de-a pururi! 
 `,
 },
 {
