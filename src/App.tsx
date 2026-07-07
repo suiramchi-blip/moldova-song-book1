@@ -927,7 +927,8 @@ Vina omului când a purtat?
 Domn etern, prin moarte umilit,
 Viu e-acum, pe tron stă proslăvit!
 
-Bridge (Opțional)
+Bridge. 
+(Opțional)
 Tu domnești de-a pururi!
 Tu domnești de-a pururi!
 Tu domnești de-a pururi! 
@@ -966,7 +967,8 @@ Vina omului când a purtat?
 Domn etern, prin moarte umilit,
 Viu e-acum, pe tron stă proslăvit!
 
-Bridge (Opțional)
+Bridge.
+(Opțional)
  A                D
 Tu domnești de-a pururi!
  A                D
