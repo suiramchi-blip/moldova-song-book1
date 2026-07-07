@@ -1006,13 +1006,13 @@ Neclintit rămâne veșnic, în El suntem ancorați.
 `,
   chords: `
 1.
-          C          F                        D
+          C                      F             C
 Cristos, ancora cea tare, cu furtuna când mă lupt,
           C            Am            G             G7
 Când bat vânturi de-ndoială si când pânzele-mi se rup.
-        F             C             C            Am
+        F             C              F     G     Am
 Prin dureri și-n suferință, când speranță nu mai am,
-       C         Am              G          C C Am F
+       C         Am             F      G    C C Am F
 Neclintit rămâne Domnul, Cel în care-s ancorat.
 
 2.
