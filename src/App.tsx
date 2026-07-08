@@ -51,7 +51,7 @@ Lui Dumnezeu glorie.
 1.
          G                C    G
 Cânt Domnului că mi-a făcut bine,
-               Em  D
+Em             A  D
 Lui Dumnezeu glorie!
        G         C     G
 Mi se bucură inima-n mine,
