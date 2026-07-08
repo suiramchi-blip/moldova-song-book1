@@ -1462,6 +1462,101 @@ Praise to my Saviour, the King of life
 I stand in the Gospel of Jesus Christ  
 `,
 },
+{
+  id: 28,
+  title: "Christ our hope in life and death",
+  key: "E",
+  youtube: "https://youtu.be/FvwlwL1FUEg?si=t7zvlLIV6KHf2TFj",
+  lyrics: `1.
+What is our hope in life and death?
+Christ alone, Christ alone
+What is our only confidence?
+That our souls to Him belong
+Who holds our days within His hand?
+What comes, apart from His command?
+And what will keep us to the end?
+The love of Christ, in which we stand
+
+R:
+O sing hallelujah!
+Our hope springs eternal
+O sing hallelujah!
+Now and ever we confess
+Christ our hope in life and death
+
+2.
+What truth can calm the troubled soul?
+God is good, God is good
+Where is his grace and goodness known?
+In our great Redeemer's blood
+Who holds our faith when fears arise?
+Who stands above the stormy trial?
+Who sends the waves that bring us nigh?
+Unto the shore, the rock of Christ
+
+3.
+Unto the grave, what shall we sing?
+"Christ, he lives! Christ, he lives!"
+And what reward will heaven bring?
+Everlasting life with him
+There we will rise to meet the Lord
+Then sin and death will be destroyed
+And we will feast in endless joy
+When Christ is ours forevermore. 
+
+`,
+  chords: `
+1.
+             E      Esus       E
+What is our hope in life and death?
+Esus     E      C#m7   B
+Christ alone, Christ alone
+            E     B     C#m
+What is our only confidence?
+A         E        B     E
+That our souls to Him belong
+              G#m             C#m
+Who holds our days within His hand?
+             F#m7       E      A
+What comes, apart from His command?
+               E       B     C#m
+And what will keep us to the end?
+     A         E         B       E  Esus E
+The love of Christ, in which we stand
+
+R:  
+  C#m   A    E
+O sing hallelujah!
+     B            C#m
+Our hope springs eternal
+E   A        E
+O sing hallelujah!
+A       E     B     A
+Now and ever we confess
+           C#m      B        E
+Christ our hope in life and death
+
+2.
+What truth can calm the troubled soul?
+God is good, God is good
+Where is his grace and goodness known?
+In our great Redeemer's blood
+Who holds our faith when fears arise?
+Who stands above the stormy trial?
+Who sends the waves that bring us nigh?
+Unto the shore, the rock of Christ
+
+3.
+Unto the grave, what shall we sing?
+"Christ, he lives! Christ, he lives!"
+And what reward will heaven bring?
+Everlasting life with him
+There we will rise to meet the Lord
+Then sin and death will be destroyed
+And we will feast in endless joy
+When Christ is ours forevermore. 
+`,
+},
 ];
 
 // ---------- YouTube helpers ----------
