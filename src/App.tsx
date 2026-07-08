@@ -1249,6 +1249,70 @@ Când lupta noastră se va sfârși
 Gloria Ta atunci vom vedea.
 O, ce zi!
 `,
+},
+{
+  id: 25,
+  title: "Sunt un pribeag",
+  key: "Bm",
+  youtube: "https://youtu.be/DPd49tI0n9s?si=OGxlTJQzXITJlQhi",
+  lyrics: `1.
+Sunt un pribeag fără de ţară,
+Rătăcitor prin lung pustiu.
+Dar am în ceruri o comoară
+Şi ţara mea e-n veşnicii.
+
+R:  
+Mă-ndrept spre cer să-L văd pe Domnul
+Să nu mai fiu un pelegrin!
+Căci după ce-am  să trec Iordanul
+Se va sfârşi al meu suspin!
+
+2.
+Tu vezi ce grea mi-e ‘naintarea
+Mă lupt să biruiesc mereu
+Un dor nestins mă cheamă acasă
+E dorul după Dumnezeu.
+
+3.
+Voi lepăda a mea povară
+Eliberat sub crucea grea
+Nădejdea mea nu o să moară
+Eu voi intra-n odihna Sa!
+
+`,
+  chords: `
+1.
+            Bm
+Sunt un pribeag fără de ţară,
+      Em        F#      Bm
+Rătăcitor prin lung pustiu.
+            Bm
+Dar am în ceruri o comoară
+         Em      F#   Bm
+Şi ţara mea e-n veşnicii.
+
+R:  
+                G        A         D
+Mă-ndrept spre cer să-L văd pe Domnul
+           G      A    D F#7
+Să nu mai fiu un pelegrin!
+            F#               Bm
+Căci după ce-am  să trec Iordanul
+          Em    F#     Bm
+Se va sfârşi al meu suspin!
+
+2.
+Tu vezi ce grea mi-e ‘naintarea
+Mă lupt să biruiesc mereu
+Un dor nestins mă cheamă acasă
+E dorul după Dumnezeu.
+
+3.
+Voi lepăda a mea povară
+Eliberat sub crucea grea
+Nădejdea mea nu o să moară
+Eu voi intra-n odihna Sa!
+`,
 },  
 ];
 
