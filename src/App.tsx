@@ -183,7 +183,7 @@ Tu ești vrednic să-Ți dăm slavă,  Să fi adorat
   },
   {
     id: 4,
-    title: "Când eram doar un plod",
+    title: "4. Când eram doar un plod",
     key: "C",
     youtube: "https://youtu.be/C1fBEod-8jA?si=I3_e3s7jbUSTL0jE",
     lyrics: `
@@ -247,7 +247,7 @@ Nu pot ascunde nimic. : /
   },
   {
     id: 5,
-    title: "Ce bucurie am în Isus",
+    title: "5. Ce bucurie am în Isus",
     key: "C",
     youtube: "https://youtu.be/MENlE86ora4?si=mQeW3YrZv6-PjUff",
     lyrics: `
@@ -311,7 +311,7 @@ Eu știu prea bine și spun mereu:
   },
   {
     id: 6,
-    title: "Domnul îmi este adăpost",
+    title: "6. Domnul îmi este adăpost",
     key: "D",
     youtube: "https://youtu.be/8yQsTWsXHEw?si=XiGPyaIT-OmI2xKU",
     lyrics: `
@@ -393,7 +393,7 @@ M-aşteaptă-n cer fericirea.
   },
   {
     id: 7,
-    title: "Ridică-te, oștirea lui Cristos",
+    title: "7. Ridică-te, oștirea lui Cristos",
     key: "D",
     youtube: "https://www.youtube.com/watch?v=4QQ0-0g6v6Y",
     lyrics: `
@@ -480,7 +480,7 @@ Tânjim și noi s-ajungem ziua când  Cu Isus vom sta în slavă.
   },
  {
     id: 8,
-    title: "Valoarea mea nu stă-n averi",
+    title: "8. Valoarea mea nu stă-n averi",
     key: "C",
     youtube: "https://youtu.be/IrnfxwkKu_E?si=sCenh4Tz8lNtBBHt",
     lyrics: `
@@ -561,7 +561,7 @@ Iar prețu-mi l-a plătit Cristos, la Calvar!
   },
   {
   id: 9,
-  title: "Dumnezeu este adăpostul",
+  title: "9. Dumnezeu este adăpostul",
   key: "G",
   youtube: "https://youtu.be/R4ozztUP1sg?si=x7Uiwu29Zxy3zprC",
   lyrics: `
@@ -605,7 +605,7 @@ Ps 46
 },
   {
   id: 10,
-  title: "Oare nu ți-am poruncit",
+  title: "10. Oare nu ți-am poruncit",
   key: "Dm",
   youtube: "https://www.youtube.com/watch?v=SEzRyLV9YYE",
   lyrics: `
@@ -633,7 +633,7 @@ Iosua, Iosua unu cu nouă.
 },
  {
   id: 11,
-  title: "M-a aflat pe căi străine",
+  title: "11. M-a aflat pe căi străine",
   key: "C",
   youtube: "https://youtu.be/aFsixV56K3o?si=2xvGz1XAe5f3_MfV ",
   lyrics: `
@@ -696,8 +696,8 @@ O, cât sunt de fericit!
 `,
 },
 {
-  id: 13,
-  title: "Doamne, bunătatea Ta",
+  id: 12,
+  title: "12. Doamne, bunătatea Ta",
   key: "D",
   youtube: "https://www.youtube.com/watch?v=UPL5iFPw2pQ",
   lyrics: `
@@ -778,8 +778,8 @@ Asta-i fericirea mea: Să cânt slava Ta!
 `,
 },
 {
-  id: 14,
-  title: "Aş vrea, Isuse scump",
+  id: 13,
+  title: "13. Aş vrea, Isuse scump",
   key: "D",
   youtube: "https://youtu.be/kV8kytlH7NY?si=mkyYFQYJdIyf4PhX",
   lyrics: `1.
@@ -842,8 +842,8 @@ Să le-mplineşti prin sfântul Tău Cuvânt!
 `,
 },
 {
-  id: 16,
-  title: "Sprijin mi-e Cristos",
+  id: 14,
+  title: "14. Sprijin mi-e Cristos",
   key: "G",
   youtube: "https://youtu.be/cL0L8DuG4z8?si=o8DTpO1DjApThZDU",
   lyrics: `1.
@@ -899,8 +899,8 @@ Ce-am crezut voi și vedea la venirea Sa!
 `,
 },
 {
-  id: 17,
-  title: "Cine-a dat oceanelor hotar?",
+  id: 15,
+  title: "15. Cine-a dat oceanelor hotar?",
   key: "A",
   youtube: "https://youtu.be/0R7NacfLQNs?si=SmMHtuUo8AHWqLHV",
   lyrics: `1.
@@ -978,8 +978,8 @@ Tu domnești de-a pururi!
 `,
 },
 {
-  id: 21,
-  title: "Cristos, ancora cea tare",
+  id: 16,
+  title: "16. Cristos, ancora cea tare",
   key: "C",
   youtube: "https://youtu.be/kllNj-cLOW8?si=6ty5hPTUaDpFvKmG",
   lyrics: `1.
@@ -1033,8 +1033,8 @@ Neclintit rămâne veșnic, în El suntem ancorați.
 `,
 },
 {
-  id: 22,
-  title: "Stânca tare e Hristos",
+  id: 17,
+  title: "17. Stânca tare e Hristos",
   key: "C",
   youtube: "https://youtu.be/cFMXmhOkp8M?si=PA5obpdjzp6uOW2Y",
   lyrics: `1.
@@ -1089,8 +1089,8 @@ Veți primi Salvare-n dar, doar prin jertfa Lui.
 `,
 },
 {
-  id: 23,
-  title: "În fața tronului de sus",
+  id: 18 ,
+  title: "18. În fața tronului de sus",
   key: "D",
   youtube: "https://youtu.be/wm8k1WN7jkk?si=oUNWaOIBEO9_hxeb",
   lyrics: `1.
@@ -1175,8 +1175,8 @@ Cu Domnul meu glorificat!
 `,
 },
 {
-  id: 24,
-  title: "Vine-o zi",
+  id: 19,
+  title: "19. Vine-o zi",
   key: "A",
   youtube: "https://youtu.be/DPd49tI0n9s?si=OGxlTJQzXITJlQhi",
   lyrics: `1.
@@ -1251,8 +1251,8 @@ O, ce zi!
 `,
 },
 {
-  id: 25,
-  title: "Sunt un pribeag",
+  id: 20,
+  title: "20. Sunt un pribeag",
   key: "Bm",
   youtube: "https://youtu.be/Ki-9V3QNGhE?si=LIzo5dQA70W4_rbG",
   lyrics: `1.
@@ -1315,8 +1315,8 @@ Eu voi intra-n odihna Sa!
 `,
 },
 {
-  id: 26,
-  title: "Amazing grace",
+  id: 21,
+  title: "21. Amazing grace",
   key: "F",
   youtube: "https://youtu.be/Tvt6E9N7AQw?si=H6m4kXWUBkUJZ7g4",
   lyrics: `1.
@@ -1376,8 +1376,8 @@ Than when we first begun.
 `,
 },
 {
-  id: 27,
-  title: "There is one Gospel",
+  id: 22,
+  title: "22. There is one Gospel",
   key: "C",
   youtube: "https://youtu.be/nmBcTrDu4O4?si=5TJ8Q8J1kvSr4ajI",
   lyrics: `1.
@@ -1463,8 +1463,8 @@ I stand in the Gospel of Jesus Christ
 `,
 },
 {
-  id: 28,
-  title: "Christ our hope in life and death",
+  id: 23,
+  title: "23. Christ our hope in life and death",
   key: "E",
   youtube: "https://youtu.be/FvwlwL1FUEg?si=t7zvlLIV6KHf2TFj",
   lyrics: `1.
