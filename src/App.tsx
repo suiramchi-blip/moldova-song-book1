@@ -17,7 +17,7 @@ type Song = {
 const songsData: Song[] = [
   {
     id: 1,
-    title: "Cânt lui Dumnezeu glorie",
+    title: "1. Cânt lui Dumnezeu glorie",
     key: "G",
     youtube: "https://www.youtube.com/watch?v=JKoox3ZWKXk&list=RDJKoox3ZWKXk&start_radio=1",
     lyrics: `
@@ -88,7 +88,7 @@ Lui Dumnezeu glorie.
   },
   {
     id: 2,
-    title: "Doamne, numele-Ţi înalţ",
+    title: "2. Doamne, numele-Ţi înalţ",
     key: "G",
     youtube:
       "https://www.youtube.com/watch?v=WSYW6SyqioA&list=RDWSYW6SyqioA&start_radio=1",
@@ -132,7 +132,7 @@ Să fii înălţat mereu! :/
   },
   {
     id: 3,
-    title: "Tu ești vrednic",
+    title: "3. Tu ești vrednic",
     key: "A",
     youtube: "",
     lyrics: `
