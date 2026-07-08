@@ -158,7 +158,7 @@ Să fi adorat
 R:   
  A                D
 Tu ești vrednic, Tu ești vrednic
-A      f#            E
+A      F#m            E
 Slavă, cinste să-Ți dăm!
 A                D
 Tu ești vrednic de-nchinare
