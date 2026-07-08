@@ -1254,7 +1254,7 @@ O, ce zi!
   id: 25,
   title: "Sunt un pribeag",
   key: "Bm",
-  youtube: "https://youtu.be/DPd49tI0n9s?si=OGxlTJQzXITJlQhi",
+  youtube: "https://youtu.be/Ki-9V3QNGhE?si=LIzo5dQA70W4_rbG",
   lyrics: `1.
 Sunt un pribeag fără de ţară,
 Rătăcitor prin lung pustiu.
