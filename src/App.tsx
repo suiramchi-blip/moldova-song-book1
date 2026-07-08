@@ -1374,7 +1374,94 @@ Bright, shining as the sun
 We've no less days to sing God's praise
 Than when we first begun.
 `,
-},  
+},
+{
+  id: 27,
+  title: "There is one Gospel",
+  key: "C",
+  youtube: "https://youtu.be/nmBcTrDu4O4?si=5TJ8Q8J1kvSr4ajI",
+  lyrics: `1.
+There is one Gospel on which I stand, For all eternity
+It is my story, my Father’s plan, The Son has rescued me
+Oh what a Gospel, Oh what a peace
+My highest joy and my deepest need
+Now and forever He is my light
+I stand in the Gospel of Jesus Christ
+
+2.
+There is one Gospel to which I cling, All else I count as loss
+For there, where justice and mercy meet
+He saved me on the cross
+No more I boast in what I can bring
+No more I carry the weight of sin
+For He has brought me from death to life
+I stand in the Gospel of Jesus Christ
+
+3.
+There is one Gospel where hope is found 
+The empty tomb still speaks
+For death could not keep my Saviour down  
+He lives and I am free
+Now on my Saviour, I fix my eyes
+My life is His and His hope is mine!
+For He has promised I, too, will rise
+I stand in the Gospel of Jesus Christ
+
+4.
+And in this Gospel the church is one 
+We do not walk alone
+We have His Spirit as we press on  
+To lead us safely home
+And when in glory still I will sing
+Of this old story that rescued me
+Praise to my Saviour, the King of life
+I stand in the Gospel of Jesus Christ  
+`,
+  chords: `
+1.
+       C                 F                 C        G
+There is one Gospel on which I stand, For all eternity
+   C/E              F                  C       G      C
+It is my story, my Father’s plan, The Son has rescued me
+C                      F     C
+Oh what a Gospel, Oh what a peace
+F           C          Am      G
+My highest joy and my deepest need
+C         Dm7     C/E     F
+Now and forever He is my light
+    F           C         G       C
+I stand in the Gospel of Jesus Christ
+
+2.
+There is one Gospel to which I cling, All else I count as loss
+For there, where justice and mercy meet
+He saved me on the cross
+No more I boast in what I can bring
+No more I carry the weight of sin
+For He has brought me from death to life
+I stand in the Gospel of Jesus Christ
+
+3.
+There is one Gospel where hope is found 
+The empty tomb still speaks
+For death could not keep my Saviour down  
+He lives and I am free
+Now on my Saviour, I fix my eyes
+My life is His and His hope is mine!
+For He has promised I, too, will rise
+I stand in the Gospel of Jesus Christ
+
+4.
+And in this Gospel the church is one 
+We do not walk alone
+We have His Spirit as we press on  
+To lead us safely home
+And when in glory still I will sing
+Of this old story that rescued me
+Praise to my Saviour, the King of life
+I stand in the Gospel of Jesus Christ  
+`,
+},
 ];
 
 // ---------- YouTube helpers ----------
