@@ -1313,6 +1313,67 @@ Eliberat sub crucea grea
 Nădejdea mea nu o să moară
 Eu voi intra-n odihna Sa!
 `,
+},
+{
+  id: 26,
+  title: "Amazing grace",
+  key: "F",
+  youtube: "https://youtu.be/Tvt6E9N7AQw?si=H6m4kXWUBkUJZ7g4",
+  lyrics: `1.
+Amazing grace how sweet the sound
+That saved a wretch like me
+I once was lost, but now I'm found
+Was blind but now I see.
+
+
+2.
+'Twas grace that taught my heart to fear
+And grace my fears relieved
+How precious did that grace appear
+The hour I first believed.
+
+3.
+Through many dangers, toils, and snares
+I have already come
+This grace that brought me safe thus far
+And grace will lead me home.
+
+4.
+When we've been here ten thousand years
+Bright, shining as the sun
+We've no less days to sing God's praise
+Than when we first begun.
+`,
+  chords: `
+1.
+  F                 Bb        F
+Amazing grace how sweet the sound
+      Dm       G         C
+That saved a wretch like me
+   F                 Bb        F
+I once was lost, but now I'm found
+      Dm       C     F
+Was blind but now I see.
+
+
+2.
+'Twas grace that taught my heart to fear
+And grace my fears relieved
+How precious did that grace appear
+The hour I first believed.
+
+3.
+Through many dangers, toils, and snares
+I have already come
+This grace that brought me safe thus far
+And grace will lead me home.
+
+4.
+When we've been here ten thousand years
+Bright, shining as the sun
+We've no less days to sing God's praise
+Than when we first begun.
+`,
 },  
 ];
 
